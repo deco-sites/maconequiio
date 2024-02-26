@@ -14,6 +14,7 @@ export default {
         ice: "F8F8F8",
         darker: "#f2f2f2",
       },
+      card: "rgba(173,33,40,.1)",
       green: "#108658",
       gray: {
         base: "#606060",
