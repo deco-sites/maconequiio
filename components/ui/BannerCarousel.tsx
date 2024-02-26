@@ -163,24 +163,13 @@ function BannerItem(
 function Dots({ images, interval = 0 }: Props) {
   return (
     <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          @property --dot-progress {
-            syntax: '<percentage>';
-            inherits: false;
-            initial-value: 0%;
-          }
-          `,
-        }}
-      />
-      <ul class="carousel justify-center col-span-full gap-6 z-10 row-start-4">
+      <ul class="carousel justify-center col-span-full gap-6 z-10 row-start-4 translate-y-12">
         {images?.map((_, index) => (
           <li class="carousel-item">
             <Slider.Dot index={index}>
-              <div class="py-5">
+              <div>
                 <div
-                  class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
+                  class="w-8 h-0.5 group-disabled:h-2 bg-gray-lighter group-disabled:bg-black"
                   style={{ animationDuration: `${interval}s` }}
                 />
               </div>
@@ -196,19 +185,19 @@ function Buttons() {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class="btn btn-circle glass">
+        <Slider.PrevButton class="btn btn-circle bg-white">
           <Icon
-            class="text-base-100"
+            class="text-black rotate-180"
             size={24}
-            id="ChevronLeft"
+            id="ChevronRight"
             strokeWidth={3}
           />
         </Slider.PrevButton>
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton class="btn btn-circle glass">
+        <Slider.NextButton class="btn btn-circle bg-white">
           <Icon
-            class="text-base-100"
+            class="text-black"
             size={24}
             id="ChevronRight"
             strokeWidth={3}

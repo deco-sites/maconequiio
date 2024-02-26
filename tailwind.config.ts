@@ -6,6 +6,21 @@ export default {
   content: ["./**/*.tsx"],
   theme: {
     container: { center: true },
+    colors: {
+      red: "#AD2128",
+      black: "#000",
+      white: {
+        base: "#f1f1f1",
+        ice: "F8F8F8",
+        darker: "#f2f2f2",
+      },
+      green: "#108658",
+      gray: {
+        base: "#606060",
+        darker: "#494949",
+        lighter: "#BDBDBD",
+      },
+    },
     extend: {
       animation: {
         sliding: "sliding 30s linear infinite",
