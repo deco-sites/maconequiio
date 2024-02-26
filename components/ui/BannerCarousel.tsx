@@ -25,11 +25,11 @@ export interface Banner {
     /** @description when user clicks on the image, go to this link */
     href: string;
     /** @description Image text title */
-    title: string;
+    title?: string;
     /** @description Image text subtitle */
-    subTitle: string;
+    subTitle?: string;
     /** @description Button label */
-    label: string;
+    label?: string;
   };
 }
 
@@ -115,10 +115,10 @@ function BannerItem(
     <a
       id={id}
       href={action?.href ?? "#"}
-      aria-label={action?.label}
-      class="relative overflow-y-hidden w-full"
+      aria-label={action?.label ?? alt}
+      class="relative h-full overflow-y-hidden w-full"
     >
-      {action && (
+      {action && action.title && action.subTitle && action.label && (
         <div class="absolute top-0 md:bottom-0 bottom-1/2 left-0 right-0 sm:right-auto max-w-[407px] flex flex-col justify-end gap-4 px-8 py-12">
           <span class="text-2xl font-light text-base-100">
             {action.title}
@@ -139,18 +139,18 @@ function BannerItem(
           media="(max-width: 767px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={mobile}
-          width={430}
-          height={590}
+          width={375}
+          height={291.66}
         />
         <Source
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={desktop}
-          width={1440}
-          height={600}
+          width={1880}
+          height={293.75}
         />
         <img
-          class="object-cover w-full h-full"
+          class="object-cover w-full"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}
@@ -226,7 +226,7 @@ function BannerCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[660px]"
+      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
         {images?.map((image, index) => {
