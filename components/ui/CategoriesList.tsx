@@ -17,7 +17,7 @@ export interface Props {
 
 export default function CategoriesList({ title, categories }: Props) {
   return (
-    <div class="flex flex-col lg:flex-row items-center justify-between container max-w-[95%] lg:max-w-[85%] gap-6 my-8">
+    <div class="flex flex-col lg:flex-row items-center justify-between container max-w-[95%] lg:max-w-[85%] gap-6 py-6">
       <div
         class="leading-[18px] lg:text-[26px] lg:leading-[30px] text-nowrap"
         dangerouslySetInnerHTML={{ __html: title }}
