@@ -17,7 +17,7 @@ export interface Props {
 
 export default function CategoriesList({ title, categories }: Props) {
   return (
-    <div class="flex flex-col lg:flex-row items-center justify-between container max-w-[95%] lg:max-w-[85%] gap-6 py-6">
+    <div class="flex flex-col lg:flex-row items-center justify-between container max-w-[95%] lg:max-w-[1350px] px-4 gap-6 py-6">
       <div
         class="leading-[18px] lg:text-[26px] lg:leading-[30px] text-nowrap"
         dangerouslySetInnerHTML={{ __html: title }}
@@ -30,7 +30,7 @@ export default function CategoriesList({ title, categories }: Props) {
           <a
             href={link}
             aria-label={description ?? label}
-            class="flex flex-col gap-1.5 px-3 items-center justify-center text-center w-[100px] h-[100px] bg-card hover:bg-red/20 rounded transition-colors duration-200"
+            class="flex flex-col gap-1.5 px-3 items-center justify-center text-center w-[100px] h-[100px] bg-card hover:bg-red/20 cursor-pointer rounded transition-colors duration-200"
           >
             <Image
               src={icon}
