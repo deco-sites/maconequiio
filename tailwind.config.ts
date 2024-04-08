@@ -10,6 +10,7 @@ export default {
       red: "#AD2128",
       black: "#000",
       white: {
+        normal: "#fff",
         base: "#f1f1f1",
         ice: "F8F8F8",
         darker: "#f2f2f2",

@@ -46,6 +46,7 @@ function Banner(
         height={292}
         alt={alt}
         loading={loading || "lazy"}
+        fetchPriority={loading === "eager" ? "auto" : "low"}
         class="rounded border border-[#ccc]"
       />
       <div class="flex flex-col gap-2">
@@ -86,7 +87,7 @@ export default function CarouselBannerWithTitle(
   };
 
   return (
-    <div class="flex flex-col gap-6 container max-w-[95%] xl:max-w-[85%] py-6">
+    <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] xl:max-w-[85%]">
       <div
         class="leading-[18px] lg:text-[26px] lg:leading-[30px]"
         dangerouslySetInnerHTML={{ __html: title || "" }}
@@ -96,10 +97,10 @@ export default function CarouselBannerWithTitle(
         class={clx(
           "grid",
           layout?.showArrows && "grid-cols-[48px_1fr_48px]",
-          "mx-auto pb-8 lg:pb-0",
+          "mx-auto pb-8 xl:pb-0",
         )}
       >
-        <Slider class="inline-flex overflow-x-scroll snap-mandatory scroll-smooth sm:snap-end gap-4 sm:gap-10 row-start-2 row-end-5 scrollbar lg:scrollbar-none pb-8 lg:pb-0">
+        <Slider class="inline-flex overflow-x-scroll snap-mandatory scroll-smooth sm:snap-end gap-4 sm:gap-10 row-start-2 row-end-5 scrollbar xl:scrollbar-none pb-8 xl:pb-0">
           {banners?.map((banner, index) => (
             <Slider.Item
               index={index}

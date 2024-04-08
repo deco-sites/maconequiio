@@ -1,7 +1,6 @@
 {
   "imports": {
     "deco-sites/maconequiio/": "./",
-
     "$store/": "./",
     "deco/": "https://denopkg.com/deco-cx/deco@1.54.0/",
     "apps/": "https://denopkg.com/deco-cx/apps@0.33.0/",
