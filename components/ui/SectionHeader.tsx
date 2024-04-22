@@ -12,7 +12,7 @@ const fontSizeClasses = {
   "Large": "lg:text-4xl",
 };
 
-function Header(props: Props) {
+function Header(props: Props & { isHTML?: boolean }) {
   return (
     <>
       {props.title || props.description
@@ -24,18 +24,24 @@ function Header(props: Props) {
           >
             {props.title &&
               (
-                <h1
-                  class={`text-2xl font-light leading-8 lg:leading-10
-                  ${
-                    props.colorReverse
-                      ? "text-primary-content"
-                      : "text-base-content"
-                  }
-                  ${fontSizeClasses[props.fontSize || "Normal"]}
-                `}
-                >
-                  {props.title}
-                </h1>
+                <>
+                  {props.isHTML
+                    ? <div dangerouslySetInnerHTML={{ __html: props.title }} />
+                    : (
+                      <h1
+                        class={`text-2xl font-light leading-8 lg:leading-10
+                    ${
+                          props.colorReverse
+                            ? "text-primary-content"
+                            : "text-base-content"
+                        }
+                    ${fontSizeClasses[props.fontSize || "Normal"]}
+                  `}
+                      >
+                        {props.title}
+                      </h1>
+                    )}
+                </>
               )}
             {props.description &&
               (

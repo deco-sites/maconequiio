@@ -7,8 +7,10 @@ export default {
   theme: {
     container: { center: true },
     colors: {
+      "red-light": "#EB5757",
       red: "#AD2128",
       black: "#000",
+      "black-neutral": "#1E1E1E",
       white: {
         normal: "#fff",
         base: "#f1f1f1",
