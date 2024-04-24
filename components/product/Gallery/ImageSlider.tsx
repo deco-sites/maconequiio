@@ -61,7 +61,8 @@ export default function GallerySlider(props: Props) {
           ))}
         </Slider>
 
-        <Slider.PrevButton
+        {
+          /* <Slider.PrevButton
           class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
           disabled
         >
@@ -73,9 +74,10 @@ export default function GallerySlider(props: Props) {
           disabled={images.length < 2}
         >
           <Icon size={24} id="ChevronRight" strokeWidth={3} />
-        </Slider.NextButton>
+        </Slider.NextButton> */
+        }
 
-        <div class="absolute top-2 right-2 bg-base-100 rounded-full">
+        <div class="absolute bottom-2 right-2 bg-base-100 rounded-full">
           <ProductImageZoom
             images={images}
             width={700}
@@ -85,15 +87,15 @@ export default function GallerySlider(props: Props) {
       </div>
 
       {/* Dots */}
-      <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1">
+      <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1 space-y-5">
         {images.map((img, index) => (
-          <li class="carousel-item min-w-[63px] sm:min-w-[100px]">
+          <li class="carousel-item min-w-[60px]">
             <Slider.Dot index={index}>
               <Image
-                style={{ aspectRatio }}
-                class="group-disabled:border-base-300 border rounded "
-                width={63}
-                height={87.5}
+                style={{ aspectRatio: 1 }}
+                class="group-disabled:border-b-4 group-disabled:border-b-red"
+                width={60}
+                height={60}
                 src={img.url!}
                 alt={img.alternateName}
               />

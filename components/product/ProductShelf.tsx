@@ -25,8 +25,6 @@ export interface Props {
       mobile?: 1 | 2 | 3 | 4 | 5;
       desktop?: 1 | 2 | 3 | 4 | 5;
     };
-    headerAlignment?: "center" | "left";
-    headerfontSize?: "Normal" | "Large" | "Small";
     showArrows?: boolean;
   };
   cardLayout?: cardLayout;
@@ -76,8 +74,6 @@ function ProductShelf({
         <Header
           title={title || ""}
           description={description || ""}
-          fontSize={layout?.headerfontSize || "Large"}
-          alignment={layout?.headerAlignment || "center"}
           isHTML
         />
 

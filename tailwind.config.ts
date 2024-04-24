@@ -6,28 +6,28 @@ export default {
   content: ["./**/*.tsx"],
   theme: {
     container: { center: true },
-    colors: {
-      "red-light": "#EB5757",
-      red: "#AD2128",
-      black: "#000",
-      "black-neutral": "#1E1E1E",
-      white: {
-        normal: "#fff",
-        base: "#f1f1f1",
-        ice: "F8F8F8",
-        darker: "#f2f2f2",
-      },
-      card: "rgba(173,33,40,.1)",
-      green: "#108658",
-      gray: {
-        base: "#606060",
-        darker: "#494949",
-        lighter: "#BDBDBD",
-      },
-    },
     extend: {
       animation: {
         sliding: "sliding 30s linear infinite",
+      },
+      colors: {
+        "red-light": "#EB5757",
+        red: "#AD2128",
+        black: "#000",
+        "black-neutral": "#1E1E1E",
+        white: {
+          normal: "#fff",
+          base: "#f1f1f1",
+          ice: "F8F8F8",
+          darker: "#f2f2f2",
+        },
+        card: "rgba(173,33,40,.1)",
+        green: "#108658",
+        gray: {
+          base: "#606060",
+          darker: "#494949",
+          lighter: "#BDBDBD",
+        },
       },
       keyframes: {
         sliding: {
