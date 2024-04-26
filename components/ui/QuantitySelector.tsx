@@ -1,6 +1,6 @@
 import Button from "../ui/Button.tsx";
 
-interface Props {
+export interface Props {
   quantity: number;
   disabled?: boolean;
   loading?: boolean;
@@ -13,7 +13,7 @@ const QUANTITY_MAX_VALUE = 100;
 function QuantitySelector(
   { onChange, quantity, disabled, loading, variation = "variation-1" }: Props,
 ) {
-  const decrement = () => onChange?.(Math.max(0, quantity - 1));
+  const decrement = () => onChange?.(Math.max(1, quantity - 1));
 
   const increment = () =>
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));

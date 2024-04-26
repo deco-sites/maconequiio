@@ -1,6 +1,6 @@
 import { SendEventOnView } from "$store/components/Analytics.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
-import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
+import QuantitySelector from "$store/islands/QuantitySelector.tsx";
 import Rating from "$store/components/daisy/Rating.tsx";
 import AddToCartButtonLinx from "$store/islands/AddToCartButton/linx.tsx";
 import AddToCartButtonShopify from "$store/islands/AddToCartButton/shopify.tsx";

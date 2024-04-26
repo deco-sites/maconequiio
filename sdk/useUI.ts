@@ -9,12 +9,14 @@ const displayCart = signal(false);
 const displayMenu = signal(false);
 const displaySearchPopup = signal(false);
 const displaySearchDrawer = signal(false);
+const productQuantity = signal(1);
 
 const state = {
   displayCart,
   displayMenu,
   displaySearchPopup,
   displaySearchDrawer,
+  productQuantity,
 };
 
 // Keyboard event listeners
