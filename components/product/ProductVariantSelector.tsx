@@ -12,34 +12,39 @@ function VariantSelector({ product }: Props) {
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
 
+  if (!possibilities || Object.keys(possibilities).length === 0) return null;
+
   return (
-    <ul class="flex flex-col gap-4">
-      {Object.keys(possibilities).map((name) => (
-        <li class="flex flex-col gap-2">
-          <span class="text-sm">{name}</span>
-          <ul class="flex flex-row gap-3">
-            {Object.entries(possibilities[name]).map(([value, link]) => {
-              const relativeUrl = relative(url);
-              const relativeLink = relative(link);
-              return (
-                <li>
-                  <button f-partial={relativeLink} f-client-nav>
-                    <Avatar
-                      content={value}
-                      variant={relativeLink === relativeUrl
-                        ? "active"
-                        : relativeLink
-                        ? "default"
-                        : "disabled"}
-                    />
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </li>
-      ))}
-    </ul>
+    <div class="flex flex-col mt-4 sm:mt-6">
+      <h2 class="text-sm font-medium text-black-neutral">Cores disponíveis</h2>
+      <ul class="flex flex-col gap-4">
+        {Object.keys(possibilities).map((name) => (
+          <li class="flex flex-col gap-2">
+            <span class="text-sm">{name}</span>
+            <ul class="flex flex-row gap-3">
+              {Object.entries(possibilities[name]).map(([value, link]) => {
+                const relativeUrl = relative(url);
+                const relativeLink = relative(link);
+                return (
+                  <li>
+                    <button f-partial={relativeLink} f-client-nav>
+                      <Avatar
+                        content={value}
+                        variant={relativeLink === relativeUrl
+                          ? "active"
+                          : relativeLink
+                          ? "default"
+                          : "disabled"}
+                      />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

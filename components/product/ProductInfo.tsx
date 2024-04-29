@@ -19,6 +19,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -125,9 +126,7 @@ function ProductInfo({ page, layout }: Props) {
       </div>
 
       {/* Sku Selector */}
-      <div class="mt-4 sm:mt-6">
-        <ProductSelector product={product} />
-      </div>
+      <ProductSelector product={product} />
 
       {/* Prices */}
       <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
@@ -228,6 +227,46 @@ function ProductInfo({ page, layout }: Props) {
             </>
           )
           : <OutOfStock productID={productID} />}
+      </div>
+
+      {/* Security */}
+      <div class="flex flex-col gap-5 mt-5 text-sm">
+        <div class="flex flex-col gap-1">
+          <div class="flex gap-0.5">
+            <Icon id="Truck" size={20} class="text-green" />
+            <span class="text-green font-medium">Entrega expressa</span>
+          </div>
+          <p>
+            Você pode retirar mais rápido nas{" "}
+            <span class="underline text-red cursor-pointer">
+              seguintes lojas
+            </span>
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <Icon id="Guard" width={14} height={16} class="text-green" />
+            <p>
+              <b>Compra 100% segura</b> - PCI Certified Vtex
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <Icon id="Check" width={15} height={10} />
+            <p>
+              <b>Loja Confiável</b> nota dos clientes 4,5/5
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <Icon id="Check" width={15} height={10} />
+            <p>
+              <b>Devolução gratuita</b>{" "}
+              sem complicações em até 7 dias após o recebimento
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Shipping Simulation */}
