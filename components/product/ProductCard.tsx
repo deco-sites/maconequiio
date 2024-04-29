@@ -166,7 +166,7 @@ function ProductCard({
             ""
           )
           : (
-            <div class="flex w-full justify-between gap-2">
+            <div class="flex w-full items-center justify-between gap-2">
               <div class="flex flex-col gap-0.5">
                 <div class="line-through text-gray-base text-xs leading-3">
                   de: {formatPrice(listPrice, offers?.priceCurrency)}
