@@ -4,6 +4,7 @@ import Button from "$store/components/ui/Button.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useCart } from "apps/vtex/hooks/useCart.ts";
 import type { SimulationOrderForm, SKU, Sla } from "apps/vtex/utils/types.ts";
+import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 
 export interface Props {
   items: Array<SKU>;
@@ -43,28 +44,28 @@ function ShippingContent({ simulation }: {
   }
 
   return (
-    <ul class="flex flex-col gap-4 p-4 bg-base-200 rounded-[4px]">
-      {methods.map((method) => (
-        <li class="flex justify-between items-center border-base-200 not-first-child:border-t">
-          <span class="text-button text-center">
-            Entrega {method.name}
-          </span>
-          <span class="text-button">
-            até {formatShippingEstimate(method.shippingEstimate)}
-          </span>
-          <span class="text-base font-semibold text-right">
-            {method.price === 0 ? "Grátis" : (
-              formatPrice(method.price / 100, currencyCode, locale)
-            )}
-          </span>
-        </li>
-      ))}
-      <span class="text-base-300">
-        Os prazos de entrega começam a contar a partir da confirmação do
-        pagamento e podem variar de acordo com a quantidade de produtos na
-        sacola.
-      </span>
-    </ul>
+    <div class="flex flex-col gap-2.5 w-full text-black-neutral text-sm font-medium">
+      <ul class="flex items-center justify-between bg-[#CCC] px-4 py-0.5 gap-2">
+        <li>Valor</li>
+        <li class="w-2/3">Disponibilidade</li>
+      </ul>
+
+      <ul class="flex flex-col gap-2 px-3">
+        {methods.map((method) => (
+          <li class="flex justify-between gap-2 items-center pb-1 border-b border-b-[#E3E3E3] last:border-none text-gray-base">
+            <span>
+              {method.price === 0 ? "Grátis" : (
+                formatPrice(method.price / 100, currencyCode, locale)
+              )}
+            </span>
+
+            <span class="w-2/3">
+              Em até {formatShippingEstimate(method.shippingEstimate)}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -92,42 +93,45 @@ function ShippingSimulation({ items }: Props) {
   }, []);
 
   return (
-    <div class="flex flex-col gap-2">
-      <div class="flex flex-col">
-        <span>Calcular frete</span>
-        <span>
-          Informe seu CEP para consultar os prazos de entrega
-        </span>
-      </div>
-
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSimulation();
-        }}
-      >
-        <input
-          as="input"
-          type="text"
-          class="input input-bordered join-item w-48"
-          placeholder="Seu cep aqui"
-          value={postalCode.value}
-          maxLength={8}
-          size={8}
-          onChange={(e: { currentTarget: { value: string } }) => {
-            postalCode.value = e.currentTarget.value;
-          }}
-        />
-        <Button type="submit" loading={loading.value} class="join-item">
-          Calcular
-        </Button>
-      </form>
-
-      <div>
-        <div>
-          <ShippingContent simulation={simulateResult} />
+    <div class="flex flex-col gap-5 border border-[#C4C4C4] p-4 w-full h-full bg-white-ice rounded-md">
+      <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex gap-2 text-sm text-black-neutral font-medium">
+          <Icon id="Truck" size={22} class="text-black-neutral" />
+          <span>Calcule seu frete:</span>
         </div>
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSimulation();
+          }}
+          class="flex items-center justify-between gap-4 rounded-md w-2/3 h-11 bg-white-normal border border-[#C4C4C4] px-2.5 text-sm"
+        >
+          <input
+            as="input"
+            type="text"
+            class="w-4/5 text-black placeholder:text-[#BEBEBE] bg-white-normal focus:outline-none"
+            placeholder="Digite seu CEP"
+            value={postalCode.value}
+            maxLength={8}
+            size={8}
+            onChange={(e: { currentTarget: { value: string } }) => {
+              postalCode.value = e.currentTarget.value;
+            }}
+          />
+
+          <Button
+            hasBtnClass={false}
+            type="submit"
+            loading={loading.value}
+            class="text-green font-medium"
+          >
+            Calcular
+          </Button>
+        </form>
       </div>
+
+      <ShippingContent simulation={simulateResult} />
     </div>
   );
 }
