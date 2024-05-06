@@ -26,7 +26,7 @@ export default function BuyTogetherCard(
   );
 
   return (
-    <div class="flex flex-col rounded w-[218px] h-[344px] bg-white-normal border border-[#BEBEBE] p-3">
+    <div class="flex flex-col rounded w-[218px] h-[374px] bg-white-normal border border-[#BEBEBE] p-3">
       <figure
         class="relative"
         style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}

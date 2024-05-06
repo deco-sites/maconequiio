@@ -105,7 +105,7 @@ function ProductCard({
         <div
           class={`absolute top-2 z-10 flex items-center left-1/2`}
         >
-          <div class=""></div>
+          {/* <div class=""></div> */}
         </div>
 
         {/* Product Images */}

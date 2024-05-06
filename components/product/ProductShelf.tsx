@@ -109,7 +109,7 @@ function ProductShelf({
           {layout?.showArrows && (
             <>
               <div class="relative block z-10 col-start-1 row-start-3">
-                <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center">
+                <Slider.PrevButton class="absolute w-10 h-10 flex justify-center items-center border border-[#E7E7E7] bg-white-normal rounded-full disabled:opacity-50">
                   <Icon
                     size={24}
                     id="ChevronLeft"
@@ -119,7 +119,7 @@ function ProductShelf({
                 </Slider.PrevButton>
               </div>
               <div class="relative block z-10 col-start-3 row-start-3">
-                <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center">
+                <Slider.NextButton class="absolute w-10 h-10 flex justify-center items-center border border-[#E7E7E7] bg-white-normal rounded-full disabled:opacity-50">
                   <Icon size={24} id="ChevronRight" strokeWidth={3} />
                 </Slider.NextButton>
               </div>
