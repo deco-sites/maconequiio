@@ -10,6 +10,10 @@
     scrool-behavior: smooth;
   }
 
+  :target {
+    scroll-margin-top: 120px;
+  }
+
   mark {
     @apply bg-accent text-accent-content;
   }

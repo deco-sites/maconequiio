@@ -50,7 +50,6 @@ function ProductInfo({ page, layout }: Props) {
     isVariantOf,
     additionalProperty = [],
   } = product;
-  const description = product.description || isVariantOf?.description;
   const {
     price = 0,
     listPrice,
@@ -98,7 +97,11 @@ function ProductInfo({ page, layout }: Props) {
                 {gtin}
               </span>
             )}
-            <a href="#" class="underline text-[#AD212B] text-sm">Litmann</a>
+            {product.brand && (
+              <a href="#" class="underline text-[#AD212B] text-sm">
+                {product.brand?.name}
+              </a>
+            )}
           </div>
 
           <div class="flex items-center gap-0.5 text-yellow-400">
@@ -110,19 +113,9 @@ function ProductInfo({ page, layout }: Props) {
 
       {/* Description card */}
       <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Descrição</summary>
-              <div
-                class="ml-2 mt-2"
-                dangerouslySetInnerHTML={{
-                  __html: description.replace(/\r?\n/g, "<br />"),
-                }}
-              />
-            </details>
-          )}
-        </span>
+        <a href="#descricao" class="text-sm underline text-red-light">
+          Ver descrição completa
+        </a>
       </div>
 
       {/* Sku Selector */}
