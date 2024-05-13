@@ -17,7 +17,7 @@ export default function ProductDescription({ page }: Props) {
       class="flex items-center justify-center w-full h-full py-8 lg:py-10 border-b-4 border-[#E4E4E4]"
     >
       <div class="w-full container flex flex-col gap-8">
-        <h2 class="text-2xl text-black-neutral">
+        <h2 class="text-2xl text-black-neutral px-4">
           Descrição do <b>Produto</b>
         </h2>
 

@@ -76,7 +76,7 @@ function ProductInfo({ page, layout }: Props) {
   });
 
   return (
-    <div class="flex flex-col xl:max-w-xl" id={id}>
+    <div class="flex flex-col xl:max-w-xl px-4 xl:px-0" id={id}>
       {/* <Breadcrumb itemListElement={breadcrumb.itemListElement} /> */}
       {/* Code and name */}
       <div class="flex flex-col w-full h-full mt-4 sm:mt-8 gap-2">
