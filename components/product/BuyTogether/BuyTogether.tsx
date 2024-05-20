@@ -12,7 +12,9 @@ export interface Props {
   products: Product[] | null;
 }
 
-export default function BuyTogether({ products }: Props) {
+export default function BuyTogether(
+  { products }: Props,
+) {
   if (!products || products.length === 0) return null;
 
   const othersProducts = useMemo(
@@ -26,6 +28,7 @@ export default function BuyTogether({ products }: Props) {
     () => products.map((item) => item.offers?.lowPrice ?? 0),
     [products],
   );
+
   const totalPrice = useMemo(
     () => productsOffers.reduce((acc, price) => acc + price, 0),
     [productsOffers],
@@ -50,8 +53,8 @@ export default function BuyTogether({ products }: Props) {
 
   return (
     <div class="flex items-center justify-center my-12 py-6 px-4 xl:px-0 bg-white-ice">
-      <div class="flex items-center gap-7 xl:max-w-full xl:mx-auto">
-        <div class="flex flex-col gap-2.5">
+      <div class="flex flex-col xl:flex-row items-center gap-7 xl:max-w-full xl:mx-auto">
+        <div class="flex-col gap-2.5 hidden xl:flex">
           <h2 class="text-black-neutral font-bold text-xl leading-6">
             Você está vendo
           </h2>
@@ -62,13 +65,13 @@ export default function BuyTogether({ products }: Props) {
           width={24}
           height={23}
           strokeWidth={2}
-          class="text-green"
+          class="text-green hidden xl:block"
         />
         <div class="flex flex-col gap-2.5">
           <h2 class="text-black-neutral font-bold text-xl leading-6">
             Compre junto
           </h2>
-          <div class="flex items-center justify-between gap-7">
+          <div class="flex flex-col xl:flex-row items-center justify-between gap-1.5 xl:gap-7">
             {othersProducts.map((product, index) => (
               <>
                 <Card product={product} hasViewProductLink={true} />
@@ -78,7 +81,7 @@ export default function BuyTogether({ products }: Props) {
                     width={24}
                     height={23}
                     strokeWidth={2}
-                    class="text-green"
+                    class="text-gray-base xl:text-green"
                   />
                 )}
               </>
@@ -88,11 +91,11 @@ export default function BuyTogether({ products }: Props) {
               width={20}
               height={17}
               strokeWidth={2}
-              class="text-green"
+              class="text-green hidden xl:block"
             />
           </div>
         </div>
-        <div class="flex flex-col gap-4 items-center justify-center text-center">
+        <div class="flex flex-col gap-4 items-center justify-center text-center w-full xl:w-auto border-t border-t-white-base xl:border-none pt-1 xl:pt-0">
           <div class="flex flex-col gap-0">
             <h2 class="text-lg text-black-neutral">Compre estes produtos</h2>
             <span class="text-lg text-black-neutral font-bold">

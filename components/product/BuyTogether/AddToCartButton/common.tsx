@@ -43,7 +43,7 @@ export default function AddToCartButton(props: Props) {
   return (
     <Button
       {...btnProps}
-      class="max-w-[250px] h-[60px] rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold text-lg leading-5"
+      class="w-full xl:max-w-[250px] h-[60px] rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold text-lg leading-5"
     >
       Comprar Junto
     </Button>

@@ -26,7 +26,7 @@ export default function BuyTogetherCard(
   );
 
   return (
-    <div class="flex flex-col rounded w-[218px] h-[374px] bg-white-normal border border-[#BEBEBE] p-3">
+    <div class="flex flex-row xl:flex-col rounded w-full xl:w-[218px] h-32 xl:h-[374px] bg-white-normal border border-[#BEBEBE] p-3">
       <figure
         class="relative"
         style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
@@ -50,7 +50,7 @@ export default function BuyTogetherCard(
         </div>
       </figure>
 
-      <div class="flex flex-col gap-1 pt-3 border-t border-t-white-base h-full justify-between">
+      <div class="flex flex-col gap-1 pt-3 border-l border-l-white-base xl:border-l-0 xl:border-t xl:border-t-white-base h-full justify-between">
         <h2
           class="line-clamp-3 text-sm text-black-neutral uppercase font-medium leading-4"
           dangerouslySetInnerHTML={{ __html: name ?? "" }}
