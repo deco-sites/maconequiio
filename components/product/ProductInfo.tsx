@@ -90,8 +90,8 @@ function ProductInfo({ page, layout }: Props) {
           </span>
         </h1>
 
-        <div class="flex items-center justify-between xl:max-w-[95%]">
-          <div class="flex items-center gap-3.5">
+        <div class="flex items-center justify-between xl:max-w-[95%] gap-1">
+          <div class="flex items-center gap-2 sm:gap-3.5">
             {gtin && (
               <span class="text-xs leading-4 font-normal text-[#555]">
                 {gtin}
@@ -124,7 +124,7 @@ function ProductInfo({ page, layout }: Props) {
       {/* Prices */}
       <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
         <div class="flex items-center gap-2">
-          <div class="flex flex-col gap-1.5">
+          <div class="flex flex-col gap-0.5">
             {(listPrice ?? 0) > price && (
               <span class="line-through text-sm text-gray-base">
                 de: {formatPrice(listPrice, offers?.priceCurrency)}
@@ -135,7 +135,7 @@ function ProductInfo({ page, layout }: Props) {
               {formatPrice(price, offers?.priceCurrency)}
             </span>
 
-            <span class="text-sm text-gray-base">
+            <span class="text-xs sm:text-sm text-gray-base">
               ou {installments?.replace(".", ",")}
             </span>
           </div>
@@ -147,7 +147,7 @@ function ProductInfo({ page, layout }: Props) {
           )}
         </div>
 
-        <div class="flex bg-gray-300 h-14 w-0.5" />
+        <div class="hidden lg:flex bg-gray-300 h-14 w-0.5" />
 
         <QuantitySelector
           quantity={1}

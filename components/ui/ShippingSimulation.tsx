@@ -110,7 +110,7 @@ function ShippingSimulation({ items }: Props) {
           <input
             as="input"
             type="text"
-            class="w-4/5 text-black placeholder:text-[#BEBEBE] bg-white-normal focus:outline-none"
+            class="w-4/5 text-black placeholder:text-[#BEBEBE] bg-white-normal focus:outline-none truncate"
             placeholder="Digite seu CEP"
             value={postalCode.value}
             maxLength={8}

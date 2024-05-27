@@ -28,7 +28,7 @@ function Benefit(
   },
 ) {
   return (
-    <div class="flex items-center gap-2 justify-center bg-white-ice py-6 px-4 rounded border border-white-base w-full max-h-[62px]">
+    <div class="flex items-center gap-2 justify-center bg-white-ice py-6 px-4 rounded border border-white-base w-full max-h-[62px] pointer-events-none">
       <Icon id={icon} width={width} height={height} class="text-red" />
       <span class="font-bold text-sm">{label}</span>
     </div>

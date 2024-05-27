@@ -23,7 +23,7 @@ function QuantitySelector(
       <div class="flex flex-col">
         <span class="text-gray-base text-sm">Quantidade:</span>
 
-        <div class="flex flex-row items-center max-w-[109px] w-full justify-between h-[38px]">
+        <div class="flex flex-row items-center sm:max-w-[109px] w-full justify-between h-[38px]">
           <Button
             class="flex items-center justify-center text-xl bg-white-base text-black font-bold rounded-l-md h-full px-4"
             hasBtnClass={false}
