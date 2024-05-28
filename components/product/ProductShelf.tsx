@@ -82,10 +82,10 @@ function ProductShelf({
           class={clx(
             "grid",
             layout?.showArrows && "grid-cols-[48px_1fr_48px]",
-            "px-0 md:px-5 container",
+            "px-2 md:px-5 container",
           )}
         >
-          <Slider class="carousel carousel-center sm:gap-1 lg:gap-4 row-start-2 row-end-5">
+          <Slider class="carousel carousel-center gap-1 lg:gap-4 row-start-2 row-end-5">
             {products?.map((product, index) => (
               <Slider.Item
                 index={index}

@@ -119,7 +119,7 @@ function ProductCard({
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="col-span-full row-span-full rounded w-full"
+            class="col-span-full row-span-full rounded w-full xl:h-[300px] object-contain"
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}

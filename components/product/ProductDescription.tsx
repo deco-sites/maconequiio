@@ -39,7 +39,8 @@ export default function ProductDescription({ page }: Props) {
             </h3>
 
             {isVariantOf?.additionalProperty?.filter((item) =>
-              item.name !== "sellerId"
+              item.name !== "sellerId" &&
+              !item.name?.toLowerCase().includes("selecione a opção de")
             )?.map((property) => (
               <div class="even:bg-[#EEEEEE] odd:bg-white-normal grid grid-cols-2 w-full text-sm leading-6 px-4">
                 <span class="text-[#444] font-bold">{property.name}</span>

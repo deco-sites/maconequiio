@@ -11,13 +11,13 @@ export interface Props {
   hasViewProductLink?: boolean;
 }
 
-const WIDTH = 183;
+const WIDTH = 192;
 const HEIGHT = 183;
 
 export default function BuyTogetherCard(
   { product, hasViewProductLink = false }: Props,
 ) {
-  const { url, name, image: images, offers } = product;
+  const { url, name, image: images, offers, isVariantOf } = product;
   const [front] = images ?? [];
   const { listPrice, price } = useOffer(offers);
 
@@ -42,7 +42,7 @@ export default function BuyTogetherCard(
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="col-span-full row-span-full rounded w-full"
+            class="col-span-full row-span-full rounded w-full h-[183px] object-contain"
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"
@@ -53,7 +53,7 @@ export default function BuyTogetherCard(
       <div class="flex flex-col gap-1 pt-3 border-l border-l-white-base xl:border-l-0 xl:border-t xl:border-t-white-base h-full justify-between">
         <h2
           class="line-clamp-3 text-sm text-black-neutral uppercase font-medium leading-4"
-          dangerouslySetInnerHTML={{ __html: name ?? "" }}
+          dangerouslySetInnerHTML={{ __html: isVariantOf?.name ?? name ?? "" }}
         />
 
         {hasViewProductLink && (

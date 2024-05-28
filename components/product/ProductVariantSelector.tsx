@@ -21,7 +21,7 @@ function VariantSelector({ product }: Props) {
           return (
             <li class="flex flex-col gap-2">
               <span class="text-sm font-medium text-black-neutral">{name}</span>
-              <ul class="flex flex-row gap-3">
+              <ul class="flex flex-wrap flex-row gap-3">
                 {Object.entries(possibilities[name]).map(([value, link]) => {
                   const relativeUrl = relative(url);
                   const relativeLink = relative(link);
