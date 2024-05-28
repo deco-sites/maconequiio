@@ -4,21 +4,21 @@
  */
 
 const colors: Record<string, string> = {
-  "azul-clara": "bg-[#87CEFA] ring-[#87CEFA]",
-  "azul-marinho": "bg-[#000080] ring-[#000080]",
-  "branca": "bg-[#FFFFFF] ring-[#FFFFFF]",
-  "cinza": "bg-[#808080] ring-[#808080]",
-  "cinza-escura": "bg-[#A9A9A9] ring-[#A9A9A9]",
-  "laranja": "bg-[#FFA500] ring-[#FFA500]",
-  "marrom": "bg-[#A52A2A] ring-[#A52A2A]",
-  "preta": "bg-[#161616] ring-[#161616]",
-  "verde-clara": "bg-[#90EE90] ring-[#90EE90]",
-  "vermelha": "bg-[#FF0000] ring-[#FF0000]",
+  "Azul": "bg-[#87CEFA] ring-[#87CEFA]",
+  "Branco": "bg-[#FFFFFF] ring-[#FFFFFF]",
+  "Cinza": "bg-[#808080] ring-[#808080]",
+  "Natural Escura": "bg-[#A9A9A9] ring-[#A9A9A9]",
+  "Natural": "bg-[#A9A9A9] ring-[#A9A9A9]",
+  "Laranja": "bg-[#FFA500] ring-[#FFA500]",
+  "Marrom": "bg-[#A52A2A] ring-[#A52A2A]",
+  "Preto": "bg-black ring-black",
+  "Verde": "bg-[#90EE90] ring-[#90EE90]",
+  "Vermelha": "bg-[#FF0000] ring-[#FF0000]",
 
   // Color variants - only applied when no color as content is passed
-  "active": "text-base-content ring-1 ring-black rounded-full",
-  "disabled": "line-through text-neutral-content",
-  "default": "text-base-content bg-base-100",
+  "active": "text-base-content border-black",
+  "disabled": "",
+  "default": "text-base-content",
 };
 
 interface Props {
@@ -27,19 +27,22 @@ interface Props {
 }
 
 const variants = {
-  active: "text-base-content ring-1 ring-black rounded-full",
-  disabled: "line-through text-neutral-content",
-  default: "text-base-content bg-base-100",
+  active: "text-base-content border-black",
+  disabled:
+    "opacity-50 relative after:absolute after:left-1/2 after:-translate-x-1/2 after:top-1/2 after:h-[1px] after:bg-gray-400 after:w-1/2 after:block after:rotate-45 after:content-['']",
+  default: "text-base-content",
 };
 
 function Avatar({ content, variant = "default" }: Props) {
   return (
-    <div class="avatar placeholder text-sm font-light h-6">
+    <div class="placeholder w-full text-sm font-light">
       <div
-        class={`${colors[content] ?? colors[variant]} ${variants[variant]}`}
+        class={`placeholder border rounded-md px-2 py-1 h-8 min-w-8 ${
+          colors[content] ?? colors[variant]
+        } ${variants[variant]}`}
       >
-        <span class="uppercase ">
-          {colors[content] ? "" : content.substring(0, 2)}
+        <span class="uppercase">
+          {colors[content] ? "" : content}
         </span>
       </div>
     </div>

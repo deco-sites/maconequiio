@@ -135,9 +135,11 @@ function ProductInfo({ page, layout }: Props) {
               {formatPrice(price, offers?.priceCurrency)}
             </span>
 
-            <span class="text-xs sm:text-sm text-gray-base">
-              ou {installments?.replace(".", ",")}
-            </span>
+            {installments && (
+              <span class="text-xs sm:text-sm text-gray-base">
+                ou {installments?.replace(".", ",")}
+              </span>
+            )}
           </div>
 
           {discount > 0 && (
