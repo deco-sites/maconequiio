@@ -90,7 +90,7 @@ function Header({
             {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
             <Navbar
               items={items}
-              searchbar={searchbar && { ...searchbar, platform }}
+              searchbar={searchbar && { ...searchbar }}
               logo={logo}
               logoPosition={logoPosition}
               buttons={buttons}
