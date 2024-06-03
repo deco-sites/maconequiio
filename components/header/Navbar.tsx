@@ -1,5 +1,5 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
+import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import { MenuButton, SearchButton } from "$store/islands/Header/Buttons.tsx";
 import CartButtonLinx from "$store/islands/Header/Cart/linx.tsx";
 import CartButtonShopify from "$store/islands/Header/Cart/shopify.tsx";
@@ -9,11 +9,11 @@ import CartButtonWake from "$store/islands/Header/Cart/wake.tsx";
 import CartButtonNuvemshop from "$store/islands/Header/Cart/nuvemshop.tsx";
 import Searchbar from "$store/islands/Header/Searchbar.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Buttons, Logo } from "$store/components/header/Header.tsx";
+import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
 
 function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
   items: SiteNavigationElement[];
@@ -62,13 +62,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       {/* Desktop Version */}
       <div class="hidden lg:flex flex-col items-center justify-center w-full border-b border-base-200 px-6 max-w-[80%] mx-auto">
         <div class="grid grid-cols-3 items-center w-full">
-          <div
-            class={`flex ${
-              logoPosition === "left"
-                ? "justify-start -order-1"
-                : "justify-center"
-            }`}
-          >
+          <div class="flex justify-start">
             {logo && (
               <a
                 href="/"
@@ -90,33 +84,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
           </div>
 
           <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-            {!buttons?.hideAccountButton && (
-              <a
-                class="flex items-center text-xs font-thin"
-                href="/account"
-                aria-label="Account"
-              >
-                <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
-                  <Icon id="User" size={20} strokeWidth={0.4} />
-                </div>
-                ACCOUNT
-              </a>
-            )}
-            {!buttons?.hideWishlistButton && (
-              <a
-                class="flex items-center text-xs font-thin"
-                href="/wishlist"
-                aria-label="Wishlist"
-              >
-                <button
-                  class="flex btn btn-circle btn-sm btn-ghost gap-1"
-                  aria-label="Wishlist"
-                >
-                  <Icon id="Heart" size={24} strokeWidth={0.4} />
-                </button>
-                WISHLIST
-              </a>
-            )}
+            {!buttons?.hideAccountButton && <LoginElement />}
             {!buttons?.hideCartButton && (
               <div class="flex items-center text-xs font-thin">
                 {platform === "vtex" && <CartButtonVTEX />}
