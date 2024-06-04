@@ -7,17 +7,20 @@ export interface Props {
 
 function MenuItem({ item }: { item: SiteNavigationElement }) {
   return (
-    <div class="collapse collapse-plus">
+    <div class="collapse collapse-arrow">
       <input type="checkbox" />
       <div class="collapse-title">{item.name}</div>
-      <div class="collapse-content">
-        <ul>
-          <li>
-            <a class="underline text-sm" href={item.url}>Ver todos</a>
-          </li>
-          {item.children?.map((node) => (
-            <li>
-              <MenuItem item={node} />
+      <div class="collapse-content p-0">
+        <ul class="flex flex-col gap-2 bg-white-base py-6">
+          {item.children?.map(({ name, url }) => (
+            <li class="flex items-center w-full justify-between pl-6 pr-1.5">
+              <a
+                href={url}
+                class="w-full block font-normal text-sm leading-6 py-0.5"
+              >
+                {name}
+              </a>
+              <Icon id="ChevronRight" strokeWidth={2.75} size={20} />
             </li>
           ))}
         </ul>
@@ -28,8 +31,8 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
 
 function Menu({ items }: Props) {
   return (
-    <div class="flex flex-col h-full">
-      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200">
+    <div class="flex flex-col h-full max-h-full overflow-y-auto scrollbar">
+      <ul class="flex-grow flex flex-col divide-y divide-base-200 text-black-neutral">
         {items.map((item) => (
           <li>
             <MenuItem item={item} />
@@ -37,40 +40,20 @@ function Menu({ items }: Props) {
         ))}
       </ul>
 
-      <ul class="flex flex-col py-2 bg-base-200">
+      <ul class="flex flex-col py-2 text-sm text-black-neutral">
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"
-            href="/wishlist"
+            href="/institucional/fale-conosco"
           >
-            <Icon id="Heart" size={24} strokeWidth={2} />
-            <span class="text-sm">Lista de desejos</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
-          >
-            <Icon id="MapPin" size={24} strokeWidth={2} />
-            <span class="text-sm">Nossas lojas</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
-          >
-            <Icon id="Phone" size={24} strokeWidth={2} />
             <span class="text-sm">Fale conosco</span>
           </a>
         </li>
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
+            href="/institucional/lojas-fisicas"
           >
-            <Icon id="User" size={24} strokeWidth={2} />
             <span class="text-sm">Minha conta</span>
           </a>
         </li>

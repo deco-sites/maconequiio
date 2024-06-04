@@ -8,6 +8,7 @@ import { useUI } from "$store/sdk/useUI.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { ComponentChildren } from "preact";
 import { lazy, Suspense } from "preact/compat";
+import { clx } from "$store/sdk/clx.ts";
 
 const Menu = lazy(() => import("$store/components/header/Menu.tsx"));
 const Searchbar = lazy(() => import("$store/components/search/Searchbar.tsx"));
@@ -23,13 +24,19 @@ export interface Props {
 }
 
 const Aside = (
-  { title, onClose, children }: {
+  { title, onClose, children, isMenu = false }: {
     title: string;
     onClose?: () => void;
     children: ComponentChildren;
+    isMenu?: boolean;
   },
 ) => (
-  <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]">
+  <div
+    class={clx(
+      "bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]",
+      isMenu && "w-[75%]",
+    )}
+  >
     <div class="flex justify-between items-center">
       <h1 class="px-4 py-3">
         <span class="font-medium text-2xl">{title}</span>
@@ -70,6 +77,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
               displaySearchDrawer.value = false;
             }}
             title={displayMenu.value ? "Menu" : "Buscar"}
+            isMenu={displayMenu.value}
           >
             {displayMenu.value && <Menu {...menu} />}
             {searchbar && displaySearchDrawer.value && (
