@@ -39,7 +39,7 @@ const Aside = (
   >
     <div class="flex justify-between items-center">
       <h1 class="px-4 py-3">
-        <span class="font-medium text-2xl">{title}</span>
+        <span class="font-medium text-xl">{title}</span>
       </h1>
       {onClose && (
         <Button class="btn btn-ghost" onClick={onClose}>
@@ -96,7 +96,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
         onClose={() => displayCart.value = false}
         aside={
           <Aside
-            title="Minha sacola"
+            title="Minha Cesta"
             onClose={() => displayCart.value = false}
           >
             <Cart platform={platform} />

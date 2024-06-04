@@ -5,7 +5,6 @@ import { useUI } from "$store/sdk/useUI.ts";
 import { AnalyticsItem } from "apps/commerce/types.ts";
 import CartItem, { Item, Props as ItemProps } from "./CartItem.tsx";
 import Coupon, { Props as CouponProps } from "./Coupon.tsx";
-import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
 
 interface Props {
   items: Item[];
@@ -49,7 +48,7 @@ function Cart({
       {isEmtpy
         ? (
           <div class="flex flex-col gap-6">
-            <span class="font-medium text-2xl">Sua sacola está vazia</span>
+            <span class="font-medium text-xl">Seu carrinho está vazio.</span>
             <Button
               class="btn-outline"
               onClick={() => {
@@ -62,20 +61,10 @@ function Cart({
         )
         : (
           <>
-            {/* Free Shipping Bar */}
-            <div class="px-2 py-4 w-full">
-              <FreeShippingProgressBar
-                total={total}
-                locale={locale}
-                currency={currency}
-                target={freeShippingTarget}
-              />
-            </div>
-
             {/* Cart Items */}
             <ul
               role="list"
-              class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
+              class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-10 w-full"
             >
               {items.map((item, index) => (
                 <li key={index}>
@@ -92,46 +81,48 @@ function Cart({
             </ul>
 
             {/* Cart Footer */}
-            <footer class="w-full">
+            <footer class="flex flex-col w-full shadow-xl text-black-neutral font-medium border-t border-base-200">
               {/* Subtotal */}
-              <div class="border-t border-base-200 py-2 flex flex-col">
+              <div class="pt-8 pb-2 flex flex-col gap-4">
                 {discounts > 0 && (
-                  <div class="flex justify-between items-center px-4">
-                    <span class="text-sm">Descontos</span>
-                    <span class="text-sm">
+                  <div class="flex justify-between items-center px-4 text-xs">
+                    <span>Descontos</span>
+                    <span>
                       {formatPrice(discounts, currency, locale)}
                     </span>
                   </div>
                 )}
-                <div class="w-full flex justify-between px-4 text-sm">
+
+                <div class="w-full flex justify-between px-4 text-xs">
                   <span>Subtotal</span>
                   <span>
                     {formatPrice(subtotal, currency, locale)}
                   </span>
                 </div>
-                {onAddCoupon && (
-                  <Coupon onAddCoupon={onAddCoupon} coupon={coupon} />
-                )}
+
+                <div class="w-full flex justify-between px-4 text-xs">
+                  <span>Entrega</span>
+                  <span>
+                    A calcular
+                  </span>
+                </div>
               </div>
 
               {/* Total */}
-              <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
+              <div class="pt-2 flex flex-col justify-end items-end gap-2 mx-4">
                 <div class="flex justify-between items-center w-full">
                   <span>Total</span>
-                  <span class="font-medium text-xl">
+                  <span class="font-semibold text-base">
                     {formatPrice(total, currency, locale)}
                   </span>
                 </div>
-                <span class="text-sm text-base-300">
-                  Taxas e fretes serão calculados no checkout
-                </span>
               </div>
 
               <div class="p-4">
                 <a class="inline-block w-full" href={checkoutHref}>
                   <Button
                     data-deco="buy-button"
-                    class="btn-primary btn-block"
+                    class="btn bg-green hover:bg-green/90 transition duration-200 text-white-normal btn-block font-bold text-base rounded-md"
                     disabled={loading || isEmtpy}
                     onClick={() => {
                       sendEvent({
@@ -147,7 +138,7 @@ function Cart({
                       });
                     }}
                   >
-                    Fechar pedido
+                    Finalizar Compra
                   </Button>
                 </a>
               </div>

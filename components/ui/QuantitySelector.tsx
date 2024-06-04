@@ -63,9 +63,10 @@ function QuantitySelector(
   }
 
   return (
-    <div class="join border rounded-none w-min">
+    <div class="join border rounded-none w-min h-9">
       <Button
-        class="btn-square btn-ghost join-item"
+        hasBtnClass={false}
+        class="btn-ghost join-item h-9 w-8"
         onClick={decrement}
         disabled={disabled}
         loading={loading}
@@ -73,7 +74,7 @@ function QuantitySelector(
         -
       </Button>
       <input
-        class="input text-center join-item [appearance:textfield]"
+        class="text-center join-item [appearance:textfield] max-h-9"
         type="number"
         inputMode="numeric"
         pattern="[0-9]*"
@@ -86,7 +87,8 @@ function QuantitySelector(
         size={3}
       />
       <Button
-        class="btn-square btn-ghost join-item"
+        hasBtnClass={false}
+        class="btn-ghost join-item h-9 w-8"
         onClick={increment}
         disabled={disabled}
         loading={loading}
