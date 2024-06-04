@@ -10,9 +10,12 @@ interface Props {
   currency: string;
   total: number;
   items: AnalyticsItem[];
+  type?: "icon" | "completed";
 }
 
-function CartButton({ loading, currency, total, items }: Props) {
+function CartButton(
+  { loading, currency, total, items, type = "completed" }: Props,
+) {
   const { displayCart } = useUI();
   const totalItems = items.length;
 
@@ -23,6 +26,30 @@ function CartButton({ loading, currency, total, items }: Props) {
     });
     displayCart.value = true;
   };
+
+  if (type === "icon") {
+    return (
+      <div class="indicator">
+        <span
+          class={`indicator-item badge badge-secondary bg-black text-white-normal badge-sm ${
+            totalItems === 0 ? "hidden" : ""
+          }`}
+        >
+          {totalItems > 9 ? "9+" : totalItems}
+        </span>
+
+        <Button
+          class="btn-circle btn-sm btn-ghost"
+          aria-label="open cart"
+          data-deco={displayCart.value && "open-cart"}
+          loading={loading}
+          onClick={onClick}
+        >
+          <Icon id="CartIcon" size={24} strokeWidth={2} class="text-red" />
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <Button

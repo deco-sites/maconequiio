@@ -1,7 +1,11 @@
 import { itemToAnalyticsItem, useCart } from "apps/vtex/hooks/useCart.ts";
 import Button from "./common.tsx";
 
-function CartButton() {
+export interface Props {
+  type: "icon" | "completed";
+}
+
+function CartButton({ type = "completed" }: Props) {
   const { loading, cart } = useCart();
   const {
     totalizers = [],
@@ -23,6 +27,7 @@ function CartButton() {
       items={items.map((item, index) =>
         itemToAnalyticsItem({ ...item, coupon }, index)
       )}
+      type={type}
     />
   );
 }

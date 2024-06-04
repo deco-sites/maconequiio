@@ -29,28 +29,30 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
+        class="lg:hidden grid grid-cols-2 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
       >
-        <MenuButton />
-        {logo && (
-          <a
-            href="/"
-            class="flex-grow inline-flex items-center justify-center"
-            style={{ minHeight: navbarHeight }}
-            aria-label="Store logo"
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 13}
-            />
-          </a>
-        )}
+        <div class="flex justify-start items-center gap-4">
+          <MenuButton />
+          {logo && (
+            <a
+              href="/"
+              class="flex-grow inline-flex items-center justify-center"
+              style={{ minHeight: navbarHeight }}
+              aria-label="Store logo"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 13}
+              />
+            </a>
+          )}
+        </div>
 
         <div class="flex justify-end gap-1">
           <SearchButton />
-          {platform === "vtex" && <CartButtonVTEX />}
+          {platform === "vtex" && <CartButtonVTEX type="icon" />}
           {platform === "vnda" && <CartButtonVDNA />}
           {platform === "wake" && <CartButtonWake />}
           {platform === "linx" && <CartButtonLinx />}
@@ -87,7 +89,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
             {!buttons?.hideAccountButton && <LoginElement />}
             {!buttons?.hideCartButton && (
               <div class="flex items-center text-xs font-thin">
-                {platform === "vtex" && <CartButtonVTEX />}
+                {platform === "vtex" && <CartButtonVTEX type="completed" />}
                 {platform === "vnda" && <CartButtonVDNA />}
                 {platform === "wake" && <CartButtonWake />}
                 {platform === "linx" && <CartButtonLinx />}
