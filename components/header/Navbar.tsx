@@ -15,12 +15,11 @@ import { navbarHeight } from "./constants.ts";
 import { Buttons, Logo } from "$store/components/header/Header.tsx";
 import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
 
-function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
+function Navbar({ items, searchbar, logo, buttons }: {
   items: SiteNavigationElement[];
   searchbar?: SearchbarProps;
   logo?: Logo;
   buttons?: Buttons;
-  logoPosition?: "left" | "center";
 }) {
   const platform = usePlatform();
 

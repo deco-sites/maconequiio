@@ -36,8 +36,6 @@ export interface Props {
   /** @title Logo */
   logo?: Logo;
 
-  logoPosition?: "left" | "center";
-
   buttons?: Buttons;
 }
 
@@ -73,7 +71,6 @@ function Header({
     height: 16,
     alt: "Logo",
   },
-  logoPosition = "center",
   buttons,
 }: Props) {
   const platform = usePlatform();
@@ -99,7 +96,6 @@ function Header({
               items={items}
               searchbar={searchbar && { ...searchbar }}
               logo={logo}
-              logoPosition={logoPosition}
               buttons={buttons}
             />
           </div>
