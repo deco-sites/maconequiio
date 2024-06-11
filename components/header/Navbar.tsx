@@ -62,8 +62,8 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg:flex flex-col items-center justify-center w-full border-b border-base-200 px-6 py-4 max-w-[80%] mx-auto">
-        <div class="grid grid-cols-3 items-center w-full h-[66px]">
+      <div class="hidden lg:flex flex-col items-center justify-center w-full border-b border-base-200 pt-4 mx-auto">
+        <div class="grid grid-cols-3 items-center w-full h-[66px] max-w-[80%] mx-auto px-6">
           <div class="flex justify-start">
             {logo && (
               <a
@@ -100,11 +100,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
           </div>
         </div>
 
-        <ul
-          class={`flex gap-6 col-span-1 ${
-            logoPosition === "left" ? "justify-center" : "justify-start"
-          }`}
-        >
+        <ul class="flex items-center justify-center w-full drop-shadow-md border-t border-t-base-200/50 gap-6 col-span-1 bg-white-ice">
           {items.map((item) => <NavItem item={item} />)}
         </ul>
       </div>
