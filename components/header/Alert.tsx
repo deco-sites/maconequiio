@@ -22,7 +22,7 @@ function Alert({ benefit, backgroundColor, dropdown }: Props) {
       style={{ backgroundColor }}
       class="flex items-center justify-center w-full h-8"
     >
-      <div class="flex justify-between items-center max-w-[75%] mx-auto text-xs font-medium text-white-normal w-full h-full">
+      <div class="flex justify-between items-center max-w-[80%] mx-auto text-xs font-medium text-white-normal w-full h-full px-6">
         <a href={benefit.url}>{benefit.text}</a>
 
         <div class="dropdown dropdown-hover h-full">
