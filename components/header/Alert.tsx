@@ -1,32 +1,57 @@
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
-import { useId } from "$store/sdk/useId.ts";
+import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 
 export interface Props {
-  alerts?: string[];
   /**
-   * @title Autoplay interval
-   * @description time (in seconds) to start the carousel autoplay
+   * @format color-input
    */
-  interval?: number;
+  backgroundColor?: string;
+  benefit: {
+    url?: string;
+    text: string;
+  };
+
+  dropdown: {
+    title: string;
+    links: Array<{ url: string; label: string }>;
+  };
 }
 
-function Alert({ alerts = [], interval = 5 }: Props) {
-  const id = useId();
-
+function Alert({ benefit, backgroundColor, dropdown }: Props) {
   return (
-    <div id={id}>
-      <Slider class="carousel carousel-center w-screen bg-secondary gap-6">
-        {alerts.map((alert, index) => (
-          <Slider.Item index={index} class="carousel-item">
-            <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
-              {alert}
-            </span>
-          </Slider.Item>
-        ))}
-      </Slider>
+    <div
+      style={{ backgroundColor }}
+      class="flex items-center justify-center w-full h-8"
+    >
+      <div class="flex justify-between items-center max-w-[75%] mx-auto text-xs font-medium text-white-normal w-full h-full">
+        <a href={benefit.url}>{benefit.text}</a>
 
-      <SliderJS rootId={id} interval={interval && interval * 1e3} />
+        <div class="dropdown dropdown-hover h-full">
+          <div
+            tabIndex={0}
+            role="button"
+            class="flex items-center justify-center h-full gap-0.5 hover:bg-white-normal hover:text-red duration-300 transition-all px-1.5"
+          >
+            <span>{dropdown.title}</span>
+            <Icon
+              id="ChevronDown"
+              size={16}
+              strokeWidth={1.75}
+              class="text-white"
+            />
+          </div>
+
+          <ul
+            tabIndex={0}
+            class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            {dropdown?.links?.map((item) => (
+              <li class="text-black">
+                <a href={item.url}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

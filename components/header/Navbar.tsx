@@ -62,8 +62,8 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg:flex flex-col items-center justify-center w-full border-b border-base-200 px-6 max-w-[80%] mx-auto">
-        <div class="grid grid-cols-3 items-center w-full">
+      <div class="hidden lg:flex flex-col items-center justify-center w-full border-b border-base-200 px-6 py-4 max-w-[80%] mx-auto">
+        <div class="grid grid-cols-3 items-center w-full h-[66px]">
           <div class="flex justify-start">
             {logo && (
               <a

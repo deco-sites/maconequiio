@@ -3,7 +3,7 @@ import Drawers from "$store/islands/Header/Drawers.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
-import Alert from "./Alert.tsx";
+import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 
@@ -13,6 +13,7 @@ export interface Logo {
   width?: number;
   height?: number;
 }
+
 export interface Buttons {
   hideSearchButton?: boolean;
   hideAccountButton?: boolean;
@@ -21,7 +22,7 @@ export interface Buttons {
 }
 
 export interface Props {
-  alerts?: string[];
+  alert?: AlertProps;
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
@@ -41,7 +42,7 @@ export interface Props {
 }
 
 function Header({
-  alerts,
+  alert,
   searchbar,
   navItems = [
     {
@@ -87,7 +88,13 @@ function Header({
           platform={platform}
         >
           <div class="bg-base-100 fixed w-full z-40">
-            {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
+            {alert && (
+              <Alert
+                benefit={alert.benefit}
+                dropdown={alert.dropdown}
+                backgroundColor={alert.backgroundColor}
+              />
+            )}
             <Navbar
               items={items}
               searchbar={searchbar && { ...searchbar }}
