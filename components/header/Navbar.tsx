@@ -1,5 +1,5 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import type { SiteNavigationElement } from "./Header.tsx";
 import { MenuButton, SearchButton } from "$store/islands/Header/Buttons.tsx";
 import CartButtonLinx from "$store/islands/Header/Cart/linx.tsx";
 import CartButtonShopify from "$store/islands/Header/Cart/shopify.tsx";
@@ -16,7 +16,7 @@ import { Buttons, Logo } from "$store/components/header/Header.tsx";
 import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
 
 function Navbar({ items, searchbar, logo, buttons }: {
-  items: SiteNavigationElement[];
+  items?: SiteNavigationElement[];
   searchbar?: SearchbarProps;
   logo?: Logo;
   buttons?: Buttons;
@@ -99,9 +99,11 @@ function Navbar({ items, searchbar, logo, buttons }: {
           </div>
         </div>
 
-        <ul class="flex items-center justify-center w-full drop-shadow-md border-t border-t-base-200/50 gap-6 col-span-1 bg-white-ice">
-          {items.map((item) => <NavItem item={item} />)}
-        </ul>
+        <div class="flex items-center justify-center w-full h-full drop-shadow-md border-t border-t-base-200/50 bg-white-ice">
+          <ul class="flex items-center justify-center w-full h-full gap-6 col-span-1">
+            {items?.map((item) => <NavItem category={item.category} />)}
+          </ul>
+        </div>
       </div>
     </>
   );

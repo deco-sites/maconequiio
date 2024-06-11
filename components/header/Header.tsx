@@ -2,10 +2,44 @@ import type { Props as SearchbarProps } from "$store/components/search/Searchbar
 import Drawers from "$store/islands/Header/Drawers.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
+
+/** @altBy OnlyText */
+export interface SiteNavigationOnlyText {
+  url: string;
+  text: string;
+}
+/** @altBy ImageAndText */
+export interface SiteNavigationImageAndText {
+  title: string;
+  subItems: { image: ImageWidget; imageDescription: string; text: string }[];
+  type: "grid-cols-1" | "grid-cols-2" | "grid-cols-3";
+}
+/** @altBy Banners */
+export interface SiteNavigationBanners {
+  image: ImageWidget;
+  imageDescription: string;
+  width: number;
+  height: number;
+  type: "flex-col" | "flex-row";
+}
+
+export interface SiteNavigationElement {
+  category: {
+    icon: AvailableIcons;
+    label: string;
+    url: string;
+    /** @title SiteNavigationItems */
+    items: (
+      | SiteNavigationOnlyText[]
+      | SiteNavigationImageAndText[]
+      | SiteNavigationBanners[]
+    )[];
+  };
+}
 
 export interface Logo {
   src: ImageWidget;
@@ -42,35 +76,8 @@ export interface Props {
 function Header({
   alert,
   searchbar,
-  navItems = [
-    {
-      "@type": "SiteNavigationElement",
-      name: "Feminino",
-      url: "/",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      name: "Masculino",
-      url: "/",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      name: "Sale",
-      url: "/",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      name: "Linktree",
-      url: "/",
-    },
-  ],
-  logo = {
-    src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
-    width: 100,
-    height: 16,
-    alt: "Logo",
-  },
+  navItems,
+  logo,
   buttons,
 }: Props) {
   const platform = usePlatform();
@@ -80,7 +87,7 @@ function Header({
     <>
       <header style={{ height: headerHeight }}>
         <Drawers
-          menu={{ items }}
+          menu={{ items: [] }}
           searchbar={searchbar}
           platform={platform}
         >
