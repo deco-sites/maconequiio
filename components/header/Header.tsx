@@ -5,6 +5,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
 import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
 
 /** @altBy OnlyText */
@@ -15,13 +16,19 @@ export interface SiteNavigationOnlyText {
 /** @altBy ImageAndText */
 export interface SiteNavigationImageAndText {
   title: string;
-  subItems: { image: ImageWidget; imageDescription: string; text: string }[];
+  subItems: {
+    image: ImageWidget;
+    imageDescription: string;
+    text: string;
+    url: string;
+  }[];
   type: "grid-cols-1" | "grid-cols-2" | "grid-cols-3";
 }
 /** @altBy Banners */
 export interface SiteNavigationBanners {
   image: ImageWidget;
   imageDescription: string;
+  url: string;
   width: number;
   height: number;
   type: "flex-col" | "flex-row";
@@ -62,23 +69,27 @@ export interface Props {
   searchbar?: Omit<SearchbarProps, "platform">;
 
   /**
+   * @title Mobile Navigation items
+   * @description Navigation items used both on mobile menu
+   */
+  mobileMenuNavItems?: MobileSiteNavigationElement[];
+
+  /**
    * @title Navigation items
-   * @description Navigation items used both on mobile and desktop menus
+   * @description Navigation items used both on desktop menu
    */
   navItems?: SiteNavigationElement[] | null;
 
   /** @title Logo */
   logo?: Logo;
-
-  buttons?: Buttons;
 }
 
 function Header({
   alert,
   searchbar,
+  mobileMenuNavItems = [],
   navItems,
   logo,
-  buttons,
 }: Props) {
   const platform = usePlatform();
   const items = navItems ?? [];
@@ -87,7 +98,7 @@ function Header({
     <>
       <header style={{ height: headerHeight }}>
         <Drawers
-          menu={{ items: [] }}
+          menu={{ items: mobileMenuNavItems }}
           searchbar={searchbar}
           platform={platform}
         >
@@ -103,7 +114,6 @@ function Header({
               items={items}
               searchbar={searchbar && { ...searchbar }}
               logo={logo}
-              buttons={buttons}
             />
           </div>
         </Drawers>

@@ -1,5 +1,10 @@
-import Icon from "$store/components/ui/Icon.tsx";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+
+export interface SiteNavigationElement {
+  icon: { id: AvailableIcons; strokeWidth: number; size: number };
+  name: string;
+  children: Array<{ name: string; url: string }>;
+}
 
 export interface Props {
   items: SiteNavigationElement[];
@@ -9,7 +14,18 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
   return (
     <div class="collapse collapse-arrow">
       <input type="checkbox" />
-      <div class="collapse-title">{item.name}</div>
+      <div class="collapse-title">
+        <div class="flex items-center gap-1.5 w-full">
+          <Icon
+            id={item.icon.id}
+            strokeWidth={item.icon.strokeWidth}
+            size={item.icon.size}
+            class="text-red"
+          />
+          <span>{item.name}</span>
+        </div>
+      </div>
+
       <div class="collapse-content p-0">
         <ul class="flex flex-col gap-2 bg-white-base py-6">
           {item.children?.map(({ name, url }) => (

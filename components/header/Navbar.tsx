@@ -15,11 +15,10 @@ import { navbarHeight } from "./constants.ts";
 import { Buttons, Logo } from "$store/components/header/Header.tsx";
 import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
 
-function Navbar({ items, searchbar, logo, buttons }: {
+function Navbar({ items, searchbar, logo }: {
   items?: SiteNavigationElement[];
   searchbar?: SearchbarProps;
   logo?: Logo;
-  buttons?: Buttons;
 }) {
   const platform = usePlatform();
 
@@ -85,17 +84,15 @@ function Navbar({ items, searchbar, logo, buttons }: {
           </div>
 
           <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-            {!buttons?.hideAccountButton && <LoginElement />}
-            {!buttons?.hideCartButton && (
-              <div class="flex items-center text-xs font-thin">
-                {platform === "vtex" && <CartButtonVTEX type="completed" />}
-                {platform === "vnda" && <CartButtonVDNA />}
-                {platform === "wake" && <CartButtonWake />}
-                {platform === "linx" && <CartButtonLinx />}
-                {platform === "shopify" && <CartButtonShopify />}
-                {platform === "nuvemshop" && <CartButtonNuvemshop />}
-              </div>
-            )}
+            <LoginElement />
+            <div class="flex items-center text-xs font-thin">
+              {platform === "vtex" && <CartButtonVTEX type="completed" />}
+              {platform === "vnda" && <CartButtonVDNA />}
+              {platform === "wake" && <CartButtonWake />}
+              {platform === "linx" && <CartButtonLinx />}
+              {platform === "shopify" && <CartButtonShopify />}
+              {platform === "nuvemshop" && <CartButtonNuvemshop />}
+            </div>
           </div>
         </div>
 
