@@ -52,6 +52,17 @@ export type AvailableIcons =
   | "AlertSuccess"
   | "AlertWarning"
   | "AlertError"
+  | "MenuIcon"
+  | "Estetoscopio"
+  | "SaudeIcon"
+  | "Bolsa"
+  | "Atleta"
+  | "Meias"
+  | "Ortopedista"
+  | "Cadeira"
+  | "Curativo"
+  | "Seringa"
+  | "Coração"
   | "share";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {

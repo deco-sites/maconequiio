@@ -1,7 +1,12 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 export interface SiteNavigationElement {
-  icon: { id: AvailableIcons; strokeWidth: number; size: number };
+  icon: {
+    id: AvailableIcons;
+    strokeWidth?: number;
+    width: number;
+    height: number;
+  };
   name: string;
   children: Array<{ name: string; url: string }>;
 }
@@ -15,14 +20,15 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
     <div class="collapse collapse-arrow">
       <input type="checkbox" />
       <div class="collapse-title">
-        <div class="flex items-center gap-1.5 w-full">
+        <div class="flex items-center gap-2 w-full">
           <Icon
             id={item.icon.id}
-            strokeWidth={item.icon.strokeWidth}
-            size={item.icon.size}
+            strokeWidth={item.icon.strokeWidth ?? 1}
+            width={item.icon.width}
+            height={item.icon.height}
             class="text-red"
           />
-          <span>{item.name}</span>
+          <span class="text-sm text-black-neutral leading-6">{item.name}</span>
         </div>
       </div>
 
