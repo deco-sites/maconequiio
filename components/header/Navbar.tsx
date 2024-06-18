@@ -12,7 +12,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
-import { Buttons, Logo } from "$store/components/header/Header.tsx";
+import { Logo } from "$store/components/header/Header.tsx";
 import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
 
 function Navbar({ items, searchbar, logo }: {
@@ -61,7 +61,7 @@ function Navbar({ items, searchbar, logo }: {
 
       {/* Desktop Version */}
       <div class="hidden lg:flex flex-col items-center justify-center w-full border-b border-base-200 pt-4 mx-auto">
-        <div class="grid grid-cols-3 items-center w-full h-[66px] max-w-[80%] mx-auto px-6">
+        <div class="grid grid-cols-3 items-center w-full h-[66px] xl:max-w-[80%] mx-auto px-6">
           <div class="flex justify-start">
             {logo && (
               <a

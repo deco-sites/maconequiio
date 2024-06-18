@@ -1,5 +1,4 @@
 import { SendEventOnView } from "$store/components/Analytics.tsx";
-import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import QuantitySelector from "$store/islands/QuantitySelector.tsx";
 import Rating from "$store/components/daisy/Rating.tsx";
 import AddToCartButtonLinx from "$store/islands/AddToCartButton/linx.tsx";
@@ -10,7 +9,6 @@ import AddToCartButtonWake from "$store/islands/AddToCartButton/wake.tsx";
 import AddToCartButtonNuvemshop from "$store/islands/AddToCartButton/nuvemshop.tsx";
 import OutOfStock from "$store/islands/OutOfStock.tsx";
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
-import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
 import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useId } from "$store/sdk/useId.ts";

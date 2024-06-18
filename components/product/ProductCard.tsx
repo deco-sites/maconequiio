@@ -48,7 +48,6 @@ function ProductCard({
   preload,
   itemListName,
   layout,
-  platform,
   index,
 }: Props) {
   const { url, productID, name, image: images, offers, isVariantOf } = product;

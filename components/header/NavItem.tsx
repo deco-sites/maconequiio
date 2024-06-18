@@ -113,7 +113,7 @@ function NavItem({ category }: SiteNavigationElement) {
         </span>
       </a>
 
-      {items && (
+      {items && items.length > 0 && (
         <div
           class="fixed hidden group-hover:flex bg-base-100 z-50 items-start gap-16 border-t border-b-2 border-base-200 w-screen py-8 px-12"
           style={{ top: "0px", left: "0px", marginTop: "65px" }}
