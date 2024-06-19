@@ -4,7 +4,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
-import { headerHeight } from "./constants.ts";
+import { useDevice } from "deco/hooks/useDevice.ts";
 import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
 import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
 
@@ -92,33 +92,32 @@ function Header({
   logo,
 }: Props) {
   const platform = usePlatform();
+  const device = useDevice();
   const items = navItems ?? [];
 
   return (
-    <>
-      <header style={{ height: headerHeight }}>
-        <Drawers
-          menu={{ items: mobileMenuNavItems }}
-          searchbar={searchbar}
-          platform={platform}
-        >
-          <div class="bg-base-100 fixed w-full z-40">
-            {alert && (
-              <Alert
-                benefit={alert.benefit}
-                dropdown={alert.dropdown}
-                backgroundColor={alert.backgroundColor}
-              />
-            )}
-            <Navbar
-              items={items}
-              searchbar={searchbar && { ...searchbar }}
-              logo={logo}
+    <header class="h-[75px] lg:h-[188px]">
+      <Drawers
+        menu={{ items: mobileMenuNavItems }}
+        searchbar={searchbar}
+        platform={platform}
+      >
+        <div class="bg-base-100 fixed w-full z-40">
+          {alert && device === "desktop" && (
+            <Alert
+              benefit={alert.benefit}
+              dropdown={alert.dropdown}
+              backgroundColor={alert.backgroundColor}
             />
-          </div>
-        </Drawers>
-      </header>
-    </>
+          )}
+          <Navbar
+            items={items}
+            searchbar={searchbar && { ...searchbar }}
+            logo={logo}
+          />
+        </div>
+      </Drawers>
+    </header>
   );
 }
 
