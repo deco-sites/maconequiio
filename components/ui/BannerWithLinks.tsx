@@ -1,6 +1,6 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 
 export interface SizeProps {
   width?: number;
@@ -45,20 +45,21 @@ export default function BannerWithLinks(
             href={banner.link}
             class="flex items-center justify-center w-full h-full"
           >
-            <Picture class="w-full h-full">
+            <Picture preload={false} class="w-full h-full">
               <Source
                 src={banner.mobileSource}
-                width={360}
-                height={120}
+                width={banner.mobileSize?.width || 360}
+                height={banner.mobileSize?.height || 120}
                 media="(max-width: 767px)"
               />
               <Source
                 src={banner.desktopSource}
-                width={1440}
-                height={200}
+                width={banner.desktopSize?.width || 1440}
+                height={banner.desktopSize?.height || 200}
                 media="(min-width: 767px)"
               />
               <img
+                loading="lazy"
                 class="w-full h-full"
                 src={banner.desktopSource}
                 alt={banner.description}

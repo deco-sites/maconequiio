@@ -27,7 +27,7 @@ export default function ProductCategories(
     >
       <div class="flex flex-col lg:flex-row lg:items-center justify-between container max-w-[95%] lg:max-w-[1350px] px-4 gap-6 py-6">
         <div
-          class="leading-[18px] lg:text-[26px] lg:leading-[30px] text-nowrap"
+          class="leading-[18px] lg:text-[26px] lg:leading-[30px] lg:max-w-64"
           dangerouslySetInnerHTML={{ __html: title }}
         />
 
@@ -49,7 +49,7 @@ export default function ProductCategories(
                 class="object-cover rounded-full"
               />
 
-              <span class="text-sm leading-4 text-black-neutral truncate">
+              <span class="text-sm leading-4 text-black-neutral truncate font-bold">
                 {label}
               </span>
             </a>
