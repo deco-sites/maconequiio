@@ -24,7 +24,7 @@ function NavItem({ category }: SiteNavigationElement) {
         return (
           <div
             key={arrayIndex}
-            class="flex flex-col gap-1.5 w-full items-start justify-start"
+            class="flex flex-col flex-wrap gap-1.5 w-full items-start justify-start max-h-[320px]"
           >
             {textItems.map((item, index) => (
               <a key={index} href={item.url} class="text-sm">
@@ -45,22 +45,31 @@ function NavItem({ category }: SiteNavigationElement) {
         return (
           <div key={arrayIndex} class="grid gap-4">
             {imageTextItems.map((item, index) => (
-              <div key={index} class="flex flex-col gap-2">
+              <div key={index} class="flex flex-col gap-6">
                 <span class="font-bold">{item.title}</span>
 
-                <div class={`grid ${item.type} w-full gap-2`}>
+                <div class={`grid ${item.type} w-full gap-2.5`}>
                   {item.subItems?.map((subitem) => (
-                    <div class="flex flex-row items-center gap-1">
+                    <a
+                      href={subitem.url}
+                      class={`flex ${
+                        item.type === "grid-cols-1" ? "flex-row" : "flex-col"
+                      } items-center gap-1`}
+                    >
                       <Image
-                        class="w-10 h-10 border rounded-full"
+                        class={`border rounded-full ${
+                          item.type === "grid-cols-1"
+                            ? "w-10 h-10"
+                            : "w-20 h-20"
+                        }`}
                         src={subitem.image}
                         alt={subitem.imageDescription}
-                        width={40}
-                        height={40}
+                        width={item.type === "grid-cols-1" ? 40 : 80}
+                        height={item.type === "grid-cols-1" ? 40 : 80}
                         loading="lazy"
                       />
                       <p>{subitem.text}</p>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -72,25 +81,27 @@ function NavItem({ category }: SiteNavigationElement) {
       // Verifica se itemArray é um array de SiteNavigationBanners
       if (
         Array.isArray(itemArray) && itemArray.length > 0 &&
-        "width" in itemArray[0] && "height" in itemArray[0]
+        "layoutType" in itemArray[0]
       ) {
         const bannerItems = itemArray as SiteNavigationBanners[];
 
         return (
-          <div key={arrayIndex} class="flex flex-wrap gap-4">
+          <div key={arrayIndex} class="flex gap-4">
             {bannerItems.map((item, index) => (
-              <div
-                key={index}
-                class={item.type}
-                style={{ width: item.width, height: item.height }}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.imageDescription}
-                  width={item.width}
-                  height={item.height}
-                  loading="lazy"
-                />
+              <div key={index} class={`grid ${item.layoutType} gap-1.5`}>
+                {item.bannersSubItems.map((subItem, subItemIndex) => (
+                  <div
+                    key={subItemIndex}
+                  >
+                    <Image
+                      src={subItem.image}
+                      alt={subItem.imageDescription}
+                      width={subItem.width}
+                      height={subItem.height}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
               </div>
             ))}
           </div>
@@ -115,8 +126,8 @@ function NavItem({ category }: SiteNavigationElement) {
 
       {items && items.length > 0 && (
         <div
-          class="fixed hidden group-hover:flex bg-base-100 z-50 items-start gap-16 border-t border-b-2 border-base-200 w-screen py-8 px-12"
-          style={{ top: "0px", left: "0px", marginTop: "65px" }}
+          class="fixed hidden group-hover:flex bg-base-100 z-50 items-start justify-start gap-16 border-t border-b-2 border-base-200 w-screen max-w-[1250px] py-8 px-12"
+          style={{ top: "0px", marginTop: "65px" }}
         >
           {renderItems()}
         </div>

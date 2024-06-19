@@ -26,12 +26,14 @@ export interface SiteNavigationImageAndText {
 }
 /** @altBy Banners */
 export interface SiteNavigationBanners {
-  image: ImageWidget;
-  imageDescription: string;
-  url: string;
-  width: number;
-  height: number;
-  type: "flex-col" | "flex-row";
+  bannersSubItems: {
+    image: ImageWidget;
+    imageDescription: string;
+    url: string;
+    width: number;
+    height: number;
+  }[];
+  layoutType: "grid-cols-1" | "grid-cols-2";
 }
 
 export interface SiteNavigationElement {
