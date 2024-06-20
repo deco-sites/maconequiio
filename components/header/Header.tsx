@@ -13,6 +13,11 @@ export interface SiteNavigationOnlyText {
   url: string;
   text: string;
 }
+/** @altBy OnlyTextWithTitle */
+export interface SiteNavigationOnlyTextWithTitle {
+  title: string;
+  items: { url: string; text: string; isViewMore?: boolean }[];
+}
 /** @altBy ImageAndText */
 export interface SiteNavigationImageAndText {
   title: string;
@@ -22,7 +27,8 @@ export interface SiteNavigationImageAndText {
     text: string;
     url: string;
   }[];
-  type: "grid-cols-1" | "grid-cols-2" | "grid-cols-3";
+  removeRoundedClass?: boolean;
+  type: "grid-cols-1" | "grid-cols-2" | "grid-cols-3" | "grid-cols-6";
 }
 /** @altBy Banners */
 export interface SiteNavigationBanners {
@@ -44,6 +50,7 @@ export interface SiteNavigationElement {
     /** @title SiteNavigationItems */
     items: (
       | SiteNavigationOnlyText[]
+      | SiteNavigationOnlyTextWithTitle[]
       | SiteNavigationImageAndText[]
       | SiteNavigationBanners[]
     )[];

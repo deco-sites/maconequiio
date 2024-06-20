@@ -5,6 +5,7 @@ import type {
   SiteNavigationElement,
   SiteNavigationImageAndText,
   SiteNavigationOnlyText,
+  SiteNavigationOnlyTextWithTitle,
 } from "./Header.tsx";
 
 function NavItem({ category }: SiteNavigationElement) {
@@ -35,6 +36,41 @@ function NavItem({ category }: SiteNavigationElement) {
         );
       }
 
+      if (
+        Array.isArray(itemArray) && itemArray.length > 0 &&
+        "title" in itemArray[0] && "items" in itemArray[0]
+      ) {
+        const textItems = itemArray as SiteNavigationOnlyTextWithTitle[];
+
+        return (
+          <>
+            {textItems.map(({ items, title }, index) => (
+              <div class="flex flex-col gap-6">
+                <span class="font-bold">{title}</span>
+
+                <div
+                  key={index}
+                  class="flex flex-col flex-wrap gap-1.5 w-full items-start justify-start max-h-[320px]"
+                >
+                  {items.map((item, index) => (
+                    <a key={index} href={item.url} class="text-sm">
+                      <span
+                        class={item.isViewMore
+                          ? "text-red underline hover:no-underline"
+                          : ""}
+                      >
+                        {item.text}
+                      </span>
+                      {item.isViewMore && <span class="text-red">+</span>}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </>
+        );
+      }
+
       // Verifica se itemArray é um array de SiteNavigationImageAndText
       if (
         Array.isArray(itemArray) && itemArray.length > 0 &&
@@ -54,10 +90,14 @@ function NavItem({ category }: SiteNavigationElement) {
                       href={subitem.url}
                       class={`flex ${
                         item.type === "grid-cols-1" ? "flex-row" : "flex-col"
-                      } items-center gap-1`}
+                      } items-center gap-1 hover:text-red duration-200 transition-all ease-in-out`}
                     >
                       <Image
-                        class={`border rounded-full ${
+                        class={`${
+                          item.removeRoundedClass
+                            ? "rounded-none"
+                            : "border rounded-full"
+                        } ${
                           item.type === "grid-cols-1"
                             ? "w-10 h-10"
                             : "w-20 h-20"
@@ -88,10 +128,14 @@ function NavItem({ category }: SiteNavigationElement) {
         return (
           <div key={arrayIndex} class="flex gap-4">
             {bannerItems.map((item, index) => (
-              <div key={index} class={`grid ${item.layoutType} gap-1.5`}>
+              <div
+                key={index}
+                class={`grid ${item.layoutType} gap-y-1.5 gap-x-6`}
+              >
                 {item.bannersSubItems.map((subItem, subItemIndex) => (
-                  <div
+                  <a
                     key={subItemIndex}
+                    href={subItem.url}
                   >
                     <Image
                       src={subItem.image}
@@ -100,7 +144,7 @@ function NavItem({ category }: SiteNavigationElement) {
                       height={subItem.height}
                       loading="lazy"
                     />
-                  </div>
+                  </a>
                 ))}
               </div>
             ))}
@@ -126,7 +170,7 @@ function NavItem({ category }: SiteNavigationElement) {
 
       {items && items.length > 0 && (
         <div
-          class="fixed hidden group-hover:flex bg-base-100 z-50 items-start justify-start gap-16 border-t border-b-2 border-base-200 w-screen max-w-[1250px] py-8 px-12"
+          class="fixed hidden group-hover:flex bg-base-100 z-50 items-start justify-between gap-16 border-t border-b-2 border-base-200 w-screen max-w-[1260px] -translate-x-1/2 left-1/2 py-8 px-12"
           style={{ top: "0px", marginTop: "65px" }}
         >
           {renderItems()}
