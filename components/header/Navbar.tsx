@@ -14,6 +14,7 @@ import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Logo } from "$store/components/header/Header.tsx";
 import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
+import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 
 function Navbar({ items, searchbar, logo }: {
   items?: SiteNavigationElement[];
@@ -61,8 +62,8 @@ function Navbar({ items, searchbar, logo }: {
 
       {/* Desktop Version */}
       <div class="hidden lg:flex flex-col items-center justify-center w-full border-b border-base-200 pt-4 mx-auto">
-        <div class="grid grid-cols-3 items-center w-full h-[66px] xl:max-w-[80%] mx-auto px-6">
-          <div class="flex justify-start">
+        <div class="grid grid-cols-3 items-center w-full h-[66px] xl:max-w-[1305px] mx-auto px-6">
+          <div class="flex items-center gap-4 justify-start">
             {logo && (
               <a
                 href="/"
@@ -77,6 +78,14 @@ function Navbar({ items, searchbar, logo }: {
                 />
               </a>
             )}
+
+            <button
+              id="navitems-button"
+              class="hidden items-center justify-center text-xs gap-1"
+            >
+              <Icon id="Bars3" size={22} strokeWidth={0.01} />
+              <span>Menu</span>
+            </button>
           </div>
 
           <div class="w-full lg:max-w-[640px]">
@@ -96,7 +105,10 @@ function Navbar({ items, searchbar, logo }: {
           </div>
         </div>
 
-        <div class="flex items-center justify-center w-full h-full drop-shadow-md border-t border-t-base-200/50 bg-white-ice">
+        <div
+          id="nav"
+          class="flex items-center justify-center w-full h-full drop-shadow-md border-t border-t-base-200/50 bg-white-ice"
+        >
           <ul class="flex items-center justify-center w-full h-full gap-6 col-span-1">
             {items?.map((item) => <NavItem category={item.category} />)}
           </ul>
