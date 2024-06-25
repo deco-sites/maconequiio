@@ -63,34 +63,31 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
   const { displayCart, displayMenu, displaySearchDrawer } = useUI();
 
   return (
-    <>
-      <Drawer // left drawer
-        open={displayMenu.value || displaySearchDrawer.value}
-        onClose={() => {
-          displayMenu.value = false;
-          displaySearchDrawer.value = false;
-        }}
-        aside={
-          <Aside
-            onClose={() => {
-              displayMenu.value = false;
-              displaySearchDrawer.value = false;
-            }}
-            title={displayMenu.value ? "Menu" : "Buscar"}
-            isMenu={displayMenu.value}
-          >
-            {displayMenu.value && <Menu {...menu} />}
-            {searchbar && displaySearchDrawer.value && (
-              <div class="w-screen">
-                <Searchbar {...searchbar} />
-              </div>
-            )}
-          </Aside>
-        }
-      >
-        {children}
-      </Drawer>
-      <Drawer // right drawer
+    <Drawer
+      open={displayMenu.value || displaySearchDrawer.value}
+      onClose={() => {
+        displayMenu.value = false;
+        displaySearchDrawer.value = false;
+      }}
+      aside={
+        <Aside
+          onClose={() => {
+            displayMenu.value = false;
+            displaySearchDrawer.value = false;
+          }}
+          title={displayMenu.value ? "Menu" : "Buscar"}
+          isMenu={displayMenu.value}
+        >
+          {displayMenu.value && <Menu {...menu} />}
+          {searchbar && displaySearchDrawer.value && (
+            <div class="w-screen">
+              <Searchbar {...searchbar} />
+            </div>
+          )}
+        </Aside>
+      }
+    >
+      <Drawer
         class="drawer-end"
         open={displayCart.value !== false}
         onClose={() => displayCart.value = false}
@@ -105,7 +102,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
       >
         {children}
       </Drawer>
-    </>
+    </Drawer>
   );
 }
 
