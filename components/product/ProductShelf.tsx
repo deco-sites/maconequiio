@@ -85,7 +85,7 @@ function ProductShelf({
             "px-2 md:px-5 container",
           )}
         >
-          <Slider class="carousel carousel-center gap-1 lg:gap-4 row-start-2 row-end-5">
+          <Slider class="carousel carousel-center justify-center gap-1 lg:gap-4 row-start-2 row-end-5">
             {products?.map((product, index) => (
               <Slider.Item
                 index={index}
