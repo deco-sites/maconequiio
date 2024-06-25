@@ -117,6 +117,16 @@ function Header({
 
         navItems?.classList.remove("flex");
         navItems?.classList.add("hidden");
+
+        menuButton?.addEventListener("click", () => {
+          if (navItems?.classList.contains("flex")) {
+            navItems?.classList.remove("flex");
+            navItems?.classList.add("hidden");
+          } else {
+            navItems?.classList.add("flex");
+            navItems?.classList.remove("hidden");
+          }
+        });
       } else {
         menuButton?.classList.remove("flex");
         menuButton?.classList.add("hidden");
