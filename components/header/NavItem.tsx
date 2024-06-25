@@ -108,7 +108,7 @@ function NavItem({ category }: SiteNavigationElement) {
                         height={item.type === "grid-cols-1" ? 40 : 80}
                         loading="lazy"
                       />
-                      <p>{subitem.text}</p>
+                      <p class="text-nowrap">{subitem.text}</p>
                     </a>
                   ))}
                 </div>
