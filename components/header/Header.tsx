@@ -110,19 +110,26 @@ function Header({
       const scrollY = self.scrollY;
       const navItems = document.getElementById("nav");
       const menuButton = document.getElementById("navitems-button");
+      const alert = document.getElementById("alert");
 
-      if (scrollY > 0) {
+      if (scrollY > 90) {
         menuButton?.classList.remove("hidden");
         menuButton?.classList.add("flex");
 
         navItems?.classList.remove("flex");
         navItems?.classList.add("hidden");
+
+        alert?.classList.add("hidden");
+        alert?.classList.remove("flex");
       } else {
         menuButton?.classList.remove("flex");
         menuButton?.classList.add("hidden");
 
         navItems?.classList.remove("hidden");
         navItems?.classList.add("flex");
+
+        alert?.classList.remove("hidden");
+        alert?.classList.add("flex");
       }
     });
   }

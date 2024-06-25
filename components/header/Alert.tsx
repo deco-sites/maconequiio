@@ -19,6 +19,7 @@ export interface Props {
 function Alert({ benefit, backgroundColor, dropdown }: Props) {
   return (
     <div
+      id="alert"
       style={{ backgroundColor }}
       class="flex items-center justify-center w-full h-8"
     >
