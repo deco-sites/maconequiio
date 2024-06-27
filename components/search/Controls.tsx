@@ -11,11 +11,10 @@ export type Props =
   & Pick<ProductListingPage, "filters" | "breadcrumb" | "sortOptions">
   & {
     displayFilter?: boolean;
-    url: string;
   };
 
 function SearchControls(
-  { filters, breadcrumb, displayFilter, sortOptions, url }: Props,
+  { filters, breadcrumb, displayFilter, sortOptions }: Props,
 ) {
   const open = useSignal(false);
 
@@ -42,7 +41,7 @@ function SearchControls(
         </>
       }
     >
-      <div class="flex flex-col justify-between mb-4 p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] sm:border-b sm:border-base-200">
+      <div class="flex flex-col justify-between mb-4 p-4 sm:mb-0 sm:pb-0 sm:gap-4 sm:flex-row sm:h-[53px] sm:border-b sm:border-base-200">
         <div class="flex flex-row items-center sm:p-0 mb-2">
           <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
         </div>
@@ -57,9 +56,7 @@ function SearchControls(
             Filtrar
             <Icon id="FilterList" width={16} height={16} />
           </Button>
-          {sortOptions.length > 0 && (
-            <Sort sortOptions={sortOptions} url={url} />
-          )}
+          {sortOptions.length > 0 && <Sort sortOptions={sortOptions} />}
         </div>
       </div>
     </Drawer>

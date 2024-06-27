@@ -66,7 +66,7 @@ function Result({
   const isFirstPage = !pageInfo.previousPage;
 
   return (
-    <>
+    <div class="flex items-center justify-center w-full h-full bg-white-base">
       <div class="container px-4 sm:py-10">
         {(isFirstPage || !isPartial) && (
           <SearchControls
@@ -74,14 +74,15 @@ function Result({
             filters={filters}
             breadcrumb={breadcrumb}
             displayFilter={layout?.variant === "drawer"}
-            url={url.href}
           />
         )}
 
-        <div class="flex flex-row">
+        <div class="flex flex-row mt-6 gap-x-8">
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside class="hidden sm:block w-min min-w-[250px]">
-              {(isFirstPage && !isPartial) && <Filters filters={filters} />}
+              {(isFirstPage && !isPartial) && (
+                <Filters filters={filters} hasContainer />
+              )}
             </aside>
           )}
           <div class="flex-grow" id={id}>
@@ -140,7 +141,7 @@ function Result({
           },
         }}
       />
-    </>
+    </div>
   );
 }
 
