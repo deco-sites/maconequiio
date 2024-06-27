@@ -7,6 +7,7 @@ import SearchControls from "../../islands/SearchControls.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
+import { SectionProps } from "deco/types.ts";
 
 export type Format = "Show More" | "Pagination";
 
@@ -67,7 +68,11 @@ function Result({
 
   return (
     <div class="flex items-center justify-center w-full h-full bg-white-base">
-      <div class="container px-4 sm:py-10">
+      <div
+        class={`container px-4 ${
+          !(!isFirstPage && format == "Show More") ? "sm:pt-10" : ""
+        }`}
+      >
         {(isFirstPage || !isPartial) && (
           <SearchControls
             sortOptions={sortOptions}
@@ -79,7 +84,7 @@ function Result({
 
         <div class="flex flex-row mt-6 gap-x-8">
           {layout?.variant === "aside" && filters.length > 0 && (
-            <aside class="hidden sm:block w-min min-w-[250px]">
+            <aside class="hidden sm:block w-min min-w-[325px]">
               {(isFirstPage && !isPartial) && (
                 <Filters filters={filters} hasContainer />
               )}
@@ -146,7 +151,7 @@ function Result({
 }
 
 function SearchResult(
-  { page, ...props }: ReturnType<typeof loader>,
+  { page, ...props }: SectionProps<typeof loader>,
 ) {
   if (!page) {
     return <NotFound />;

@@ -35,7 +35,7 @@ function FilterValues({ key, values }: FilterToggle) {
   const flexDirection = key === "tamanho" ? "flex-row" : "flex-col";
 
   return (
-    <ul class={`flex flex-wrap gap-2 ${flexDirection}`}>
+    <ul class={`flex flex-wrap gap-2.5 ${flexDirection}`}>
       {values.map((item) => {
         const { url, selected, value } = item;
 
@@ -69,7 +69,7 @@ function FilterValues({ key, values }: FilterToggle) {
 
 function ToggleFilters({ filters }: Pick<Props, "filters">) {
   return (
-    <ul class="flex flex-col gap-1.5 px-2">
+    <ul class="flex flex-col gap-1.5 px-6">
       {filters
         .filter(isToggle)
         .map((filter) => (
@@ -82,13 +82,13 @@ function ToggleFilters({ filters }: Pick<Props, "filters">) {
                 aria-label="Filtros"
                 checked={filter.values.some((item) => item.selected)}
               />
-              <div class="collapse-title flex justify-between cursor-pointer border-b">
+              <div class="collapse-title flex justify-between cursor-pointer border-b last:border-none">
                 <span class="flex content-center flex-wrap">
                   {filter.label}
                 </span>
               </div>
 
-              <div class="collapse-content pb-0 pt-3 overflow-auto max-h-64 scrollbar">
+              <div class="collapse-content pb-0 mt-3 overflow-auto max-h-60 scrollbar">
                 <FilterValues {...filter} />
               </div>
             </div>
@@ -98,11 +98,13 @@ function ToggleFilters({ filters }: Pick<Props, "filters">) {
   );
 }
 
-function Filters({ filters, hasContainer = false }: Props) {
+function Filters({ filters: partialFilters, hasContainer = false }: Props) {
+  const filters = partialFilters.filter((item) => item.key !== "ref");
+
   if (hasContainer) {
     return (
       <div class="flex flex-col w-full border gap-1 bg-white-normal text-black">
-        <div class="flex w-full py-3 px-4 font-medium bg-white-base text-lg">
+        <div class="flex w-full py-3 px-4 font-bold bg-white-base text-lg">
           Filtros
         </div>
         <ToggleFilters filters={filters} />
