@@ -74,6 +74,7 @@ function Result({
             filters={filters}
             breadcrumb={breadcrumb}
             displayFilter={layout?.variant === "drawer"}
+            url={url.href}
           />
         )}
 

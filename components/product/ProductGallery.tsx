@@ -70,6 +70,19 @@ function ProductGallery(
           preload={index === 0}
           index={offset + index}
           platform={platform}
+          layout={{
+            hide: {
+              installments: true,
+              flag: true,
+              productDescription: true,
+            },
+            basics: {
+              ctaText: "Comprar",
+            },
+            onMouseOver: {
+              showCardShadow: true,
+            },
+          }}
         />
       ))}
 
