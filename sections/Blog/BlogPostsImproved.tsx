@@ -71,7 +71,7 @@ export default function BlogPosts({
     const estimatedTimeMinutes = words / wordsPerMinute;
 
     const roundedReadingTime = Math.round(estimatedTimeMinutes);
-    return `${roundedReadingTime} min`;
+    return `${roundedReadingTime || 1} min`;
   }
 
   const ContainerComponent = page === 0 ? Container : Fragment;
@@ -83,7 +83,7 @@ export default function BlogPosts({
           {posts?.slice(from, to).map((post) => (
             <a
               href={`/blog/${post.slug}`}
-              class="border border-secondary overflow-hidden rounded-lg flex flex-col"
+              class="border border-base-200 overflow-hidden rounded-lg flex flex-col"
             >
               <Image
                 width={380}
