@@ -9,7 +9,7 @@ import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
 import RegionSelector from "$store/components/footer/RegionSelector.tsx";
 import Social from "$store/components/footer/Social.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 
 export type Item = {
@@ -88,7 +88,7 @@ export interface Props {
     description?: string;
   };
   newsletter?: {
-    title?: string;
+    title?: HTMLWidget;
     /** @format textarea */
     description?: string;
     form?: NewsletterForm;
@@ -214,13 +214,13 @@ function Footer({
 
   return (
     <footer
-      class={`w-full flex flex-col pt-10 pb-2 md:pb-10 gap-10 ${
+      class={`w-full flex flex-col pb-2 md:pb-10 gap-10 ${
         ColorClasses(layout)
       }`}
     >
-      <div class="lg:container mx-6 lg:mx-auto">
+      <div>
         {(!layout?.variation || layout?.variation == "Variation 1") && (
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 container">
             <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
               {_logo}
               {_sectionLinks}
@@ -243,7 +243,7 @@ function Footer({
           </div>
         )}
         {layout?.variation == "Variation 2" && (
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 container">
             <div class="flex flex-col md:flex-row gap-10">
               <div class="flex flex-col gap-10 lg:w-1/2">
                 {_logo}
@@ -265,7 +265,7 @@ function Footer({
           </div>
         )}
         {layout?.variation == "Variation 3" && (
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 container">
             {_logo}
             <div class="flex flex-col lg:flex-row gap-14">
               <div class="flex flex-col md:flex-row lg:flex-col md:justify-between lg:justify-normal gap-10 lg:w-2/5">
@@ -291,35 +291,36 @@ function Footer({
           </div>
         )}
         {layout?.variation == "Variation 4" && (
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col">
             {_newsletter}
-            {layout?.hide?.newsletter ? <></> : <Divider />}
-            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
-              {_sectionLinks}
-              <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
-                <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
-                  <div class="lg:flex-auto">
-                    {_payments}
+            <div class="flex items-center justify-center w-full bg-black-neutral">
+              <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-8 pb-4 text-white-normal">
+                {_sectionLinks}
+                <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
+                  <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
+                    <div class="lg:flex-auto">
+                      {_payments}
+                    </div>
+                    <div class="lg:flex-auto">
+                      {_social}
+                    </div>
                   </div>
-                  <div class="lg:flex-auto">
-                    {_social}
+                  <div class="flex flex-col gap-10 lg:gap-10">
+                    {_region}
+                    {_apps}
                   </div>
-                </div>
-                <div class="flex flex-col gap-10 lg:gap-10">
-                  {_region}
-                  {_apps}
                 </div>
               </div>
             </div>
             <Divider />
-            <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
+            <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-4">
               {_logo}
               <PoweredByDeco />
             </div>
           </div>
         )}
         {layout?.variation == "Variation 5" && (
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 container">
             {_newsletter}
             {layout?.hide?.newsletter ? <></> : <Divider />}
             {_logo}

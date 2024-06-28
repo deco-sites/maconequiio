@@ -55,6 +55,7 @@ export type AvailableIcons =
   | "MenuIcon"
   | "Estetoscopio"
   | "SaudeIcon"
+  | "SubmitArrow"
   | "Bolsa"
   | "Atleta"
   | "Meias"

@@ -119,6 +119,10 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </symbol>
 
+	<symbol id="SubmitArrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M4 6.03L11.5 9.25L4 8.25V6.03ZM11.5 14.75L4 17.97V15.75L11.5 14.75ZM2 3V10L17 12L2 14V21L23 12L2 3Z" fill="#AD2128"/>
+	</symbol>
+
 	<symbol id="AlertInfo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </symbol>
