@@ -23,7 +23,7 @@ export interface Post {
 
 export interface Props {
   cta?: CTA;
-  posts?: BlogPost[] | null;
+  posts?: BlogPost[];
   pagination?: {
     /**
      * @title First page
