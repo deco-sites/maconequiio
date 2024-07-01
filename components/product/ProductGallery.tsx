@@ -104,7 +104,7 @@ function ProductGallery(
                     mode: "append",
                   })}
                 >
-                  Mostrar mais
+                  Ver mais produtos
                 </button>
               </div>
             )}

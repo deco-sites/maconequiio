@@ -34,7 +34,9 @@ export default function ShowMore(
     >
       {children}
       <button
-        class={`btn cursor-pointer absolute ${loading.value ? "hidden" : ""}`}
+        class={`btn cursor-pointer absolute bg-red hover:bg-red text-white-base font-bold rounded-md ${
+          loading.value ? "hidden" : ""
+        }`}
         onClick={() => {
           loading.value = true;
           const element = document.getElementById(
@@ -50,7 +52,7 @@ export default function ShowMore(
           }
         }}
       >
-        Mostrar mais
+        Ver mais produtos
       </button>
     </div>
   );
