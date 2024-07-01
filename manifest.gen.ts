@@ -66,13 +66,14 @@ import * as $$$$$$56 from "./sections/Product/ProductDescription.tsx";
 import * as $$$$$$57 from "./sections/Product/ProductInfo.tsx";
 import * as $$$$$$58 from "./sections/Product/ProductShelf.tsx";
 import * as $$$$$$59 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$60 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$61 from "./sections/Product/ShelfWithImage.tsx";
-import * as $$$$$$62 from "./sections/Product/SimilarsProducts.tsx";
-import * as $$$$$$63 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$64 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$65 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$66 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$60 from "./sections/Product/SearchDescription.tsx";
+import * as $$$$$$61 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$62 from "./sections/Product/ShelfWithImage.tsx";
+import * as $$$$$$63 from "./sections/Product/SimilarsProducts.tsx";
+import * as $$$$$$64 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$65 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$66 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$67 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
   "loaders": {
@@ -144,13 +145,14 @@ const manifest = {
     "deco-sites/maconequiio/sections/Product/ProductInfo.tsx": $$$$$$57,
     "deco-sites/maconequiio/sections/Product/ProductShelf.tsx": $$$$$$58,
     "deco-sites/maconequiio/sections/Product/ProductShelfTabbed.tsx": $$$$$$59,
-    "deco-sites/maconequiio/sections/Product/SearchResult.tsx": $$$$$$60,
-    "deco-sites/maconequiio/sections/Product/ShelfWithImage.tsx": $$$$$$61,
-    "deco-sites/maconequiio/sections/Product/SimilarsProducts.tsx": $$$$$$62,
-    "deco-sites/maconequiio/sections/Product/Wishlist.tsx": $$$$$$63,
-    "deco-sites/maconequiio/sections/Social/InstagramPosts.tsx": $$$$$$64,
-    "deco-sites/maconequiio/sections/Social/WhatsApp.tsx": $$$$$$65,
-    "deco-sites/maconequiio/sections/Theme/Theme.tsx": $$$$$$66,
+    "deco-sites/maconequiio/sections/Product/SearchDescription.tsx": $$$$$$60,
+    "deco-sites/maconequiio/sections/Product/SearchResult.tsx": $$$$$$61,
+    "deco-sites/maconequiio/sections/Product/ShelfWithImage.tsx": $$$$$$62,
+    "deco-sites/maconequiio/sections/Product/SimilarsProducts.tsx": $$$$$$63,
+    "deco-sites/maconequiio/sections/Product/Wishlist.tsx": $$$$$$64,
+    "deco-sites/maconequiio/sections/Social/InstagramPosts.tsx": $$$$$$65,
+    "deco-sites/maconequiio/sections/Social/WhatsApp.tsx": $$$$$$66,
+    "deco-sites/maconequiio/sections/Theme/Theme.tsx": $$$$$$67,
   },
   "apps": {
     "deco-sites/maconequiio/apps/decohub.ts": $$$$$$$$$$$0,

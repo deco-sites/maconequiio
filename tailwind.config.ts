@@ -30,6 +30,7 @@ export default {
           "base": "#606060",
           "darker": "#494949",
           "lighter": "#BDBDBD",
+          "neutral": "#A8A8A8",
         },
       },
       keyframes: {

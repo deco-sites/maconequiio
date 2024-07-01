@@ -3,11 +3,13 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import Filters from "../../components/search/Filters.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import SearchControls from "../../islands/SearchControls.tsx";
+// import SearchControls from "../../islands/SearchControls.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import { SectionProps } from "deco/types.ts";
+import Sort from "$store/islands/Sort.tsx";
+import ColumnToggle from "deco-sites/maconequiio/components/search/ColumnToggle.tsx";
 
 export type Format = "Show More" | "Pagination";
 
@@ -66,21 +68,25 @@ function Result({
   const isPartial = url.searchParams.get("partial") === "true";
   const isFirstPage = !pageInfo.previousPage;
 
+  const isListModeActive = layout?.columns?.desktop === 4;
+
   return (
-    <div class="flex items-center justify-center w-full h-full bg-white-base">
+    <div class="flex items-center justify-center w-full h-full bg-white-base border-t border-t-base-200">
       <div
         class={`container px-4 ${
           !(!isFirstPage && format == "Show More") ? "sm:pt-10" : ""
         }`}
       >
-        {(isFirstPage || !isPartial) && (
+        {
+          /* {(isFirstPage || !isPartial) && (
           <SearchControls
             sortOptions={sortOptions}
             filters={filters}
             breadcrumb={breadcrumb}
             displayFilter={layout?.variant === "drawer"}
           />
-        )}
+        )} */
+        }
 
         <div class="flex flex-row mt-6 gap-x-8">
           {layout?.variant === "aside" && filters.length > 0 && (
@@ -90,7 +96,20 @@ function Result({
               )}
             </aside>
           )}
-          <div class="flex-grow" id={id}>
+          <div class="flex flex-col gap-6 flex-grow" id={id}>
+            {isFirstPage && !isPartial && (
+              <div class="flex items-center justify-between px-6 w-full bg-white-normal text-black h-12 shadow-sm">
+                <span class="text-sm">
+                  <b>{pageInfo.records}</b> itens
+                </span>
+
+                <div class="flex items-center gap-7">
+                  <Sort sortOptions={sortOptions} />
+                  <ColumnToggle isListModeActive={isListModeActive} />
+                </div>
+              </div>
+            )}
+
             <ProductGallery
               products={products}
               offset={offset}
@@ -161,6 +180,19 @@ function SearchResult(
 }
 
 export const loader = (props: Props, req: Request) => {
+  const url = new URL(req.url);
+
+  if (url.searchParams.get("layout") == "grid") {
+    return {
+      ...props,
+      layout: {
+        ...props.layout,
+        columns: { desktop: 3 as Columns["desktop"] },
+      },
+      url: req.url,
+    };
+  }
+
   return {
     ...props,
     url: req.url,

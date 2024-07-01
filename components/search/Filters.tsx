@@ -83,7 +83,7 @@ function ToggleFilters({ filters }: Pick<Props, "filters">) {
                 checked={filter.values.some((item) => item.selected)}
               />
               <div class="collapse-title flex justify-between cursor-pointer border-b last:border-none">
-                <span class="flex content-center flex-wrap">
+                <span class="flex content-center flex-wrap font-bold text-sm">
                   {filter.label}
                 </span>
               </div>
