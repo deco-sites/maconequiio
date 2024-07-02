@@ -11,6 +11,8 @@ import { SectionProps } from "deco/types.ts";
 import { clx } from "$store/sdk/clx.ts";
 import Sort from "$store/islands/Sort.tsx";
 import ColumnToggle from "deco-sites/maconequiio/components/search/ColumnToggle.tsx";
+import type { Subcategories } from "$store/loaders/Search/subcategories.ts";
+import SearchSubcategories from "deco-sites/maconequiio/components/search/SearchSubcategories.tsx";
 
 export type Format = "Show More" | "Pagination";
 
@@ -32,6 +34,7 @@ export interface Layout {
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
+  subcategories: Subcategories | undefined;
   layout?: Layout;
 
   /** @description 0 for ?page=0 as your first page */
@@ -51,6 +54,7 @@ function Result({
   layout,
   startingPage = 0,
   url: _url,
+  subcategories,
 }: Omit<Props, "page"> & {
   page: ProductListingPage;
   url: string;
@@ -102,16 +106,20 @@ function Result({
               )}
             </aside>
           )}
-          <div class="flex flex-col gap-6 flex-grow" id={id}>
+          <div class="flex flex-col gap-6 w-full" id={id}>
             {isFirstPage && !isPartial && (
-              <div class="flex items-center justify-between px-6 w-full bg-white-normal text-black h-12 shadow-sm">
-                <span class="text-sm">
-                  <b>{pageInfo.records}</b> itens
-                </span>
+              <div class="flex flex-col w-full">
+                <SearchSubcategories subcategories={subcategories?.items} />
 
-                <div class="flex items-center gap-7">
-                  <Sort sortOptions={sortOptions} />
-                  <ColumnToggle isListModeActive={isListModeActive} />
+                <div class="flex items-center justify-between px-6 w-full bg-white-normal text-black h-12 shadow-sm">
+                  <span class="text-sm">
+                    <b>{pageInfo.records}</b> itens
+                  </span>
+
+                  <div class="flex items-center gap-7">
+                    <Sort sortOptions={sortOptions} />
+                    <ColumnToggle isListModeActive={isListModeActive} />
+                  </div>
                 </div>
               </div>
             )}
