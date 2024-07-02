@@ -16,7 +16,10 @@ export interface Props {
 /**
  * @title Search Subcategories
  */
-const loader = ({ subcategories = [] }: Props, req: Request) => {
+export default function loader(
+  { subcategories = [] }: Props,
+  req: Request,
+): Subcategories | undefined {
   const url = new URL(req.url);
   const pathname = url.pathname;
 
@@ -26,6 +29,4 @@ const loader = ({ subcategories = [] }: Props, req: Request) => {
   });
 
   return filteredSubcategories;
-};
-
-export default loader;
+}
