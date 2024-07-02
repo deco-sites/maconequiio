@@ -8,6 +8,7 @@ import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import { SectionProps } from "deco/types.ts";
+import { clx } from "$store/sdk/clx.ts";
 import Sort from "$store/islands/Sort.tsx";
 import ColumnToggle from "deco-sites/maconequiio/components/search/ColumnToggle.tsx";
 
@@ -71,7 +72,12 @@ function Result({
   const isListModeActive = layout?.columns?.desktop === 4;
 
   return (
-    <div class="flex items-center justify-center w-full h-full bg-white-base border-t border-t-base-200">
+    <div
+      class={clx(
+        "flex items-center justify-center w-full h-full bg-white-base",
+        isFirstPage && !isPartial && "border-t border-base-200",
+      )}
+    >
       <div
         class={`container px-4 ${
           !(!isFirstPage && format == "Show More") ? "sm:pt-10" : ""
