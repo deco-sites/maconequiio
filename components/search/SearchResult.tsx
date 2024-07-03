@@ -2,7 +2,6 @@ import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import Filters from "../../components/search/Filters.tsx";
-import Icon from "../../components/ui/Icon.tsx";
 // import SearchControls from "../../islands/SearchControls.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
@@ -13,6 +12,7 @@ import Sort from "$store/islands/Sort.tsx";
 import ColumnToggle from "deco-sites/maconequiio/components/search/ColumnToggle.tsx";
 import type { Subcategories } from "$store/loaders/Search/subcategories.ts";
 import SearchSubcategories from "deco-sites/maconequiio/components/search/SearchSubcategories.tsx";
+import Pagination from "deco-sites/maconequiio/components/search/Pagination.tsx";
 
 export type Format = "Show More" | "Pagination";
 
@@ -141,29 +141,10 @@ function Result({
         </div>
 
         {format == "Pagination" && (
-          <div class="flex justify-center my-4">
-            <div class="join">
-              <a
-                aria-label="previous page link"
-                rel="prev"
-                href={pageInfo.previousPage ?? "#"}
-                class="btn btn-ghost join-item"
-              >
-                <Icon id="ChevronLeft" size={24} strokeWidth={2} />
-              </a>
-              <span class="btn btn-ghost join-item">
-                Página {zeroIndexedOffsetPage + 1}
-              </span>
-              <a
-                aria-label="next page link"
-                rel="next"
-                href={pageInfo.nextPage ?? "#"}
-                class="btn btn-ghost join-item"
-              >
-                <Icon id="ChevronRight" size={24} strokeWidth={2} />
-              </a>
-            </div>
-          </div>
+          <Pagination
+            pageInfo={pageInfo}
+            zeroIndexedOffsetPage={zeroIndexedOffsetPage}
+          />
         )}
       </div>
       <SendEventOnView
