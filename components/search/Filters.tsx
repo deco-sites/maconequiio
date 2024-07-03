@@ -1,4 +1,3 @@
-import Avatar from "$store/components/ui/Avatar.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import type {
   Filter,
@@ -37,19 +36,6 @@ function FilterValues({ key, values }: FilterToggle) {
   return (
     <ul class={`flex flex-wrap gap-2.5 ${flexDirection}`}>
       {values.map((item) => {
-        const { url, selected, value } = item;
-
-        if (key === "tamanho") {
-          return (
-            <a href={url} rel="nofollow">
-              <Avatar
-                content={value}
-                variant={selected ? "active" : "default"}
-              />
-            </a>
-          );
-        }
-
         if (key === "price") {
           const range = parseRange(item.value);
 
@@ -88,7 +74,7 @@ function ToggleFilters({ filters }: Pick<Props, "filters">) {
                 </span>
               </div>
 
-              <div class="collapse-content pb-0 mt-3 overflow-auto max-h-60 scrollbar">
+              <div class="collapse-content pb-0 last:pb-2 last:mb-2 mt-3 overflow-auto max-h-60 scrollbar">
                 <FilterValues {...filter} />
               </div>
             </div>

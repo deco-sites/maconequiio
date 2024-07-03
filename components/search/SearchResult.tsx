@@ -100,7 +100,13 @@ function Result({
 
         <div class="flex flex-row mt-6 gap-x-8">
           {layout?.variant === "aside" && filters.length > 0 && (
-            <aside class="hidden sm:block w-min min-w-[325px]">
+            <aside
+              class={clx(
+                "hidden sm:block w-min min-w-[325px]",
+                (isFirstPage && format) == "Show More" &&
+                  "sm:max-h-[1380px] sm:overflow-y-auto sm:scrollbar-none",
+              )}
+            >
               {(isFirstPage && !isPartial) && (
                 <Filters filters={filters} hasContainer />
               )}
