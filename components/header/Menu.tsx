@@ -1,5 +1,16 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
+/**
+ * @altBy name
+ */
+export interface SiteNavigationElementChild {
+  name: string;
+  url: string;
+}
+
+/**
+ * @altBy name
+ */
 export interface SiteNavigationElement {
   icon: {
     id: AvailableIcons;
@@ -8,7 +19,7 @@ export interface SiteNavigationElement {
     height: number;
   };
   name: string;
-  children: Array<{ name: string; url: string }>;
+  children: SiteNavigationElementChild[];
 }
 
 export interface Props {
@@ -76,7 +87,7 @@ function Menu({ items }: Props) {
             class="flex items-center gap-4 px-4 py-2"
             href="/institucional/lojas-fisicas"
           >
-            <span class="text-sm">Minha conta</span>
+            <span class="text-sm">Lojas Físicas</span>
           </a>
         </li>
       </ul>
