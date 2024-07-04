@@ -2,12 +2,14 @@ import Avatar from "$store/components/ui/Avatar.tsx";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { relative } from "$store/sdk/url.ts";
+import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
 
 interface Props {
   product: Product;
+  colors: Color[];
 }
 
-function VariantSelector({ product }: Props) {
+function VariantSelector({ product, colors }: Props) {
   const { url, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
@@ -30,6 +32,7 @@ function VariantSelector({ product }: Props) {
                     <li class="h-8">
                       <button f-partial={relativeLink} f-client-nav>
                         <Avatar
+                          colors={colors}
                           content={value}
                           variant={relativeLink === relativeUrl
                             ? "active"

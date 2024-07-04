@@ -3,6 +3,8 @@
  * TODO: Figure out a better name for this component.
  */
 
+import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
+
 const colors: Record<string, string> = {
   "Azul": "bg-[#87CEFA] ring-[#87CEFA]",
   "Branco": "bg-[#FFFFFF] ring-[#FFFFFF]",
@@ -24,6 +26,7 @@ const colors: Record<string, string> = {
 interface Props {
   variant?: "active" | "disabled" | "default";
   content: string;
+  colors: Color[];
 }
 
 const variants = {

@@ -18,9 +18,11 @@ import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
 
-interface Props {
+export interface Props {
   page: ProductDetailsPage | null;
+  colors: Color[];
   layout: {
     /**
      * @title Product Name
@@ -31,7 +33,7 @@ interface Props {
   };
 }
 
-function ProductInfo({ page, layout }: Props) {
+function ProductInfo({ page, colors = [], layout }: Props) {
   const platform = usePlatform();
   const id = useId();
 
@@ -117,7 +119,7 @@ function ProductInfo({ page, layout }: Props) {
       </div>
 
       {/* Sku Selector */}
-      <ProductSelector product={product} />
+      <ProductSelector product={product} colors={colors} />
 
       {/* Prices */}
       <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
