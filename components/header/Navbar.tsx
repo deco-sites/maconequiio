@@ -101,7 +101,7 @@ function Navbar({ items, searchbar, logo }: {
               <button
                 id="navitems-button"
                 hx-on:click={useScript(onClick)}
-                class="flex items-center justify-center text-xs gap-1"
+                class="hidden items-center justify-center text-xs gap-1"
               >
                 <Icon id="Bars3" size={22} strokeWidth={0.01} />
                 <span>Menu</span>
