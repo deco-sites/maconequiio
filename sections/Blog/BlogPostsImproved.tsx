@@ -124,7 +124,7 @@ export default function BlogPosts({
                       : ""}
                   </span>
                   <span>•</span>
-                  <span>{post.authors[0]?.name}</span>
+                  <span>{post.authors[0]?.name || "Maconequi"}</span>
                 </div>
               </div>
             </a>
