@@ -42,7 +42,7 @@ export default function BuyTogetherCard(
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="col-span-full row-span-full rounded w-full h-[183px] object-contain"
+            class="col-span-full row-span-full rounded w-full object-contain"
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"
@@ -50,7 +50,7 @@ export default function BuyTogetherCard(
         </div>
       </figure>
 
-      <div class="flex flex-col gap-1 pt-3 border-l border-l-white-base xl:border-l-0 xl:border-t xl:border-t-white-base h-full justify-between">
+      <div class="flex flex-col gap-1 pt-3 border-l border-l-white-base xl:border-l-0 xl:border-t xl:border-t-white-base h-full justify-between pl-2 xl:pl-0">
         <h2
           class="line-clamp-3 text-sm text-black-neutral uppercase font-medium leading-4"
           dangerouslySetInnerHTML={{ __html: isVariantOf?.name ?? name ?? "" }}
