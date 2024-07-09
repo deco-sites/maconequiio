@@ -13,6 +13,9 @@ export interface Color {
   value: string;
 }
 
+/**
+ * @title Color
+ */
 export interface Props {
   colors: Color[];
 }
