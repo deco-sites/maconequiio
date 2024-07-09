@@ -1,16 +1,22 @@
 import BackToTop from "$store/components/footer/BackToTop.tsx";
 import ColorClasses from "$store/components/footer/ColorClasses.tsx";
-import Divider from "$store/components/footer/Divider.tsx";
-import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
+import ExtraLinks, {
+  Item as ExtraLinksItem,
+} from "$store/components/footer/ExtraLinks.tsx";
 import FooterItems from "$store/components/footer/FooterItems.tsx";
-import Logo from "$store/components/footer/Logo.tsx";
-import MobileApps from "$store/components/footer/MobileApps.tsx";
-import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
-import RegionSelector from "$store/components/footer/RegionSelector.tsx";
+import PaymentMethods, {
+  PaymentItem,
+} from "$store/components/footer/PaymentMethods.tsx";
 import Social from "$store/components/footer/Social.tsx";
+import Security, { SecurityItem } from "$store/components/footer/Security.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
-import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
+import type { HTMLWidget } from "apps/admin/widgets.ts";
+import AboutUs, {
+  Props as AboutUsProps,
+} from "deco-sites/maconequiio/components/footer/AboutUs.tsx";
+import Logos, {
+  Logo,
+} from "deco-sites/maconequiio/components/footer/Logos.tsx";
 
 export type Item = {
   label: string;
@@ -29,24 +35,17 @@ export interface SocialItem {
     | "Instagram"
     | "Linkedin"
     | "Tiktok"
+    | "Youtube"
     | "Twitter";
   link: string;
 }
 
-export interface PaymentItem {
-  label: "Diners" | "Elo" | "Mastercard" | "Pix" | "Visa";
-}
-
-export interface MobileApps {
-  /** @description Link to the app */
-  apple?: string;
-  /** @description Link to the app */
-  android?: string;
-}
-
-export interface RegionOptions {
-  currency?: Item[];
-  language?: Item[];
+/**
+ * @altBy title
+ */
+export interface Payment {
+  title?: string;
+  items: PaymentItem[];
 }
 
 export interface NewsletterForm {
@@ -63,48 +62,45 @@ export interface Layout {
     | "Accent"
     | "Base 100"
     | "Base 100 inverted";
-  variation?:
-    | "Variation 1"
-    | "Variation 2"
-    | "Variation 3"
-    | "Variation 4"
-    | "Variation 5";
   hide?: {
-    logo?: boolean;
     newsletter?: boolean;
-    sectionLinks?: boolean;
-    socialLinks?: boolean;
-    paymentMethods?: boolean;
-    mobileApps?: boolean;
-    regionOptions?: boolean;
+    about_us?: boolean;
     extraLinks?: boolean;
+    socialLinks?: boolean;
+    sectionLinks?: boolean;
+    paymentMethods?: boolean;
+    security?: boolean;
+    logos?: boolean;
     backToTheTop?: boolean;
   };
 }
 
 export interface Props {
-  logo?: {
-    image: ImageWidget;
-    description?: string;
-  };
   newsletter?: {
     title?: HTMLWidget;
     /** @format textarea */
     description?: string;
     form?: NewsletterForm;
   };
-  sections?: Section[];
+  aboutUs?: AboutUsProps;
+  extraLinks?: {
+    content: ExtraLinksItem[];
+  };
   social?: {
     title?: string;
     items: SocialItem[];
   };
-  payments?: {
+  sections?: Section[];
+  payments?: Payment[];
+  security?: {
     title?: string;
-    items: PaymentItem[];
+    items?: SecurityItem[];
   };
-  mobileApps?: MobileApps;
-  regionOptions?: RegionOptions;
-  extraLinks?: Item[];
+  /**
+   * @format textarea
+   */
+  storeInfo?: string;
+  logos?: Logo[];
   backToTheTop?: {
     text?: string;
   };
@@ -112,7 +108,7 @@ export interface Props {
 }
 
 function Footer({
-  logo,
+  logos = [],
   newsletter = {
     title: "Newsletter",
     description: "",
@@ -155,193 +151,107 @@ function Footer({
     title: "Redes sociais",
     items: [{ label: "Instagram", link: "/" }, { label: "Tiktok", link: "/" }],
   },
-  payments = {
-    title: "Formas de pagamento",
-    items: [{ label: "Mastercard" }, { label: "Visa" }, { label: "Pix" }],
+  aboutUs = {
+    title: "Sobre a Maconequi",
+    description:
+      "Desde 1977, a Maconequi  é referência na distribuição de materiais médicos hospitalares e odontológicos.",
   },
-  mobileApps = { apple: "/", android: "/" },
-  regionOptions = { currency: [], language: [] },
-  extraLinks = [],
+  payments = [{
+    title: "Formas de pagamento",
+    items: [],
+  }],
+  security = {
+    title: "Segurança e Certificados",
+    items: [],
+  },
+  extraLinks,
   backToTheTop,
+  storeInfo,
   layout = {
     backgroundColor: "Primary",
-    variation: "Variation 1",
     hide: {
-      logo: false,
       newsletter: false,
-      sectionLinks: false,
+      about_us: false,
       socialLinks: false,
+      sectionLinks: false,
       paymentMethods: false,
-      mobileApps: false,
-      regionOptions: false,
+      security: false,
+      logos: false,
       extraLinks: false,
       backToTheTop: false,
     },
   },
 }: Props) {
-  const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
     <Newsletter
       content={newsletter}
       layout={{
-        tiled: layout?.variation == "Variation 4" ||
-          layout?.variation == "Variation 5",
+        tiled: true,
       }}
     />
   );
   const _sectionLinks = layout?.hide?.sectionLinks ? <></> : (
     <FooterItems
       sections={sections}
-      justify={layout?.variation == "Variation 2" ||
-        layout?.variation == "Variation 3"}
+      justify
     />
   );
   const _social = layout?.hide?.socialLinks
     ? <></>
-    : <Social content={social} vertical={layout?.variation == "Variation 3"} />;
-  const _payments = layout?.hide?.paymentMethods
+    : <Social content={social} />;
+  const _payments = layout?.hide?.paymentMethods && !payments
     ? <></>
-    : <PaymentMethods content={payments} />;
-  const _apps = layout?.hide?.mobileApps
+    : (
+      <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-12 lg:gap-16">
+        {payments?.map((payment) => <PaymentMethods content={payment} />)}
+      </div>
+    );
+  const _security = layout?.hide?.security
     ? <></>
-    : <MobileApps content={mobileApps} />;
-  const _region = layout?.hide?.regionOptions
-    ? <></>
-    : <RegionSelector content={regionOptions} />;
+    : <Security content={security} />;
   const _links = layout?.hide?.extraLinks
     ? <></>
-    : <ExtraLinks content={extraLinks} />;
+    : <ExtraLinks content={extraLinks?.content} />;
+  const _logos = layout?.hide?.logos ? <></> : <Logos logos={logos} />;
+  const _about_us = layout?.hide?.about_us ? <></> : <AboutUs {...aboutUs} />;
 
   return (
     <footer
-      class={`w-full flex flex-col pb-2 md:pb-10 gap-10 ${
-        ColorClasses(layout)
-      }`}
+      class={`w-full flex flex-col md:pb-10 gap-10 ${ColorClasses(layout)}`}
     >
       <div>
-        {(!layout?.variation || layout?.variation == "Variation 1") && (
-          <div class="flex flex-col gap-10 container">
-            <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
-              {_logo}
-              {_sectionLinks}
-              {_newsletter}
-            </div>
-            <Divider />
-            <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
-              {_payments}
-              {_social}
-              <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-end">
-                {_apps}
-                {_region}
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredByDeco />
-              {_links}
-            </div>
-          </div>
-        )}
-        {layout?.variation == "Variation 2" && (
-          <div class="flex flex-col gap-10 container">
-            <div class="flex flex-col md:flex-row gap-10">
-              <div class="flex flex-col gap-10 lg:w-1/2">
-                {_logo}
-                {_social}
-                {_payments}
-                {_apps}
-                {_region}
-              </div>
-              <div class="flex flex-col gap-10 lg:gap-20 lg:w-1/2 lg:pr-10">
-                {_newsletter}
-                {_sectionLinks}
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredByDeco />
-              {_links}
-            </div>
-          </div>
-        )}
-        {layout?.variation == "Variation 3" && (
-          <div class="flex flex-col gap-10 container">
-            {_logo}
-            <div class="flex flex-col lg:flex-row gap-14">
-              <div class="flex flex-col md:flex-row lg:flex-col md:justify-between lg:justify-normal gap-10 lg:w-2/5">
-                {_newsletter}
-                <div class="flex flex-col gap-10">
-                  {_payments}
-                  {_apps}
-                </div>
-              </div>
-              <div class="flex flex-col gap-10 lg:gap-20 lg:w-3/5 lg:items-end">
-                <div class="flex flex-col md:flex-row gap-10">
-                  {_sectionLinks}
-                  {_social}
-                </div>
-                {_region}
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredByDeco />
-              {_links}
-            </div>
-          </div>
-        )}
-        {layout?.variation == "Variation 4" && (
-          <div class="flex flex-col">
-            {_newsletter}
-            <div class="flex items-center justify-center w-full bg-black-neutral">
-              <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-8 pb-4 text-white-normal">
-                {_sectionLinks}
-                <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
-                  <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
-                    <div class="lg:flex-auto">
-                      {_payments}
-                    </div>
-                    <div class="lg:flex-auto">
-                      {_social}
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-10 lg:gap-10">
-                    {_region}
-                    {_apps}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-4">
-              {_logo}
-              <PoweredByDeco />
-            </div>
-          </div>
-        )}
-        {layout?.variation == "Variation 5" && (
-          <div class="flex flex-col gap-10 container">
-            {_newsletter}
-            {layout?.hide?.newsletter ? <></> : <Divider />}
-            {_logo}
-            <div class="flex flex-col md:flex-row gap-10 lg:gap-20 md:justify-between">
-              {_sectionLinks}
-              <div class="flex flex-col gap-10 md:w-2/5 lg:pl-10">
-                {_payments}
-                {_social}
-                {_apps}
-              </div>
-            </div>
-            <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 md:items-center">
-              <PoweredByDeco />
-              <div class="flex flex-col md:flex-row gap-10 md:items-center">
+        <div class="flex flex-col">
+          {_newsletter}
+          <div class="flex items-center justify-center w-full bg-black-neutral">
+            <div class="flex flex-col gap-6 md:gap-10 lg:justify-between container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-8 pb-4 text-white-normal">
+              <div class="flex flex-col md:flex-row md:flex-wrap gap-4 justify-between w-full">
+                {_about_us}
                 {_links}
-                {_region}
+                {_social}
               </div>
+              {_sectionLinks}
             </div>
           </div>
-        )}
+
+          <div class="flex flex-col md:justify-between gap-10 md:items-center container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-4 pb-4 px-2 md:px-0 md:pb-0 bg-black-neutral md:bg-white-normal">
+            <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-2 w-full">
+              <div class="flex flex-col gap-2">
+                <h3 class="font-bold text-sm text-white-normal md:text-black-neutral">
+                  Formas de Pagamento
+                </h3>
+                {_payments}
+              </div>
+              {_security}
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between gap-6 w-full">
+              <span class="block text-white-normal md:text-gray-base text-sm font-normal w-full text-justify">
+                {storeInfo}
+              </span>
+              {_logos}
+            </div>
+          </div>
+        </div>
       </div>
       {layout?.hide?.backToTheTop
         ? <></>

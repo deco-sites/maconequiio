@@ -7,6 +7,7 @@ export interface SocialItem {
     | "Instagram"
     | "Linkedin"
     | "Tiktok"
+    | "Youtube"
     | "Twitter";
   link: string;
 }
@@ -21,7 +22,11 @@ export default function Social(
     <>
       {content && content.items && content.items.length > 0 && (
         <div class="flex flex-col gap-4">
-          {content.title && <h3 class="text-lg">{content.title}</h3>}
+          {content.title && (
+            <h3 class="text-white-normal font-bold text-base">
+              {content.title}
+            </h3>
+          )}
           <ul
             class={`flex gap-4 ${
               vertical ? "lg:flex-col lg:items-start" : "flex-wrap items-center"
@@ -37,7 +42,7 @@ export default function Social(
                     aria-label={`${item.label} Logo`}
                     class="flex gap-2 items-center"
                   >
-                    <span class="block p-1 border rounded-full">
+                    <span class="block">
                       <Icon size={24} id={item.label} />
                     </span>
                     {vertical && (

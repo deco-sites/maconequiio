@@ -1,36 +1,52 @@
-import Icon from "$store/components/ui/Icon.tsx";
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
 
+/**
+ * @altBy alt
+ */
 export interface PaymentItem {
-  label: "Diners" | "Elo" | "Mastercard" | "Pix" | "Visa";
+  image: ImageWidget;
+  alt: string;
+  width?: number;
+  height?: number;
 }
 
 export default function PaymentMethods(
   { content }: { content?: { title?: string; items?: PaymentItem[] } },
 ) {
   return (
-    <>
-      {content && content.items && content.items.length > 0 && (
-        <div class="flex flex-col gap-4">
-          {content.title && <h3 class="text-lg">{content.title}</h3>}
-          <ul class="flex items-center gap-4 flex-wrap">
-            {content.items.map((item) => {
-              return (
-                <li
-                  class="border"
-                  title={item.label}
-                >
-                  <Icon
-                    width={48}
-                    height={32}
-                    strokeWidth={1}
-                    id={item.label}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
-    </>
+    <div class="flex flex-col gap-2 w-full">
+      <div class="flex items-center justify-between w-full">
+        {content && content.items && content.items.length > 0 && (
+          <div class="flex flex-col gap-2">
+            {content.title && (
+              <h3 class="text-xs text-white-normal md:text-black-neutral font-medium leading-5">
+                {content.title}
+              </h3>
+            )}
+
+            <ul class="flex items-center gap-2 flex-wrap max-w-72">
+              {content.items.map((item) => {
+                return (
+                  <li
+                    class=""
+                    title={item.alt}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      width={item.width || 47}
+                      height={item.height || 28}
+                      loading="lazy"
+                      fetchPriority="low"
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
