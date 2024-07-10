@@ -50,11 +50,20 @@ function ProductCard({
   layout,
   index,
 }: Props) {
-  const { url, productID, name, image: images, offers, isVariantOf } = product;
+  const {
+    url,
+    productID,
+    name: partialName,
+    image: images,
+    offers,
+    isVariantOf,
+  } = product;
   const id = `product-card-${productID}`;
   const description = product.description || isVariantOf?.description;
   const [front] = images ?? [];
   const { listPrice, price, installments } = useOffer(offers);
+
+  const name = product?.isVariantOf?.name || partialName;
 
   const l = layout;
 
