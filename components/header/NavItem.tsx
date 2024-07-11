@@ -11,7 +11,7 @@ import type {
 function NavItem({ category }: SiteNavigationElement) {
   if (!category || !category.icon || !category.label) return null;
 
-  const { icon, label, items, url } = category;
+  const { icon, label, items, url, brands } = category;
 
   const renderItems = () => {
     return items.map((itemArray, arrayIndex) => {
@@ -170,10 +170,34 @@ function NavItem({ category }: SiteNavigationElement) {
 
       {items && items.length > 0 && (
         <div
-          class="fixed hidden group-hover:flex bg-base-100 z-50 items-start justify-between gap-16 border-t border-b-2 border-base-200 w-screen max-w-[1260px] -translate-x-1/2 left-1/2 py-8 px-12"
+          class="fixed hidden group-hover:flex group-hover:flex-col bg-base-100 z-50 items-start justify-between border-t border-b-2 border-base-200 w-screen max-w-[1260px] -translate-x-1/2 left-1/2 pt-8"
           style={{ top: "0px", marginTop: "65px" }}
         >
-          {renderItems()}
+          <div class="flex items-start justify-between gap-16 w-full px-12 pb-8">
+            {renderItems()}
+          </div>
+
+          {brands && brands.length > 0 && (
+            <div class="flex flex-col gap-3 w-full h-full bg-gray-light-shade/50 px-12 py-4">
+              <h2 class="uppercase font-bold text-black-neutral text-sm">
+                Marcas
+              </h2>
+
+              <div class="flex items-center gap-3 w-full">
+                {brands.map((brand) => (
+                  <a href={brand.link}>
+                    <Image
+                      src={brand.image}
+                      alt={brand.description}
+                      width={brand.width || 60}
+                      height={brand.height || 60}
+                      loading="lazy"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </li>

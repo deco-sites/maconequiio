@@ -9,17 +9,17 @@ import { useScript } from "deco/hooks/useScript.ts";
 import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
 import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
 
-/** @altBy OnlyText */
+/** @title OnlyText */
 export interface SiteNavigationOnlyText {
   url: string;
   text: string;
 }
-/** @altBy OnlyTextWithTitle */
+/** @title OnlyTextWithTitle */
 export interface SiteNavigationOnlyTextWithTitle {
   title: string;
   items: { url: string; text: string; isViewMore?: boolean }[];
 }
-/** @altBy ImageAndText */
+/** @title ImageAndText */
 export interface SiteNavigationImageAndText {
   title: string;
   subItems: {
@@ -31,7 +31,7 @@ export interface SiteNavigationImageAndText {
   removeRoundedClass?: boolean;
   type: "grid-cols-1" | "grid-cols-2" | "grid-cols-3" | "grid-cols-6";
 }
-/** @altBy Banners */
+/** @title Banners */
 export interface SiteNavigationBanners {
   bannersSubItems: {
     image: ImageWidget;
@@ -41,6 +41,17 @@ export interface SiteNavigationBanners {
     height: number;
   }[];
   layoutType: "grid-cols-1" | "grid-cols-2";
+}
+
+/**
+ * @title {{{description}}}
+ */
+export interface Brand {
+  image: ImageWidget;
+  description: string;
+  link: string;
+  width?: number;
+  height?: number;
 }
 
 export interface SiteNavigationElement {
@@ -55,6 +66,7 @@ export interface SiteNavigationElement {
       | SiteNavigationImageAndText[]
       | SiteNavigationBanners[]
     )[];
+    brands?: Brand[];
   };
 }
 
