@@ -11,6 +11,11 @@ export default function ProductDescription({ page }: Props) {
 
   const description = productDescription || isVariantOf?.description || "";
 
+  const properties =
+    isVariantOf?.additionalProperty?.filter((item) =>
+      item.propertyID === "allSpecifications"
+    ) ?? [];
+
   return (
     <div
       id="descricao"
@@ -38,8 +43,8 @@ export default function ProductDescription({ page }: Props) {
               <b>Características</b>
             </h3>
 
-            {isVariantOf?.additionalProperty?.filter((item) =>
-              item.name !== "sellerId" &&
+            {properties.filter((item) =>
+              item.name !== "sellerId" && item.name !== "Tabela de Medidas" &&
               !item.name?.toLowerCase().includes("selecione a opção de")
             )?.map((property) => (
               <div class="even:bg-[#EEEEEE] odd:bg-white-normal grid grid-cols-2 w-full text-sm leading-6 px-4">

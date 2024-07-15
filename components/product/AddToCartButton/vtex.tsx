@@ -8,7 +8,9 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
   productID: string;
 }
 
-function AddToCartButton({ seller, productID, eventParams }: Props) {
+function AddToCartButton(
+  { seller, productID, eventParams, ctaText, isUnavailable, type }: Props,
+) {
   const { productQuantity } = useUI();
   const { addItems } = useCart();
   const onAddItem = () =>
@@ -20,7 +22,15 @@ function AddToCartButton({ seller, productID, eventParams }: Props) {
       }],
     });
 
-  return <Button onAddItem={onAddItem} eventParams={eventParams} />;
+  return (
+    <Button
+      onAddItem={onAddItem}
+      eventParams={eventParams}
+      ctaText={ctaText}
+      isUnavailable={isUnavailable}
+      type={type}
+    />
+  );
 }
 
 export default AddToCartButton;

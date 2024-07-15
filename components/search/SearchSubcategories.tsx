@@ -23,7 +23,7 @@ function Subcategory({ label, image, link }: Subcategory) {
   return (
     <a
       href={link}
-      class="flex flex-col h-full items-center justify-center gap-1 max-h-[137px]"
+      class="flex flex-col h-full items-center justify-center gap-1 w-full max-h-[137px]"
     >
       <div class="flex items-center justify-center p-1 w-full h-full border border-white-base bg-white-normal rounded shadow">
         <Image
@@ -52,7 +52,7 @@ export default function SearchSubcategories({ subcategories = [] }: Props) {
     >
       <Slider class="relative carousel carousel-center xl:justify-between gap-3 h-full w-full">
         {subcategories.map((subcategory, index) => (
-          <Slider.Item index={index} class="carousel-item w-[88px] h-full">
+          <Slider.Item index={index} class="carousel-item min-w-28 h-full">
             <Subcategory {...subcategory} />
           </Slider.Item>
         ))}

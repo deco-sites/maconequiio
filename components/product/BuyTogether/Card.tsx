@@ -42,7 +42,7 @@ export default function BuyTogetherCard(
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="col-span-full row-span-full rounded w-full object-contain"
+            class="col-span-full row-span-full rounded w-full h-28 xl:h-[183px] object-contain"
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"
@@ -67,9 +67,11 @@ export default function BuyTogetherCard(
 
         <div class="flex w-full items-center justify-between gap-2">
           <div class="flex flex-col gap-0.5">
-            <div class="line-through text-gray-base text-xs leading-3">
-              de: {formatPrice(listPrice, offers?.priceCurrency)}
-            </div>
+            {(listPrice ?? 0) > (price ?? 0) && (
+              <div class="line-through text-gray-base text-xs leading-3">
+                de: {formatPrice(listPrice, offers?.priceCurrency)}
+              </div>
+            )}
 
             <div class="text-black-neutral text-sm font-bold leading-4">
               por: {formatPrice(price, offers?.priceCurrency)}

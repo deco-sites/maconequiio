@@ -84,7 +84,7 @@ function Result({
     >
       <div
         class={`container px-4 ${
-          !(!isFirstPage && format == "Show More") ? "sm:pt-10" : ""
+          !(!isFirstPage && format == "Show More") ? "xl:pt-10" : ""
         }`}
       >
         {
@@ -102,9 +102,9 @@ function Result({
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside
               class={clx(
-                "hidden sm:block w-min min-w-[325px]",
+                "hidden xl:block w-min min-w-[325px]",
                 (isFirstPage && format) == "Show More" &&
-                  "sm:max-h-[1380px] sm:overflow-y-auto sm:scrollbar-none",
+                  "xl:max-h-[1380px] xl:overflow-y-auto xl:scrollbar-none",
               )}
             >
               {(isFirstPage && !isPartial) && (

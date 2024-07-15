@@ -6,6 +6,8 @@ import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
 import { relative } from "$store/sdk/url.ts";
+import { useDevice } from "deco/hooks/useDevice.ts";
+import AddToCartButtonVTEX from "deco-sites/maconequiio/islands/AddToCartButton/vtex.tsx";
 
 export interface Layout {
   basics?: {
@@ -61,21 +63,23 @@ function ProductCard({
   const id = `product-card-${productID}`;
   const description = product.description || isVariantOf?.description;
   const [front] = images ?? [];
-  const { listPrice, price, installments } = useOffer(offers);
-
+  const { listPrice, price, installments, availability, seller = "1" } =
+    useOffer(offers);
   const name = product?.isVariantOf?.name || partialName;
 
   const l = layout;
 
-  const cta = (
-    <a
-      href={url && relative(url)}
-      aria-label="view product"
-      class="btn btn-block rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold text-sm leading-5"
-    >
-      {l?.basics?.ctaText || "Ver produto"}
-    </a>
-  );
+  const device = useDevice();
+  const isDesktop = device === "desktop";
+
+  const isUnavailable = availability === "https://schema.org/OutOfStock";
+
+  const eventItem = mapProductToAnalyticsItem({
+    product,
+    price,
+    listPrice,
+    index,
+  });
 
   const discount = Math.round(
     (((listPrice ?? 0) - (price ?? 0)) / (listPrice ?? 0)) * 100,
@@ -84,8 +88,8 @@ function ProductCard({
   return (
     <div
       id={id}
-      class={`card group w-full xl:h-[422px] duration-300 transition-all ease-out bg-white-normal text-start ${
-        !l?.hide?.cta ? "xl:hover:h-[478px]" : "shadow-none"
+      class={`card group w-full xl:h-[380px] duration-300 transition-all ease-out bg-white-normal text-start ${
+        !l?.hide?.cta ? "" : "shadow-none"
       } ${l?.onMouseOver?.showCardShadow ? "xl:hover:shadow-md" : ""}`}
       data-deco="view-product"
     >
@@ -120,14 +124,14 @@ function ProductCard({
         <a
           href={url && relative(url)}
           aria-label="view product"
-          class="grid grid-cols-1 grid-rows-1 w-full"
+          class="grid grid-cols-1 grid-rows-1 items-center w-full"
         >
           <Image
             src={front.url!}
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="col-span-full row-span-full rounded w-full xl:h-[300px] object-contain"
+            class="col-span-full row-span-full rounded w-full h-3/4 object-contain"
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
@@ -153,7 +157,7 @@ function ProductCard({
                 )
                 : (
                   <h2
-                    class="line-clamp-3 text-sm text-black-neutral uppercase font-medium leading-4"
+                    class="line-clamp-2 text-sm text-black-neutral uppercase font-medium leading-4"
                     dangerouslySetInnerHTML={{ __html: name ?? "" }}
                   />
                 )}
@@ -175,21 +179,25 @@ function ProductCard({
           )
           : (
             <div class="flex w-full items-center justify-between gap-2">
-              <div class="flex flex-col gap-0.5">
-                <div class="line-through text-gray-base text-xs leading-3">
-                  de: {formatPrice(listPrice, offers?.priceCurrency)}
-                </div>
+              {!isUnavailable && (
+                <div class="flex flex-col gap-0.5">
+                  {(listPrice ?? 0) > (price ?? 0) && (
+                    <div class="line-through text-gray-base text-xs leading-3">
+                      de: {formatPrice(listPrice, offers?.priceCurrency)}
+                    </div>
+                  )}
 
-                <div class="text-black-neutral text-sm font-bold leading-4">
-                  por: {formatPrice(price, offers?.priceCurrency)}
-                </div>
-
-                {!l?.hide?.installments && (
-                  <div class="text-xs leading-3 text-gray-base">
-                    {installments}
+                  <div class="text-black-neutral text-sm font-bold leading-4">
+                    por: {formatPrice(price, offers?.priceCurrency)}
                   </div>
-                )}
-              </div>
+
+                  {!l?.hide?.installments && (
+                    <div class="text-xs leading-3 text-gray-base">
+                      {installments}
+                    </div>
+                  )}
+                </div>
+              )}
 
               {discount > 0 && (
                 <div class="flex items-center justify-center text-xs leading-3 font-bold bg-red-light text-white-normal w-10 h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
@@ -199,12 +207,19 @@ function ProductCard({
             </div>
           )}
 
-        {!l?.hide?.cta
+        {!l?.hide?.cta && isDesktop
           ? (
             <div
-              class={`hidden group-hover:flex items-end flex-auto`}
+              class={`opacity-0 group-hover:opacity-100 items-end flex-auto transition-all duration-150 ease-linear`}
             >
-              {cta}
+              <AddToCartButtonVTEX
+                eventParams={{ items: [eventItem] }}
+                productID={productID}
+                seller={seller}
+                isUnavailable={isUnavailable}
+                ctaText={l?.basics?.ctaText}
+                type="Shelf"
+              />
             </div>
           )
           : (
