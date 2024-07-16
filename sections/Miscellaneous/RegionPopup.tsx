@@ -1,6 +1,8 @@
 import type { HTMLWidget } from "apps/admin/widgets.ts";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
+import { SectionProps } from "deco/mod.ts";
+import { getCookies } from "std/http/cookie.ts";
 
 export interface Props {
   text: HTMLWidget;
@@ -15,9 +17,18 @@ const changeRegionPopupAttribute = () => {
   }
 
   root.setAttribute("data-popup-closed", "true");
+
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + 2);
+  document.cookie =
+    `region-popup=true; expires=${expirationDate.toUTCString()}; path=/`;
 };
 
-export default function RegionPopup({ text }: Props) {
+export default function RegionPopup(
+  { text, hasRegionPopupCookie }: SectionProps<typeof loader>,
+) {
+  if (hasRegionPopupCookie) return null;
+
   return (
     <div
       id="popup"
@@ -43,3 +54,13 @@ export default function RegionPopup({ text }: Props) {
     </div>
   );
 }
+
+export const loader = (props: Props, req: Request) => {
+  const cookies = getCookies(req.headers);
+  const hasRegionPopupCookie = cookies["region-popup"];
+
+  return {
+    ...props,
+    hasRegionPopupCookie,
+  };
+};
