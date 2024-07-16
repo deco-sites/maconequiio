@@ -84,8 +84,8 @@ function ProductInfo({ page, colors = [], layout }: Props) {
       {/* <Breadcrumb itemListElement={breadcrumb.itemListElement} /> */}
       {/* Code and name */}
       <div class="flex flex-col w-full h-full mt-4 sm:mt-8 gap-2">
-        <div class="flex items-start justify-between w-full gap-1">
-          <h1>
+        <div class="flex flex-col md:flex-row items-start justify-between w-full gap-2.5">
+          <h1 class="w-full">
             <span class="font-medium text-2xl capitalize text-black-neutral">
               {layout?.name === "concat"
                 ? `${isVariantOf?.name} ${name}`
