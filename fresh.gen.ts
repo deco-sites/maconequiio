@@ -4,6 +4,7 @@
 
 import * as $_app from "./routes/_app.tsx";
 import * as $AddToCartButton_BuyTogether_vtex from "./islands/AddToCartButton/BuyTogether/vtex.tsx";
+import * as $AddToCartButton_Variants_button from "./islands/AddToCartButton/Variants/button.tsx";
 import * as $AddToCartButton_linx from "./islands/AddToCartButton/linx.tsx";
 import * as $AddToCartButton_nuvemshop from "./islands/AddToCartButton/nuvemshop.tsx";
 import * as $AddToCartButton_shopify from "./islands/AddToCartButton/shopify.tsx";
@@ -40,6 +41,8 @@ const manifest = {
   islands: {
     "./islands/AddToCartButton/BuyTogether/vtex.tsx":
       $AddToCartButton_BuyTogether_vtex,
+    "./islands/AddToCartButton/Variants/button.tsx":
+      $AddToCartButton_Variants_button,
     "./islands/AddToCartButton/linx.tsx": $AddToCartButton_linx,
     "./islands/AddToCartButton/nuvemshop.tsx": $AddToCartButton_nuvemshop,
     "./islands/AddToCartButton/shopify.tsx": $AddToCartButton_shopify,

@@ -19,6 +19,7 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import ProductSelector from "./ProductVariantSelector.tsx";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
+import Variants from "deco-sites/maconequiio/components/product/Variants.tsx";
 
 export interface Props {
   page: ProductDetailsPage | null;
@@ -75,20 +76,34 @@ function ProductInfo({ page, colors = [], layout }: Props) {
     listPrice,
   });
 
+  const variants = product.isVariantOf?.hasVariant ?? [];
+  const hasVariants = variants.length > 1;
+
   return (
     <div class="flex flex-col xl:max-w-xl px-4 xl:px-0" id={id}>
       {/* <Breadcrumb itemListElement={breadcrumb.itemListElement} /> */}
       {/* Code and name */}
       <div class="flex flex-col w-full h-full mt-4 sm:mt-8 gap-2">
-        <h1>
-          <span class="font-medium text-2xl capitalize text-black-neutral">
-            {layout?.name === "concat"
-              ? `${isVariantOf?.name} ${name}`
-              : layout?.name === "productGroup"
-              ? isVariantOf?.name
-              : name}
-          </span>
-        </h1>
+        <div class="flex items-start justify-between w-full gap-1">
+          <h1>
+            <span class="font-medium text-2xl capitalize text-black-neutral">
+              {layout?.name === "concat"
+                ? `${isVariantOf?.name} ${name}`
+                : layout?.name === "productGroup"
+                ? isVariantOf?.name
+                : name}
+            </span>
+          </h1>
+
+          {hasVariants && (
+            <div class="flex items-center justify-center text-xs leading-3 bg-[#ffbbbb] text-black w-full h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
+              <span>
+                Este produto possui{" "}
+                <b>{variants.length} variações</b>, escolha abaixo.
+              </span>
+            </div>
+          )}
+        </div>
 
         <div class="flex items-center justify-between xl:max-w-[95%] gap-1">
           <div class="flex items-center gap-2 sm:gap-3.5">
@@ -121,49 +136,56 @@ function ProductInfo({ page, colors = [], layout }: Props) {
       {/* Sku Selector */}
       <ProductSelector product={product} colors={colors} />
 
+      {hasVariants && (
+        <Variants
+          variants={variants}
+        />
+      )}
+
       {/* Prices */}
-      <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
-        <div class="flex items-center gap-2">
-          <div class="flex flex-col gap-0.5">
-            {(listPrice ?? 0) > price && (
-              <span class="line-through text-sm text-gray-base">
-                de: {formatPrice(listPrice, offers?.priceCurrency)}
-              </span>
-            )}
+      {!hasVariants && (
+        <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
+          <div class="flex items-center gap-2">
+            <div class="flex flex-col gap-0.5">
+              {(listPrice ?? 0) > price && (
+                <span class="line-through text-sm text-gray-base">
+                  de: {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
+              )}
 
-            <span class="font-medium text-lg text-black-neutral">
-              {formatPrice(price, offers?.priceCurrency)}
-            </span>
-
-            {installments && (
-              <span class="text-xs sm:text-sm text-gray-base">
-                ou {installments?.replace(".", ",")}
+              <span class="font-medium text-lg text-black-neutral">
+                {formatPrice(price, offers?.priceCurrency)}
               </span>
+
+              {installments && (
+                <span class="text-xs sm:text-sm text-gray-base">
+                  ou {installments?.replace(".", ",")}
+                </span>
+              )}
+            </div>
+
+            {discount > 0 && (
+              <div class="flex items-center justify-center text-xs leading-3 font-bold bg-red-light text-white-normal w-10 h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
+                -{discount}%
+              </div>
             )}
           </div>
 
-          {discount > 0 && (
-            <div class="flex items-center justify-center text-xs leading-3 font-bold bg-red-light text-white-normal w-10 h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
-              -{discount}%
-            </div>
-          )}
+          <div class="hidden lg:flex bg-gray-300 h-14 w-0.5" />
+
+          <QuantitySelector
+            quantity={1}
+            variation="variation-2"
+          />
         </div>
-
-        <div class="hidden lg:flex bg-gray-300 h-14 w-0.5" />
-
-        <QuantitySelector
-          quantity={1}
-          onChange={() => {}}
-          variation="variation-2"
-        />
-      </div>
+      )}
 
       {/* Add to Cart and Favorites button */}
       <div class="mt-5 flex flex-col gap-2">
         {availability === "https://schema.org/InStock"
           ? (
             <>
-              {platform === "vtex" && (
+              {platform === "vtex" && !hasVariants && (
                 <>
                   <AddToCartButtonVTEX
                     eventParams={{ items: [eventItem] }}
@@ -179,7 +201,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
                   }
                 </>
               )}
-              {platform === "wake" && (
+              {platform === "wake" && !hasVariants && (
                 <>
                   <AddToCartButtonWake
                     eventParams={{ items: [eventItem] }}
@@ -192,27 +214,27 @@ function ProductInfo({ page, colors = [], layout }: Props) {
                   />
                 </>
               )}
-              {platform === "linx" && (
+              {platform === "linx" && !hasVariants && (
                 <AddToCartButtonLinx
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   productGroupID={productGroupID}
                 />
               )}
-              {platform === "vnda" && (
+              {platform === "vnda" && !hasVariants && (
                 <AddToCartButtonVNDA
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   additionalProperty={additionalProperty}
                 />
               )}
-              {platform === "shopify" && (
+              {platform === "shopify" && !hasVariants && (
                 <AddToCartButtonShopify
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                 />
               )}
-              {platform === "nuvemshop" && (
+              {platform === "nuvemshop" && !hasVariants && (
                 <AddToCartButtonNuvemshop
                   productGroupID={productGroupID}
                   eventParams={{ items: [eventItem] }}

@@ -76,9 +76,6 @@ function ProductGallery(
               flag: true,
               productDescription: true,
             },
-            basics: {
-              ctaText: "Comprar",
-            },
             onMouseOver: {
               showCardShadow: true,
             },

@@ -6,10 +6,11 @@ import { useUI } from "$store/sdk/useUI.ts";
 export interface Props extends Omit<BtnProps, "onAddItem"> {
   seller: string;
   productID: string;
+  quantity?: number;
 }
 
 function AddToCartButton(
-  { seller, productID, eventParams, ctaText, isUnavailable, type }: Props,
+  { seller, productID, eventParams, isUnavailable, type, quantity }: Props,
 ) {
   const { productQuantity } = useUI();
   const { addItems } = useCart();
@@ -22,11 +23,30 @@ function AddToCartButton(
       }],
     });
 
+  if (type === "Variants") {
+    const onVariantAddItem = () =>
+      addItems({
+        orderItems: [{
+          id: productID,
+          seller: seller,
+          quantity: quantity ?? 1,
+        }],
+      });
+
+    return (
+      <Button
+        onAddItem={onVariantAddItem}
+        eventParams={eventParams}
+        isUnavailable={isUnavailable}
+        type={type}
+      />
+    );
+  }
+
   return (
     <Button
       onAddItem={onAddItem}
       eventParams={eventParams}
-      ctaText={ctaText}
       isUnavailable={isUnavailable}
       type={type}
     />

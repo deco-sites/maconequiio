@@ -10,9 +10,6 @@ import { useDevice } from "deco/hooks/useDevice.ts";
 import AddToCartButtonVTEX from "deco-sites/maconequiio/islands/AddToCartButton/vtex.tsx";
 
 export interface Layout {
-  basics?: {
-    ctaText?: string;
-  };
   onMouseOver?: {
     showCardShadow?: boolean;
   };
@@ -217,7 +214,6 @@ function ProductCard({
                 productID={productID}
                 seller={seller}
                 isUnavailable={isUnavailable}
-                ctaText={l?.basics?.ctaText}
                 type="Shelf"
               />
             </div>

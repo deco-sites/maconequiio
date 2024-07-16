@@ -9,8 +9,7 @@ export interface Props {
   eventParams: AddToCartParams;
   onAddItem: () => Promise<void>;
   isUnavailable?: boolean;
-  type?: "PDP" | "Shelf";
-  ctaText?: string;
+  type?: "PDP" | "Shelf" | "Variants";
 }
 
 const useAddToCart = ({ eventParams, onAddItem }: Props) => {
@@ -54,7 +53,7 @@ export default function AddToCartButton(props: Props) {
         aria-label="buy product"
         class="btn btn-block rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold text-sm leading-5 disabled:bg-black-neutral disabled:hover:bg-black-neutral/90 disabled:text-white-normal"
       >
-        {props.isUnavailable ? "Indisponível" : props.ctaText || "Ver produto"}
+        {props.isUnavailable ? "Indisponível" : "Comprar"}
       </Button>
     );
   }
@@ -62,9 +61,10 @@ export default function AddToCartButton(props: Props) {
   return (
     <Button
       {...btnProps}
-      class="max-w-sm h-[60px] rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold text-lg leading-5"
+      disabled={props.isUnavailable}
+      class="max-w-sm h-[60px] rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold text-lg leading-5 disabled:bg-black-neutral disabled:hover:bg-black-neutral/90 disabled:text-white-normal"
     >
-      Comprar
+      {props.isUnavailable ? "Indisponível" : "Comprar"}
     </Button>
   );
 }
