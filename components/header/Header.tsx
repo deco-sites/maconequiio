@@ -172,6 +172,7 @@ function Header({
       </header>
 
       <script
+        type="module"
         dangerouslySetInnerHTML={{ __html: useScript(handleScroll) }}
       />
     </>

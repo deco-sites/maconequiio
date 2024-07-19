@@ -13,10 +13,10 @@ import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Logo } from "$store/components/header/Header.tsx";
-import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import { useScript } from "deco/hooks/useScript.ts";
+import User from "deco-sites/maconequiio/components/user/User.tsx";
 
 function Navbar({ items, searchbar, logo }: {
   items?: SiteNavigationElement[];
@@ -112,10 +112,10 @@ function Navbar({ items, searchbar, logo }: {
               <Searchbar searchbar={searchbar} />
             </div>
 
-            <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-              <LoginElement />
+            <div class="flex-none flex items-center justify-end gap-1.5 col-span-1">
+              <User />
               <div class="flex items-center text-xs font-thin">
-                {platform === "vtex" && <CartButtonVTEX type="completed" />}
+                {platform === "vtex" && <CartButtonVTEX type="icon" />}
                 {platform === "vnda" && <CartButtonVDNA />}
                 {platform === "wake" && <CartButtonWake />}
                 {platform === "linx" && <CartButtonLinx />}
