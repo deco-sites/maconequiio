@@ -20,6 +20,7 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
 import Variants from "deco-sites/maconequiio/components/product/Variants.tsx";
+import { useVariantPossibilities } from "deco-sites/maconequiio/sdk/useVariantPossiblities.ts";
 
 export interface Props {
   page: ProductDetailsPage | null;
@@ -50,6 +51,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
     gtin,
     isVariantOf,
     additionalProperty = [],
+    url,
   } = product;
   const {
     price = 0,
@@ -78,6 +80,9 @@ function ProductInfo({ page, colors = [], layout }: Props) {
 
   const variants = product.isVariantOf?.hasVariant ?? [];
   const hasVariants = variants.length > 1;
+  const possibilities = useVariantPossibilities(variants, product);
+  const notHasPossibilities = !possibilities ||
+    Object.keys(possibilities).length === 0;
 
   return (
     <div class="flex flex-col xl:max-w-xl px-4 xl:px-0" id={id}>
@@ -95,7 +100,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
             </span>
           </h1>
 
-          {hasVariants && (
+          {hasVariants && notHasPossibilities && (
             <div class="flex items-center justify-center text-xs leading-3 bg-[#ffbbbb] text-black w-full h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
               <span>
                 Este produto possui{" "}
@@ -134,16 +139,22 @@ function ProductInfo({ page, colors = [], layout }: Props) {
       </div>
 
       {/* Sku Selector */}
-      <ProductSelector product={product} colors={colors} />
+      {!notHasPossibilities && (
+        <ProductSelector
+          possibilities={possibilities}
+          url={url ?? ""}
+          colors={colors}
+        />
+      )}
 
-      {hasVariants && (
+      {hasVariants && notHasPossibilities && (
         <Variants
           variants={variants}
         />
       )}
 
       {/* Prices */}
-      {!hasVariants && (
+      {!hasVariants && notHasPossibilities && (
         <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
           <div class="flex items-center gap-2">
             <div class="flex flex-col gap-0.5">
@@ -185,7 +196,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
         {availability === "https://schema.org/InStock"
           ? (
             <>
-              {platform === "vtex" && !hasVariants && (
+              {platform === "vtex" && !notHasPossibilities && (
                 <>
                   <AddToCartButtonVTEX
                     eventParams={{ items: [eventItem] }}
@@ -201,7 +212,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
                   }
                 </>
               )}
-              {platform === "wake" && !hasVariants && (
+              {platform === "wake" && !notHasPossibilities && (
                 <>
                   <AddToCartButtonWake
                     eventParams={{ items: [eventItem] }}
@@ -214,27 +225,27 @@ function ProductInfo({ page, colors = [], layout }: Props) {
                   />
                 </>
               )}
-              {platform === "linx" && !hasVariants && (
+              {platform === "linx" && !notHasPossibilities && (
                 <AddToCartButtonLinx
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   productGroupID={productGroupID}
                 />
               )}
-              {platform === "vnda" && !hasVariants && (
+              {platform === "vnda" && !notHasPossibilities && (
                 <AddToCartButtonVNDA
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   additionalProperty={additionalProperty}
                 />
               )}
-              {platform === "shopify" && !hasVariants && (
+              {platform === "shopify" && !notHasPossibilities && (
                 <AddToCartButtonShopify
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                 />
               )}
-              {platform === "nuvemshop" && !hasVariants && (
+              {platform === "nuvemshop" && !notHasPossibilities && (
                 <AddToCartButtonNuvemshop
                   productGroupID={productGroupID}
                   eventParams={{ items: [eventItem] }}

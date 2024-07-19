@@ -1,21 +1,15 @@
 import Avatar from "$store/components/ui/Avatar.tsx";
-import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
-import type { Product } from "apps/commerce/types.ts";
+import { type Possibilities } from "$store/sdk/useVariantPossiblities.ts";
 import { relative } from "$store/sdk/url.ts";
 import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
 
 interface Props {
-  product: Product;
+  possibilities: Possibilities;
+  url: string;
   colors: Color[];
 }
 
-function VariantSelector({ product, colors }: Props) {
-  const { url, isVariantOf } = product;
-  const hasVariant = isVariantOf?.hasVariant ?? [];
-  const possibilities = useVariantPossibilities(hasVariant, product);
-
-  if (!possibilities || Object.keys(possibilities).length === 0) return null;
-
+function VariantSelector({ possibilities, url, colors }: Props) {
   return (
     <div class="flex flex-col mt-4 sm:mt-6">
       <ul class="flex flex-col gap-4">
