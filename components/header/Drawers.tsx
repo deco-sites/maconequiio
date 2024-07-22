@@ -24,17 +24,19 @@ export interface Props {
 }
 
 const Aside = (
-  { title, onClose, children, isMenu = false }: {
+  { title, onClose, children, isMenu = false, isSearchbar = false }: {
     title: string;
     onClose?: () => void;
     children: ComponentChildren;
     isMenu?: boolean;
+    isSearchbar?: boolean;
   },
 ) => (
   <div
     class={clx(
       "bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]",
       isMenu && "w-[75%]",
+      isSearchbar && "overflow-auto",
     )}
   >
     <div class="flex justify-between items-center">
@@ -77,6 +79,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
           }}
           title={displayMenu.value ? "Menu" : "Buscar"}
           isMenu={displayMenu.value}
+          isSearchbar={displaySearchDrawer.value}
         >
           {displayMenu.value && <Menu {...menu} />}
           {searchbar && displaySearchDrawer.value && (
