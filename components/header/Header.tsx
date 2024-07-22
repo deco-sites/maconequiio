@@ -11,16 +11,28 @@ import { headerHeight } from "deco-sites/maconequiio/components/header/constants
 
 /** @title OnlyText */
 export interface SiteNavigationOnlyText {
+  /**
+   * @default SiteNavigationOnlyText
+   */
+  defaultType: "SiteNavigationOnlyText";
   url: string;
   text: string;
 }
 /** @title OnlyTextWithTitle */
 export interface SiteNavigationOnlyTextWithTitle {
+  /**
+   * @default SiteNavigationOnlyTextWithTitle
+   */
+  defaultType: "SiteNavigationOnlyTextWithTitle";
   title: string;
   items: { url: string; text: string; isViewMore?: boolean }[];
 }
 /** @title ImageAndText */
 export interface SiteNavigationImageAndText {
+  /**
+   * @default SiteNavigationImageAndText
+   */
+  defaultType: "SiteNavigationImageAndText";
   title: string;
   subItems: {
     image: ImageWidget;
@@ -33,6 +45,10 @@ export interface SiteNavigationImageAndText {
 }
 /** @title Banners */
 export interface SiteNavigationBanners {
+  /**
+   * @default SiteNavigationBanners
+   */
+  defaultType: "SiteNavigationBanners";
   bannersSubItems: {
     image: ImageWidget;
     imageDescription: string;
@@ -54,18 +70,19 @@ export interface Brand {
   height?: number;
 }
 
+export type MenuTypes =
+  | SiteNavigationOnlyText[]
+  | SiteNavigationOnlyTextWithTitle[]
+  | SiteNavigationImageAndText[]
+  | SiteNavigationBanners[];
+
 export interface SiteNavigationElement {
   category: {
     icon: AvailableIcons;
     label: string;
     url: string;
     /** @title SiteNavigationItems */
-    items: (
-      | SiteNavigationOnlyText[]
-      | SiteNavigationOnlyTextWithTitle[]
-      | SiteNavigationImageAndText[]
-      | SiteNavigationBanners[]
-    )[];
+    items: MenuTypes[];
     brands?: Brand[];
   };
 }

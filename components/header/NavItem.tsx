@@ -19,7 +19,7 @@ function NavItem({ category }: SiteNavigationElement) {
       // Verifica se itemArray é um array de SiteNavigationOnlyText
       if (
         Array.isArray(itemArray) && itemArray.length > 0 &&
-        "url" in itemArray[0]
+        itemArray[0].defaultType === "SiteNavigationOnlyText"
       ) {
         const textItems = itemArray as SiteNavigationOnlyText[];
 
@@ -39,7 +39,7 @@ function NavItem({ category }: SiteNavigationElement) {
 
       if (
         Array.isArray(itemArray) && itemArray.length > 0 &&
-        "title" in itemArray[0] && "items" in itemArray[0]
+        itemArray[0].defaultType === "SiteNavigationOnlyTextWithTitle"
       ) {
         const textItems = itemArray as SiteNavigationOnlyTextWithTitle[];
 
@@ -75,7 +75,7 @@ function NavItem({ category }: SiteNavigationElement) {
       // Verifica se itemArray é um array de SiteNavigationImageAndText
       if (
         Array.isArray(itemArray) && itemArray.length > 0 &&
-        "type" in itemArray[0]
+        itemArray[0].defaultType === "SiteNavigationImageAndText"
       ) {
         const imageTextItems = itemArray as SiteNavigationImageAndText[];
 
@@ -122,7 +122,7 @@ function NavItem({ category }: SiteNavigationElement) {
       // Verifica se itemArray é um array de SiteNavigationBanners
       if (
         Array.isArray(itemArray) && itemArray.length > 0 &&
-        "layoutType" in itemArray[0]
+        itemArray[0].defaultType === "SiteNavigationBanners"
       ) {
         const bannerItems = itemArray as SiteNavigationBanners[];
 
@@ -161,7 +161,7 @@ function NavItem({ category }: SiteNavigationElement) {
     <li class="group flex items-center h-11">
       <a
         href={url}
-        class="flex flex-row gap-1 items-center justify-between max-w-full h-full group-hover:bg-gray-300/50 p-1.5 duration-150 transition-all"
+        class="flex flex-row gap-2 items-center justify-between max-w-full h-full group-hover:bg-gray-300/50 p-1.5 duration-150 transition-all"
       >
         <Icon id={icon} size={20} class="text-red" />
         <span class="text-xs font-bold text-center text-black-neutral">
