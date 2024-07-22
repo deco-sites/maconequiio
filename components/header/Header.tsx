@@ -7,7 +7,6 @@ import Navbar from "./Navbar.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
 import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
 import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
-import { headerHeight } from "deco-sites/maconequiio/components/header/constants.ts";
 
 /** @title OnlyText */
 export interface SiteNavigationOnlyText {
@@ -137,7 +136,7 @@ function Header({
   const items = navItems ?? [];
 
   return (
-    <header style={{ height: headerHeight }}>
+    <header class="h-[53px] xl:h-[82px]">
       <Drawers
         menu={{ items: mobileMenuNavItems }}
         searchbar={searchbar}

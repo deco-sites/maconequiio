@@ -69,7 +69,7 @@ function Navbar({ items, searchbar, logo }: {
 
       {/* Desktop Version */}
       {isDesktop && (
-        <div class="hidden xl:flex items-center justify-between gap-1.5 w-full border-b border-base-200 container py-0.5">
+        <div class="hidden xl:flex items-center justify-between gap-1.5 w-full container py-0.5">
           <div class="flex items-center gap-4 justify-start">
             {logo && (
               <a
