@@ -12,7 +12,7 @@ import { menuMarginTop } from "deco-sites/maconequiio/components/header/constant
 function NavItem({ category }: SiteNavigationElement) {
   if (!category || !category.icon || !category.label) return null;
 
-  const { icon, label, items, url, brands } = category;
+  const { icon, width = 20, height = 20, label, items, url, brands } = category;
 
   const renderItems = () => {
     return items.map((itemArray, arrayIndex) => {
@@ -163,7 +163,7 @@ function NavItem({ category }: SiteNavigationElement) {
         href={url}
         class="flex flex-row gap-2 items-center justify-between max-w-full h-full group-hover:bg-gray-300/50 p-1.5 duration-150 transition-all"
       >
-        <Icon id={icon} size={20} class="text-red" />
+        <Icon id={icon} width={width} height={height} class="text-red" />
         <span class="text-xs font-bold text-center text-black-neutral">
           {label}
         </span>

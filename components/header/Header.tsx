@@ -79,6 +79,8 @@ export type MenuTypes =
 export interface SiteNavigationElement {
   category: {
     icon: AvailableIcons;
+    width?: number;
+    height?: number;
     label: string;
     url: string;
     /** @title SiteNavigationItems */
