@@ -5,9 +5,9 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
-import { useScript } from "deco/hooks/useScript.ts";
 import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
 import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import { headerHeight } from "deco-sites/maconequiio/components/header/constants.ts";
 
 /** @title OnlyText */
 export interface SiteNavigationOnlyText {
@@ -117,65 +117,29 @@ function Header({
   const device = useDevice();
   const items = navItems ?? [];
 
-  function handleScroll() {
-    self.addEventListener("scroll", () => {
-      const scrollY = self.scrollY;
-      const navItems = document.getElementById("nav");
-      const menuButton = document.getElementById("navitems-button");
-      const alert = document.getElementById("alert");
-
-      if (scrollY > 90) {
-        menuButton?.classList.remove("hidden");
-        menuButton?.classList.add("flex");
-
-        navItems?.classList.remove("flex");
-        navItems?.classList.add("hidden");
-
-        alert?.classList.add("hidden");
-        alert?.classList.remove("flex");
-      } else {
-        menuButton?.classList.remove("flex");
-        menuButton?.classList.add("hidden");
-
-        navItems?.classList.remove("hidden");
-        navItems?.classList.add("flex");
-
-        alert?.classList.remove("hidden");
-        alert?.classList.add("flex");
-      }
-    });
-  }
-
   return (
-    <>
-      <header class="h-[75px] lg:h-[188px]">
-        <Drawers
-          menu={{ items: mobileMenuNavItems }}
-          searchbar={searchbar}
-          platform={platform}
-        >
-          <div class="bg-base-100 fixed w-full z-40">
-            {alert && device === "desktop" && (
-              <Alert
-                benefit={alert.benefit}
-                dropdown={alert.dropdown}
-                backgroundColor={alert.backgroundColor}
-              />
-            )}
-            <Navbar
-              items={items}
-              searchbar={searchbar && { ...searchbar }}
-              logo={logo}
+    <header style={{ height: headerHeight }}>
+      <Drawers
+        menu={{ items: mobileMenuNavItems }}
+        searchbar={searchbar}
+        platform={platform}
+      >
+        <div class="bg-base-100 fixed w-full z-40">
+          {alert && device === "desktop" && (
+            <Alert
+              benefit={alert.benefit}
+              dropdown={alert.dropdown}
+              backgroundColor={alert.backgroundColor}
             />
-          </div>
-        </Drawers>
-      </header>
-
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: useScript(handleScroll) }}
-      />
-    </>
+          )}
+          <Navbar
+            items={items}
+            searchbar={searchbar && { ...searchbar }}
+            logo={logo}
+          />
+        </div>
+      </Drawers>
+    </header>
   );
 }
 

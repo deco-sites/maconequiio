@@ -1,6 +1,9 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import type { SiteNavigationElement } from "./Header.tsx";
-import { MenuButton, SearchButton } from "$store/islands/Header/Buttons.tsx";
+import {
+  MenuButton,
+  SearchButton,
+} from "deco-sites/maconequiio/islands/Header/Buttons.tsx";
 import CartButtonLinx from "$store/islands/Header/Cart/linx.tsx";
 import CartButtonShopify from "$store/islands/Header/Cart/shopify.tsx";
 import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";
@@ -13,9 +16,7 @@ import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Logo } from "$store/components/header/Header.tsx";
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
-import { useScript } from "deco/hooks/useScript.ts";
 import User from "deco-sites/maconequiio/components/user/User.tsx";
 
 function Navbar({ items, searchbar, logo }: {
@@ -26,18 +27,6 @@ function Navbar({ items, searchbar, logo }: {
   const platform = usePlatform();
   const device = useDevice();
   const isDesktop = device === "desktop";
-
-  const onClick = () => {
-    const navItems = document.getElementById("nav");
-
-    if (navItems?.classList.contains("flex")) {
-      navItems?.classList.remove("flex");
-      navItems?.classList.add("hidden");
-    } else {
-      navItems?.classList.add("flex");
-      navItems?.classList.remove("hidden");
-    }
-  };
 
   return (
     <>
@@ -80,58 +69,40 @@ function Navbar({ items, searchbar, logo }: {
 
       {/* Desktop Version */}
       {isDesktop && (
-        <div class="hidden xl:flex flex-col items-center justify-center w-full border-b border-base-200 pt-4 mx-auto">
-          <div class="grid grid-cols-3 items-center w-full h-[66px] xl:max-w-[1305px] mx-auto px-6">
-            <div class="flex items-center gap-4 justify-start">
-              {logo && (
-                <a
-                  href="/"
-                  aria-label="Store logo"
-                  class="block"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={logo.width || 100}
-                    height={logo.height || 13}
-                  />
-                </a>
-              )}
-
-              <button
-                id="navitems-button"
-                hx-on:click={useScript(onClick)}
-                class="hidden items-center justify-center text-xs gap-1"
+        <div class="hidden xl:flex items-center justify-between gap-1.5 w-full border-b border-base-200 container py-0.5">
+          <div class="flex items-center gap-4 justify-start">
+            {logo && (
+              <a
+                href="/"
+                aria-label="Store logo"
+                class="block"
               >
-                <Icon id="Bars3" size={22} strokeWidth={0.01} />
-                <span>Menu</span>
-              </button>
-            </div>
-
-            <div class="w-full lg:max-w-[640px]">
-              <Searchbar searchbar={searchbar} />
-            </div>
-
-            <div class="flex-none flex items-center justify-end gap-1.5 col-span-1">
-              <User />
-              <div class="flex items-center text-xs font-thin">
-                {platform === "vtex" && <CartButtonVTEX type="icon" />}
-                {platform === "vnda" && <CartButtonVDNA />}
-                {platform === "wake" && <CartButtonWake />}
-                {platform === "linx" && <CartButtonLinx />}
-                {platform === "shopify" && <CartButtonShopify />}
-                {platform === "nuvemshop" && <CartButtonNuvemshop />}
-              </div>
-            </div>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+              </a>
+            )}
           </div>
 
-          <div
-            id="nav"
-            class="flex items-center justify-center w-full h-full drop-shadow-md border-t border-t-base-200/50 bg-white-ice"
-          >
-            <ul class="flex items-center justify-center w-full h-full gap-6 col-span-1">
-              {items?.map((item) => <NavItem category={item.category} />)}
-            </ul>
+          <ul class="flex-auto flex items-center justify-center h-full">
+            {items?.map((item) => <NavItem category={item.category} />)}
+          </ul>
+
+          <div class="flex items-center justify-end gap-2">
+            <SearchButton />
+            <Searchbar searchbar={searchbar} />
+            <User />
+            <div class="flex items-center text-xs font-thin">
+              {platform === "vtex" && <CartButtonVTEX type="icon" />}
+              {platform === "vnda" && <CartButtonVDNA />}
+              {platform === "wake" && <CartButtonWake />}
+              {platform === "linx" && <CartButtonLinx />}
+              {platform === "shopify" && <CartButtonShopify />}
+              {platform === "nuvemshop" && <CartButtonNuvemshop />}
+            </div>
           </div>
         </div>
       )}

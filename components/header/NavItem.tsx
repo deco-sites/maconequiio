@@ -7,6 +7,7 @@ import type {
   SiteNavigationOnlyText,
   SiteNavigationOnlyTextWithTitle,
 } from "./Header.tsx";
+import { menuMarginTop } from "deco-sites/maconequiio/components/header/constants.ts";
 
 function NavItem({ category }: SiteNavigationElement) {
   if (!category || !category.icon || !category.label) return null;
@@ -157,10 +158,10 @@ function NavItem({ category }: SiteNavigationElement) {
   };
 
   return (
-    <li class="group flex items-center h-full">
+    <li class="group flex items-center h-11">
       <a
         href={url}
-        class="flex flex-col gap-1.5 items-center justify-between max-w-24 h-full group-hover:bg-gray-300/50 p-1.5 duration-150 transition-all"
+        class="flex flex-row gap-1 items-center justify-between max-w-full h-full group-hover:bg-gray-300/50 p-1.5 duration-150 transition-all"
       >
         <Icon id={icon} size={20} class="text-red" />
         <span class="text-xs font-bold text-center text-black-neutral">
@@ -171,7 +172,7 @@ function NavItem({ category }: SiteNavigationElement) {
       {items && items.length > 0 && (
         <div
           class="fixed hidden group-hover:flex group-hover:flex-col bg-base-100 z-50 items-start justify-between border-t border-b-2 border-base-200 w-screen max-w-[1260px] -translate-x-1/2 left-1/2 pt-8"
-          style={{ top: "0px", marginTop: "65px" }}
+          style={{ top: "0px", marginTop: menuMarginTop }}
         >
           <div class="flex items-start justify-between gap-16 w-full px-12 pb-8">
             {renderItems()}
