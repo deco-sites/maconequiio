@@ -9,7 +9,7 @@ export default function SearchDetails({ details }: Props) {
 
   return (
     <div class="flex items-center justify-center w-full bg-white-normal py-8">
-      <div class="container max-w-6xl px-4 xl:px-0">
+      <div class="container p-4">
         <div dangerouslySetInnerHTML={{ __html: details.item.html }} />
       </div>
     </div>
