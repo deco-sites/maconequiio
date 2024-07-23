@@ -1,7 +1,7 @@
-import type { HTMLWidget } from "apps/admin/widgets.ts";
+import type { RichText } from "apps/admin/widgets.ts";
 
 export interface Props {
-  text: HTMLWidget;
+  text: RichText;
   containerWidth?: number;
 }
 

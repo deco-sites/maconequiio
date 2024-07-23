@@ -10,7 +10,7 @@ import PaymentMethods, {
 import Social from "$store/components/footer/Social.tsx";
 import Security, { SecurityItem } from "$store/components/footer/Security.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
-import type { HTMLWidget } from "apps/admin/widgets.ts";
+import type { RichText } from "apps/admin/widgets.ts";
 import AboutUs, {
   Props as AboutUsProps,
 } from "deco-sites/maconequiio/components/footer/AboutUs.tsx";
@@ -77,7 +77,7 @@ export interface Layout {
 
 export interface Props {
   newsletter?: {
-    title?: HTMLWidget;
+    title?: RichText;
     /** @format textarea */
     description?: string;
     form?: NewsletterForm;

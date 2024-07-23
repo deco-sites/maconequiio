@@ -1,10 +1,10 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import type { HTMLWidget } from "apps/admin/widgets.ts";
+import type { RichText } from "apps/admin/widgets.ts";
 
 export interface ServiceProps {
   type?: string;
   label?: string;
-  description?: HTMLWidget;
+  description?: RichText;
   image: ImageWidget;
   placement: "left" | "right";
 }

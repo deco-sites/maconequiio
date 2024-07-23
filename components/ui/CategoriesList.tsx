@@ -1,8 +1,8 @@
 import Image from "apps/website/components/Image.tsx";
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 
 export interface Props {
-  title: HTMLWidget;
+  title: RichText;
   categories?: Array<
     {
       icon: ImageWidget;

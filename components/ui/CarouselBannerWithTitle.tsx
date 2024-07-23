@@ -5,20 +5,20 @@ import Image from "apps/website/components/Image.tsx";
 
 import { useId } from "$store/sdk/useId.ts";
 import { clx } from "$store/sdk/clx.ts";
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 
 export interface BannerProps {
   image: ImageWidget;
   alt: string;
   title: string;
-  subtitle: HTMLWidget;
+  subtitle: RichText;
   link: string;
   target: "_blank" | "_self";
   loading?: "lazy" | "eager";
 }
 
 export interface Props {
-  title: HTMLWidget;
+  title: RichText;
   layout?: {
     numberOfSliders?: {
       mobile?: 1 | 2 | 3 | 4 | 5;

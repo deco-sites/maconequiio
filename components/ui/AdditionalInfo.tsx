@@ -1,7 +1,7 @@
-import type { HTMLWidget } from "apps/admin/widgets.ts";
+import type { RichText } from "apps/admin/widgets.ts";
 
 export interface Props {
-  html: HTMLWidget;
+  html: RichText;
 }
 
 export default function AdditionalInfo({ html }: Props) {

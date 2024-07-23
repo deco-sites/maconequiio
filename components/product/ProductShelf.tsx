@@ -13,11 +13,11 @@ import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { clx } from "$store/sdk/clx.ts";
 import type { CallToAction } from "../layout/CategoriesShelf.tsx";
-import type { HTMLWidget } from "apps/admin/widgets.ts";
+import type { RichText } from "apps/admin/widgets.ts";
 
 export interface Props {
   products: Product[] | null;
-  title?: HTMLWidget;
+  title?: RichText;
   /** @format textarea */
   description?: string;
   layout?: {

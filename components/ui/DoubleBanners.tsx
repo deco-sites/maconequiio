@@ -1,5 +1,5 @@
 import Image from "apps/website/components/Image.tsx";
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 
 /**
  * @altBy title
@@ -8,7 +8,7 @@ export interface Banner {
   image: ImageWidget;
   alt: string;
   title: string;
-  description: HTMLWidget;
+  description: RichText;
   /**
    * @default #
    */
@@ -17,7 +17,7 @@ export interface Banner {
 }
 
 export interface Props {
-  title?: HTMLWidget;
+  title?: RichText;
   /**
    * @minItems 2
    * @maxItems 2

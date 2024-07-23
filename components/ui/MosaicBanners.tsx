@@ -1,5 +1,5 @@
 import Image from "apps/website/components/Image.tsx";
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 
 export interface Banner {
   source: ImageWidget;
@@ -10,7 +10,7 @@ export interface Banner {
 }
 
 export interface Props {
-  title: HTMLWidget;
+  title: RichText;
   /** @format color-input */
   backgroundColor?: string;
   /**

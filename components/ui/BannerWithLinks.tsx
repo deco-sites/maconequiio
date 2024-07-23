@@ -1,6 +1,6 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 
 export interface SizeProps {
   width?: number;
@@ -8,7 +8,7 @@ export interface SizeProps {
 }
 
 export interface Props {
-  title: HTMLWidget;
+  title: RichText;
   /** @format color-input */
   backgroundColor?: string;
   banner: {

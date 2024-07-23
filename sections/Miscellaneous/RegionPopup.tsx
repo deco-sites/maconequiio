@@ -1,11 +1,11 @@
-import type { HTMLWidget } from "apps/admin/widgets.ts";
+import type { RichText } from "apps/admin/widgets.ts";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
 import { useScript } from "deco/hooks/useScript.ts";
 import { SectionProps } from "deco/mod.ts";
 import { getCookies } from "std/http/cookie.ts";
 
 export interface Props {
-  text: HTMLWidget;
+  text: RichText;
 }
 
 const changeRegionPopupAttribute = () => {

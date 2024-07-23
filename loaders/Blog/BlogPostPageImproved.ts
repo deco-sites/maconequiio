@@ -25,12 +25,24 @@ export default async function BlogPostPageLoader(
   ctx: AppContext,
 ): Promise<BlogPostPage | null> {
   try {
-    // Adjusted to use correct type
-    const records = await getRecordsByPath<{ post: BlogPost }[]>(
+    if (!slug) {
+      console.error("Slug is undefined or null");
+      return null;
+    }
+
+    // Get records from the path
+    const records = await getRecordsByPath<BlogPost[]>(
       ctx,
       COLLECTION_PATH,
       ACCESSOR,
     );
+
+    console.log("Records:", records);
+
+    if (!records || records.length === 0) {
+      console.error("No records found");
+      return null;
+    }
 
     const { url: baseUrl } = req;
     const url = new URL(baseUrl);
@@ -38,13 +50,17 @@ export default async function BlogPostPageLoader(
     // Flatten the array of arrays
     const flattenedRecords = records.flat();
 
-    // Extract the actual blog posts
-    const blogPosts = flattenedRecords.map((item) => item.post);
+    // Since each item in flattenedRecords is already a blog post, no need to map further
+    const blogPosts = flattenedRecords;
+
+    if (!blogPosts || blogPosts.length === 0) {
+      console.error("No blog posts found");
+      return null;
+    }
 
     // Find the post with the matching slug
     const post = blogPosts.find((post) => post.slug === slug);
 
-    // Check if the post was found
     if (!post) {
       console.error("Post not found with slug:", slug);
       return null;

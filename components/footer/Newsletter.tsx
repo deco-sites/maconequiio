@@ -2,7 +2,7 @@ import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
 import type { JSX } from "preact";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
-import { HTMLWidget } from "apps/admin/widgets.ts";
+import { RichText } from "apps/admin/widgets.ts";
 
 export interface Form {
   placeholder?: string;
@@ -13,7 +13,7 @@ export interface Form {
 
 export interface Props {
   content: {
-    title?: HTMLWidget;
+    title?: RichText;
     /** @format textarea */
     description?: string;
     form?: Form;
