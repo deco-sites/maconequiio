@@ -1,10 +1,10 @@
 import Header from "$store/components/ui/SectionHeader.tsx";
+import { RichText } from "apps/admin/widgets.ts";
 
 export interface Form {
   placeholder?: string;
   buttonText?: string;
-  /** @format html */
-  helpText?: string;
+  helpText?: RichText;
 }
 
 export interface Props {

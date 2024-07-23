@@ -1,14 +1,12 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import { RichText } from "apps/admin/widgets.ts";
 
 /**
  * @titleBy title
  */
 export interface Card {
   icon?: AvailableIcons;
-  /**
-   * @format html
-   */
-  title: string;
+  title: RichText;
   text: string;
 }
 

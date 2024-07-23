@@ -51,8 +51,7 @@ export interface Payment {
 export interface NewsletterForm {
   placeholder?: string;
   buttonText?: string;
-  /** @format html */
-  helpText?: string;
+  helpText?: RichText;
 }
 
 export interface Layout {

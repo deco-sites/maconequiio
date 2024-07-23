@@ -1,15 +1,14 @@
 import Header from "$store/components/ui/SectionHeader.tsx";
+import { RichText } from "apps/admin/widgets.ts";
 
 export interface Question {
   question: string;
-  /** @format html */
-  answer: string;
+  answer: RichText;
 }
 
 export interface Contact {
   title?: string;
-  /** @format html */
-  description?: string;
+  description?: RichText;
   link?: {
     text: string;
     href: string;
