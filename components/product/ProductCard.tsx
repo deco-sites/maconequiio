@@ -175,7 +175,7 @@ function ProductCard({
             ""
           )
           : (
-            <div class="flex w-full items-center justify-between gap-2">
+            <div class="flex w-full items-center justify-between gap-2 h-8">
               {!isUnavailable && (
                 <div class="flex flex-col gap-0.5">
                   {(listPrice ?? 0) > (price ?? 0) && (
