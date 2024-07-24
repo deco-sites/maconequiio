@@ -1,12 +1,14 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
+import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import type { ProductListingPage } from "apps/commerce/types.ts";
 import Drawers from "$store/islands/Header/Drawers.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
-import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
-import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import SearchNavbar from "deco-sites/maconequiio/components/header/SearchNavbar.tsx";
 
 /** @title OnlyText */
 export interface SiteNavigationOnlyText {
@@ -120,6 +122,8 @@ export interface Props {
    */
   navItems?: SiteNavigationElement[] | null;
 
+  PLPIntegration?: ProductListingPage | null;
+
   /** @title Logo */
   logo?: Logo;
 }
@@ -130,20 +134,25 @@ function Header({
   mobileMenuNavItems = [],
   navItems,
   logo,
+  PLPIntegration,
 }: Props) {
   const platform = usePlatform();
   const device = useDevice();
+  const isDesktop = device === "desktop";
   const items = navItems ?? [];
 
+  const sortOptions = PLPIntegration?.sortOptions ?? [];
+  const filters = PLPIntegration?.filters ?? [];
+
   return (
-    <header class="h-[53px] xl:h-[82px]">
+    <header class={`${PLPIntegration ? "h-[100px]" : "h-[58px]"} xl:h-[82px]`}>
       <Drawers
         menu={{ items: mobileMenuNavItems }}
         searchbar={searchbar}
         platform={platform}
       >
         <div class="bg-base-100 fixed w-full z-40">
-          {alert && device === "desktop" && (
+          {alert && isDesktop && (
             <Alert
               benefit={alert.benefit}
               infos={alert.infos}
@@ -155,10 +164,26 @@ function Header({
             searchbar={searchbar && { ...searchbar }}
             logo={logo}
           />
+          {PLPIntegration && !isDesktop && (
+            <SearchNavbar
+              sortOptions={sortOptions}
+              filters={filters}
+            />
+          )}
         </div>
       </Drawers>
     </header>
   );
 }
+
+export const loader = (props: Props, req: Request) => {
+  const url = new URL(req.url);
+  const verifiedUrl = url.pathname === "/" || url.search.includes("skuId");
+
+  return {
+    ...props,
+    PLPIntegration: !verifiedUrl ? props.PLPIntegration : null,
+  };
+};
 
 export default Header;

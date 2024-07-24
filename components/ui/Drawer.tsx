@@ -2,6 +2,7 @@ import { useId } from "$store/sdk/useId.ts";
 import { useSignal } from "@preact/signals";
 import { ComponentChildren } from "preact";
 import { useEffect } from "preact/hooks";
+import { clx } from "deco-sites/maconequiio/sdk/clx.ts";
 
 interface Props {
   onClose?: () => void;
@@ -40,7 +41,12 @@ function Drawer(props: Props) {
   }, []);
 
   return (
-    <div class={`drawer ${_class}`}>
+    <div
+      class={clx(
+        "drawer",
+        _class.length > 0 && `${_class}`,
+      )}
+    >
       <input
         id={id}
         checked={open}

@@ -13,6 +13,7 @@ import ColumnToggle from "deco-sites/maconequiio/components/search/ColumnToggle.
 import type { Subcategories } from "$store/loaders/Search/subcategories.ts";
 import SearchSubcategories from "deco-sites/maconequiio/components/search/SearchSubcategories.tsx";
 import Pagination from "deco-sites/maconequiio/components/search/Pagination.tsx";
+import { useDevice } from "deco/hooks/useDevice.ts";
 
 export type Format = "Show More" | "Pagination";
 
@@ -75,6 +76,9 @@ function Result({
 
   const isListModeActive = layout?.columns?.desktop === 4;
 
+  const device = useDevice();
+  const isDesktop = device === "desktop";
+
   return (
     <div
       class={clx(
@@ -123,7 +127,7 @@ function Result({
                   </span>
 
                   <div class="flex items-center gap-7">
-                    <Sort sortOptions={sortOptions} />
+                    {isDesktop && <Sort sortOptions={sortOptions} />}
                     <ColumnToggle isListModeActive={isListModeActive} />
                   </div>
                 </div>

@@ -55,7 +55,7 @@ function FilterValues({ key, values }: FilterToggle) {
 
 function ToggleFilters({ filters }: Pick<Props, "filters">) {
   return (
-    <ul class="flex flex-col gap-1.5 px-6">
+    <ul class="flex flex-col gap-0.5 xl:gap-1.5 px-6">
       {filters
         .filter(isToggle)
         .map((filter) => (
