@@ -171,7 +171,7 @@ function NavItem({ category }: SiteNavigationElement) {
 
       {items && items.length > 0 && (
         <div
-          class="fixed hidden group-hover:flex group-hover:flex-col bg-base-100 z-50 items-start justify-between border-t border-b-2 border-base-200 w-screen max-w-[1260px] -translate-x-1/2 left-1/2 pt-8"
+          class="fixed hidden group-hover:flex group-hover:flex-col bg-base-100 z-50 items-start justify-between border-t border-b-2 border-base-200 w-screen max-w-[1015px] -translate-x-1/2 left-[53%] pt-8"
           style={{ top: "0px", marginTop: menuMarginTop }}
         >
           <div class="flex items-start justify-between gap-16 w-full px-12 pb-8">
