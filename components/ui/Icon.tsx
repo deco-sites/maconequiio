@@ -2,6 +2,7 @@ import { asset } from "$fresh/runtime.ts";
 import type { JSX } from "preact";
 
 export type AvailableIcons =
+  | "Aparelhos"
   | "ArrowsPointingOut"
   | "Bars3"
   | "ChevronLeft"
@@ -55,11 +56,13 @@ export type AvailableIcons =
   | "AlertSuccess"
   | "AlertWarning"
   | "AlertError"
+  | "Menu"
   | "MenuIcon"
   | "Estetoscopio"
   | "SaudeIcon"
   | "SubmitArrow"
   | "Bolsa"
+  | "Ostomia"
   | "Atleta"
   | "Meias"
   | "Ortopedista"
