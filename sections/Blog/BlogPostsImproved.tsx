@@ -40,7 +40,7 @@ function Container(
   { children, title }: { children: ComponentChildren; title?: RichText },
 ) {
   return (
-    <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] lg:max-w-[1350px] px-4">
+    <div class="w-full container py-8 flex flex-col gap-2 lg:py-10 max-w-[95%] lg:max-w-[1350px] px-4">
       {title && (
         <div
           class="leading-[18px] lg:text-[26px] lg:leading-[30px]"
@@ -48,7 +48,7 @@ function Container(
         />
       )}
 
-      <div class="space-y-8">{children}</div>
+      {children}
     </div>
   );
 }
@@ -90,7 +90,7 @@ export default function BlogPosts({
   return (
     <ContainerComponent title={title}>
       <>
-        <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+        <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-4">
           {posts?.slice(from, to).map((post) => (
             <a
               href={`/blog/${post.slug}`}
@@ -142,7 +142,7 @@ export default function BlogPosts({
           ))}
         </div>
         {to < (posts?.length || 1000) && (
-          <div class="flex justify-center w-full" id={postList}>
+          <div class="flex justify-center w-full mt-2" id={postList}>
             <button
               hx-get={fetchMoreLink}
               hx-swap="outerHTML"
