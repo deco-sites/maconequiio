@@ -67,8 +67,10 @@ export type AvailableIcons =
   | "Curativo"
   | "Seringa"
   | "Coração"
-  | "share"
-  | "Youtube";
+  | "Share"
+  | "Youtube"
+  | "BenefitsGuard"
+  | "Store";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

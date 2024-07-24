@@ -1,4 +1,19 @@
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import Icon, {
+  AvailableIcons,
+} from "deco-sites/maconequiio/components/ui/Icon.tsx";
+
+/**
+ * @title {{{text}}}
+ */
+export interface Info {
+  icon: {
+    source: AvailableIcons;
+    width?: number;
+    height?: number;
+  };
+  link: string;
+  text: string;
+}
 
 export interface Props {
   /**
@@ -10,13 +25,10 @@ export interface Props {
     text: string;
   };
 
-  dropdown: {
-    title: string;
-    links: Array<{ url: string; label: string }>;
-  };
+  infos: Info[];
 }
 
-function Alert({ benefit, backgroundColor, dropdown }: Props) {
+function Alert({ benefit, backgroundColor, infos = [] }: Props) {
   return (
     <div
       id="alert"
@@ -26,32 +38,23 @@ function Alert({ benefit, backgroundColor, dropdown }: Props) {
       <div class="flex justify-between items-center xl:container mx-auto text-xs font-medium text-white-normal w-full h-full px-6">
         <a href={benefit.url}>{benefit.text}</a>
 
-        <div class="dropdown dropdown-hover h-full">
-          <div
-            tabIndex={0}
-            role="button"
-            class="flex items-center justify-center h-full gap-0.5 hover:bg-white-normal hover:text-red duration-300 transition-all px-1.5"
-          >
-            <span>{dropdown.title}</span>
-            <Icon
-              id="ChevronDown"
-              size={16}
-              strokeWidth={1.75}
-              class="text-white"
-            />
-          </div>
-
-          <ul
-            tabIndex={0}
-            class="dropdown-content z-[10000] menu p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            {dropdown?.links?.map((item) => (
-              <li class="text-black">
-                <a href={item.url}>{item.label}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul class="flex items-center justify-end gap-5">
+          {infos.map((info) => (
+            <li class="flex w-full">
+              <a
+                href={info.link}
+                class="flex items-center justify-center w-full gap-1"
+              >
+                <Icon
+                  id={info.icon.source}
+                  width={info.icon.width}
+                  height={info.icon.height}
+                />
+                <span class="text-xs text-nowrap">{info.text}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

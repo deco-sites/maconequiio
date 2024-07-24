@@ -146,7 +146,7 @@ function Header({
           {alert && device === "desktop" && (
             <Alert
               benefit={alert.benefit}
-              dropdown={alert.dropdown}
+              infos={alert.infos}
               backgroundColor={alert.backgroundColor}
             />
           )}

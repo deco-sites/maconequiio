@@ -175,7 +175,7 @@ function Links(props: Props) {
 
                 <Icon
                   size={20}
-                  id="share"
+                  id="Share"
                   strokeWidth={2}
                   class="opacity-0 group-hover:opacity-100"
                 />

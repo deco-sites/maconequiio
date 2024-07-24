@@ -45,7 +45,7 @@ function CartButton(
           loading={loading}
           onClick={onClick}
         >
-          <Icon id="CartIcon" size={24} strokeWidth={2} class="text-red" />
+          <Icon id="CartIcon" size={20} strokeWidth={2} class="text-red" />
         </Button>
       </div>
     );
