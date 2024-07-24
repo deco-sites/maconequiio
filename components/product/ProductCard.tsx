@@ -26,8 +26,6 @@ export interface Layout {
 
 interface Props {
   product: Product;
-  /** Preload card image */
-  preload?: boolean;
 
   /** @description used for analytics event */
   itemListName?: string;
@@ -44,7 +42,6 @@ const HEIGHT = 220;
 
 function ProductCard({
   product,
-  preload,
   itemListName,
   layout,
   index,
@@ -130,8 +127,7 @@ function ProductCard({
             height={HEIGHT}
             class="col-span-full row-span-full rounded w-full h-3/4 object-contain"
             sizes="(max-width: 640px) 50vw, 20vw"
-            preload={preload}
-            loading={preload ? "eager" : "lazy"}
+            loading="lazy"
             decoding="async"
           />
         </a>
