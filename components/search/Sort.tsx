@@ -29,7 +29,7 @@ const portugueseMappings = {
   "relevance:desc": "Relevância",
   "price:desc": "Maior Preço",
   "price:asc": "Menor Preço",
-  "orders:desc": "Mais vendidos",
+  "orders:desc": "Mais Vendidos",
   "name:desc": "Nome - de Z a A",
   "name:asc": "Nome - de A a Z",
   // "release:desc": "Relevância - Decrescente",
@@ -38,6 +38,7 @@ const portugueseMappings = {
 
 function Sort({ sortOptions }: Props) {
   const sort = useSort();
+  const removedLabel = "release:desc";
 
   return (
     <>
@@ -52,7 +53,9 @@ function Sort({ sortOptions }: Props) {
           value,
           label: portugueseMappings[label as keyof typeof portugueseMappings] ??
             label,
-        })).filter(({ label }) => label).map(({ value, label }) => (
+        })).filter(({ label }) => !label.includes(removedLabel)).map((
+          { value, label },
+        ) => (
           <option key={value} value={value} selected={value === sort}>
             <span class="text-sm">{label}</span>
           </option>
