@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
@@ -18,7 +18,7 @@ export interface Brands {
 }
 
 export interface Props {
-  title: string;
+  title: RichText;
   brands: Brands[];
   layout?: {
     showArrows?: boolean;
@@ -33,11 +33,12 @@ export default function Brands(
   const id = useId();
 
   return (
-    <div class="flex flex-col gap-2.5 container items-center justify-center w-full p-4">
+    <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] lg:max-w-[1350px] px-4">
       {title && (
-        <div class="flex flex-col gap-1 pb-1.5 w-full border-b border-b-black">
-          <h1 class="text-lg font-bold tracking-tight">{title}</h1>
-        </div>
+        <div
+          class="leading-[18px] lg:text-[26px] lg:leading-[30px]"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
       )}
 
       <div

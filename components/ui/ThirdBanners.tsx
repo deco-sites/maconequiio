@@ -59,7 +59,7 @@ function BannerCard(
 
 export default function ThirdBanners({ banners = [], title }: Props) {
   return (
-    <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px]">
+    <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] px-4">
       {title && (
         <div
           class="leading-[18px] lg:text-[26px] lg:leading-[30px] text-nowrap"

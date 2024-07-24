@@ -30,7 +30,7 @@ export default function MosaicBanners(
       style={{ backgroundColor }}
       class="flex items-center justify-center w-full h-full"
     >
-      <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] lg:max-w-[1350px]">
+      <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] lg:max-w-[1350px] px-4">
         <div
           class="leading-[18px] lg:text-[26px] lg:leading-[30px]"
           dangerouslySetInnerHTML={{ __html: title || "" }}
