@@ -1,6 +1,6 @@
 import type { Platform } from "$store/apps/site.ts";
 import { SendEventOnClick } from "$store/components/Analytics.tsx";
-import { formatPrice } from "$store/sdk/format.ts";
+import { formatInstallments, formatPrice } from "$store/sdk/format.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
@@ -39,8 +39,8 @@ interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 300;
-const HEIGHT = 300;
+const WIDTH = 292;
+const HEIGHT = 220;
 
 function ProductCard({
   product,
@@ -190,7 +190,7 @@ function ProductCard({
 
                   {!l?.hide?.installments && (
                     <div class="text-xs leading-3 text-gray-base">
-                      {installments}
+                      {formatInstallments(installments)}
                     </div>
                   )}
                 </div>

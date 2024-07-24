@@ -55,7 +55,7 @@ function ProductShelf({
     1: "md:w-full",
     2: "md:w-1/2",
     3: "md:w-1/3",
-    4: "md:w-[300px]",
+    4: "md:w-[292px]",
     5: "md:w-1/5",
   };
 

@@ -10,7 +10,7 @@ import AddToCartButtonNuvemshop from "$store/islands/AddToCartButton/nuvemshop.t
 import OutOfStock from "$store/islands/OutOfStock.tsx";
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
-import { formatPrice } from "$store/sdk/format.ts";
+import { formatInstallments, formatPrice } from "$store/sdk/format.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
@@ -170,7 +170,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
 
               {installments && (
                 <span class="text-xs sm:text-sm text-gray-base">
-                  ou {installments?.replace(".", ",")}
+                  ou {formatInstallments(installments)}
                 </span>
               )}
             </div>
