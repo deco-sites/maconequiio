@@ -34,8 +34,8 @@ const Aside = (
 ) => (
   <div
     class={clx(
-      "bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]",
-      isMenu && "w-[75%]",
+      "bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y",
+      isMenu ? "max-w-[75%]" : "max-w-[100vw]",
       isSearchbar && "overflow-auto",
     )}
   >

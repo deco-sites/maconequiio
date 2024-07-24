@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { ComponentChildren, Fragment } from "preact";
@@ -22,6 +22,7 @@ export interface Post {
 }
 
 export interface Props {
+  title?: RichText;
   cta?: CTA;
   posts?: BlogPost[];
   pagination?: {
@@ -35,15 +36,25 @@ export interface Props {
   };
 }
 
-function Container({ children }: { children: ComponentChildren }) {
+function Container(
+  { children, title }: { children: ComponentChildren; title?: RichText },
+) {
   return (
-    <div class="container lg:mx-auto lg:py-14 mx-2 py-12 text-sm">
+    <div class="w-full container py-8 flex flex-col gap-10 lg:py-10 max-w-[95%] lg:max-w-[1350px] px-4">
+      {title && (
+        <div
+          class="leading-[18px] lg:text-[26px] lg:leading-[30px]"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      )}
+
       <div class="space-y-8">{children}</div>
     </div>
   );
 }
 
 export default function BlogPosts({
+  title,
   cta = { text: "Show more" },
   posts = [],
   pagination: {
@@ -77,7 +88,7 @@ export default function BlogPosts({
   const ContainerComponent = page === 0 ? Container : Fragment;
 
   return (
-    <ContainerComponent>
+    <ContainerComponent title={title}>
       <>
         <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
           {posts?.slice(from, to).map((post) => (
