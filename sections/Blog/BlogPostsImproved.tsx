@@ -112,7 +112,10 @@ export default function BlogPosts({
                   {calculateReadingTime(post.content.split(" ").length)}
                 </div>
                 <div class="space-y-2 flex-1">
-                  <h3 class="text-2xl" id={`title-${post.slug}`}>
+                  <h3
+                    class="text-2xl h-16 line-clamp-2"
+                    id={`title-${post.slug}`}
+                  >
                     {post.title}
                   </h3>
                   <p class="text-base">{post.excerpt}</p>
