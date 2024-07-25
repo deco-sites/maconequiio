@@ -12,7 +12,10 @@ export interface PaymentItem {
 }
 
 export default function PaymentMethods(
-  { content }: { content?: { title?: string; items?: PaymentItem[] } },
+  { content, hasMaxWidth = false }: {
+    content?: { title?: string; items?: PaymentItem[] };
+    hasMaxWidth?: boolean;
+  },
 ) {
   return (
     <div class="flex flex-col gap-2 w-full">
@@ -25,11 +28,15 @@ export default function PaymentMethods(
               </h3>
             )}
 
-            <ul class="flex items-center gap-2 flex-wrap max-w-72">
+            <ul
+              class={`flex items-center gap-2 ${
+                hasMaxWidth ? "flex-wrap max-w-72" : "flex-row w-full"
+              }`}
+            >
               {content.items.map((item) => {
                 return (
                   <li
-                    class=""
+                    class={!hasMaxWidth ? "w-full" : ""}
                     title={item.alt}
                   >
                     <Image
