@@ -128,7 +128,10 @@ function Result({
 
                   <div class="flex items-center gap-7">
                     {isDesktop && <Sort sortOptions={sortOptions} />}
-                    <ColumnToggle isListModeActive={isListModeActive} />
+                    <ColumnToggle
+                      device={device}
+                      isListModeActive={isListModeActive}
+                    />
                   </div>
                 </div>
               </div>
@@ -192,7 +195,10 @@ export const loader = (props: Props, req: Request) => {
       ...props,
       layout: {
         ...props.layout,
-        columns: { desktop: 3 as Columns["desktop"] },
+        columns: {
+          mobile: 1 as Columns["mobile"],
+          desktop: 3 as Columns["desktop"],
+        },
       },
       url: req.url,
     };

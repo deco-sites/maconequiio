@@ -63,6 +63,8 @@ export type AvailableIcons =
   | "SaudeIcon"
   | "SubmitArrow"
   | "Bolsa"
+  | "GridColumns"
+  | "FourColumns"
   | "Ostomia"
   | "Atleta"
   | "Meias"
