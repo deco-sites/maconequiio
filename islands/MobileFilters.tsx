@@ -20,7 +20,7 @@ export default function MobileFilters({ filters }: Props) {
       onClose={() => open.value = false}
       aside={
         <>
-          <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
+          <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden w-3/4">
             <div class="flex justify-between items-center">
               <h1 class="px-4 py-3">
                 <span class="font-medium text-2xl">Filtrar</span>
