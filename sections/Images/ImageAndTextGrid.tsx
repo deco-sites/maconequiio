@@ -117,11 +117,11 @@ function ImageAndText({
   return (
     <div
       style={{ backgroundColor: backgroundColor }}
-      class="flex justify-center w-full h-full items-center py-4 px-6"
+      class="flex justify-center w-full h-full items-center py-8 lg:py-10 px-4"
     >
       <div
         class={`${
-          hasContainerClass && "container"
+          hasContainerClass && "container max-w-[95%] lg:max-w-[1350px]"
         } flex justify-between w-full h-full items-center gap-3 ${maxWidth} ${mobilePosition} ${mobileAlignment} ${
           DESKTOP_POSITION[desktopPosition]
         } ${DESKTOP_ALIGNMENT[desktopAlignment]} ${
