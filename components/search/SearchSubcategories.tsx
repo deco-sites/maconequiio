@@ -48,11 +48,11 @@ export default function SearchSubcategories({ subcategories = [] }: Props) {
   return (
     <div
       id={id}
-      class="flex items-center justify-center w-full h-[160px] bg-gray-light-shade px-3 md:px-8 py-2.5"
+      class="grid items-center w-full h-[160px] bg-gray-light-shade px-3 md:px-8 py-2.5"
     >
-      <Slider class="relative carousel carousel-center xl:justify-between gap-3 h-full w-full">
+      <Slider class="carousel xl:justify-between col-span-full col-start-1 row-start-1 row-span-full h-full w-full gap-3">
         {subcategories.map((subcategory, index) => (
-          <Slider.Item index={index} class="carousel-item min-w-28 h-full">
+          <Slider.Item index={index} class="carousel-item w-28 h-[137px]">
             <Subcategory {...subcategory} />
           </Slider.Item>
         ))}

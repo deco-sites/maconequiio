@@ -102,7 +102,7 @@ function Result({
         )} */
         }
 
-        <div class="flex flex-row mt-6 gap-x-8">
+        <div class="flex flex-row mt-6 gap-x-8 w-full">
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside
               class={clx(
