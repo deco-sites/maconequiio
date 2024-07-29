@@ -18,12 +18,12 @@ export default function PaymentMethods(
   },
 ) {
   return (
-    <div class="flex flex-col gap-2 w-full">
+    <div class="flex flex-col gap-2">
       <div class="flex items-center justify-between w-full">
         {content && content.items && content.items.length > 0 && (
           <div class="flex flex-col gap-2">
             {content.title && (
-              <h3 class="text-xs text-white-normal md:text-black-neutral font-medium leading-5">
+              <h3 class="font-bold text-sm">
                 {content.title}
               </h3>
             )}

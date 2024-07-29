@@ -182,7 +182,7 @@ function Footer({
   const _payments = layout?.hide?.paymentMethods && !payments
     ? <></>
     : (
-      <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-12 lg:gap-16">
+      <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-12 lg:gap-16">
         {payments?.map((payment) => (
           <PaymentMethods
             content={payment}
@@ -219,9 +219,9 @@ function Footer({
           </div>
 
           <div class="flex flex-col md:justify-between gap-10 md:items-center container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-4 pb-4 px-4 md:px-0 md:pb-0 bg-black-neutral md:bg-white-normal">
-            <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-2 w-full">
-              <div class="flex flex-col gap-2">
-                <h3 class="font-bold text-sm text-white-normal md:text-black-neutral">
+            <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-2 w-full text-white-normal md:text-black-neutral">
+              <div class="flex flex-col gap-6 md:gap-2">
+                <h3 class="font-bold text-sm">
                   Formas de Pagamento
                 </h3>
                 {_payments}
@@ -253,7 +253,7 @@ function Footer({
 
           <div class="flex flex-col md:justify-between gap-10 md:items-center container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] px-4 md:px-0 py-8 md:py-12 border-b border-b-black-neutral/40">
             <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-2 w-full">
-              <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-6 md:gap-2">
                 <h3 class="font-bold text-sm">
                   Formas de Pagamento
                 </h3>
