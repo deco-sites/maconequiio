@@ -19,7 +19,7 @@ export default function Security(
       {content && content.items && content.items.length > 0 && (
         <div class="flex flex-col gap-2">
           {content.title && (
-            <h3 class="font-bold text-sm">
+            <h3 class="font-bold text-sm text-nowrap">
               {content.title}
             </h3>
           )}
