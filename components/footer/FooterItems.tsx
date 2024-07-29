@@ -65,9 +65,7 @@ export default function FooterItems(
                       <span>{section.label}</span>
                     </label>
                     <div class="collapse-content">
-                      <ul
-                        class={`flex flex-col gap-1 pl-5 pt-2`}
-                      >
+                      <ul class="flex flex-col gap-1 pt-2">
                         {section.items?.map((item) => (
                           <li>
                             <a

@@ -31,6 +31,7 @@ export default {
           "darker": "#494949",
           "lighter": "#BDBDBD",
           "neutral": "#A8A8A8",
+          "placeholder": "#727272",
           "light-shade": "#E7E7E7",
         },
       },

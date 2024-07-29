@@ -39,7 +39,10 @@ export interface Payment {
 }
 
 export interface NewsletterForm {
-  placeholder?: string;
+  placeholder?: {
+    email?: string;
+    name?: string;
+  };
   buttonText?: string;
   helpText?: RichText;
 }
@@ -81,7 +84,7 @@ function Footer({
   newsletter = {
     title: "Newsletter",
     description: "",
-    form: { placeholder: "", buttonText: "", helpText: "" },
+    form: { buttonText: "", helpText: "" },
   },
   sections = [{
     "label": "Sobre",
@@ -161,6 +164,7 @@ function Footer({
       layout={{
         tiled: true,
       }}
+      variation={layout.variation}
     />
   );
   const _sectionLinks = layout?.hide?.sectionLinks ? <></> : (
@@ -204,7 +208,7 @@ function Footer({
         <div class="flex flex-col">
           {_newsletter}
           <div class="flex items-center justify-center w-full bg-black-neutral">
-            <div class="flex flex-col gap-6 md:gap-10 lg:justify-between container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-8 pb-4 text-white-normal">
+            <div class="flex flex-col gap-6 md:gap-10 lg:justify-between container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] px-4 md:px-0 pt-8 pb-4 text-white-normal">
               <div class="flex flex-col md:flex-row md:flex-wrap gap-4 justify-between w-full">
                 {_about_us}
                 {_links}
@@ -214,7 +218,7 @@ function Footer({
             </div>
           </div>
 
-          <div class="flex flex-col md:justify-between gap-10 md:items-center container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-4 pb-4 px-2 md:px-0 md:pb-0 bg-black-neutral md:bg-white-normal">
+          <div class="flex flex-col md:justify-between gap-10 md:items-center container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-4 pb-4 px-4 md:px-0 md:pb-0 bg-black-neutral md:bg-white-normal">
             <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-2 w-full">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bold text-sm text-white-normal md:text-black-neutral">
@@ -239,7 +243,7 @@ function Footer({
         <div class="flex flex-col">
           {_newsletter}
           <div class="flex items-center justify-center w-full">
-            <div class="flex flex-col gap-6 md:gap-10 lg:justify-between container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] py-8 md:py-12 border-b border-b-black-neutral/40">
+            <div class="flex flex-col gap-6 md:gap-10 lg:justify-between container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] px-4 md:px-0 py-8 md:py-12 border-b border-b-black-neutral/40">
               <div class="flex items-center justify-center w-full">
                 {_social}
               </div>
@@ -247,7 +251,7 @@ function Footer({
             </div>
           </div>
 
-          <div class="flex flex-col md:justify-between gap-10 md:items-center container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] py-8 md:py-12 border-b border-b-black-neutral/40">
+          <div class="flex flex-col md:justify-between gap-10 md:items-center container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] px-4 md:px-0 py-8 md:py-12 border-b border-b-black-neutral/40">
             <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-2 w-full">
               <div class="flex flex-col gap-2">
                 <h3 class="font-bold text-sm">
@@ -259,7 +263,7 @@ function Footer({
             </div>
           </div>
 
-          <div class="flex flex-col md:justify-between gap-10 md:items-center container max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] pt-8 pb-4">
+          <div class="flex flex-col md:justify-between gap-10 md:items-center container md:max-w-[95%] xl:max-w-[80%] 2xl:max-w-[1350px] px-4 md:px-0 pt-8 pb-4">
             <div class="flex flex-col md:flex-row justify-between gap-6 w-full">
               <span class="block text-sm font-normal w-full text-justify">
                 {storeInfo}
