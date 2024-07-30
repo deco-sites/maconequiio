@@ -1,6 +1,6 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { SectionProps } from "deco/types.ts";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Color, ImageWidget } from "apps/admin/widgets.ts";
 
 /**
  * @titleBy matcher
@@ -9,9 +9,15 @@ export interface Banner {
   /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
   matcher: string;
   /** @description text to be rendered on top of the image */
-  title?: string;
+  title?: {
+    color: Color;
+    content: string;
+  };
   /** @description text to be rendered on top of the image */
-  subtitle?: string;
+  subtitle?: {
+    color: Color;
+    content: string;
+  };
   image: {
     /** @description Image for big screens */
     desktop: ImageWidget;
@@ -32,9 +38,15 @@ const DEFAULT_PROPS = {
           "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96",
         alt: "a",
       },
-      title: "Woman",
       matcher: "/*",
-      subtitle: "As",
+      title: {
+        color: "#fff",
+        content: "Título",
+      },
+      subtitle: {
+        color: "#fff",
+        content: "Subtítulo",
+      },
     },
   ],
 };
@@ -63,17 +75,31 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
           height={200}
           media="(min-width: 767px)"
         />
-        <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
+        <img
+          class="w-full"
+          src={image.desktop}
+          alt={image.alt ?? title?.content}
+        />
       </Picture>
 
       <div class="container flex flex-col gap-4 items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full px-4">
-        <h1 class="w-full text-5xl font-medium text-base-100">
-          {title}
-        </h1>
+        {title && (
+          <h1
+            style={{ color: title.color }}
+            class="w-full text-5xl font-medium"
+          >
+            {title.content}
+          </h1>
+        )}
 
-        <h2 class="w-full text-xl font-medium text-base-100">
-          {subtitle}
-        </h2>
+        {subtitle && (
+          <h2
+            style={{ color: subtitle.color }}
+            class="w-full text-xl font-medium"
+          >
+            {subtitle.content}
+          </h2>
+        )}
       </div>
     </div>
   );
