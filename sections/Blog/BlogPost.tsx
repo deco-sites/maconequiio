@@ -23,7 +23,7 @@ const CONTENT_STYLES =
   `max-w-3xl mx-auto ${PARAGRAPH_STYLES} ${HEADING_STYLES} ${CODE_BLOCK_STYLES} ${IMAGE_STYLES} ${BLOCKQUOTE_STYLES} [&>ul]:list-disc [&>ul]:pl-8 [&>ol]:list-decimal [&>ol]:pl-8 [&>strong]:text-bold`;
 
 const DEFAULT_AVATAR =
-  "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/7286de42-e9c5-4fcb-ae8b-b992eea4b78e";
+  "https://scontent.frec16-1.fna.fbcdn.net/v/t39.30808-6/273504265_5152579978093668_7077378126009495682_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=0NhaLbmAGxQQ7kNvgERfYlY&_nc_ht=scontent.frec16-1.fna&oh=00_AYBgh5pMNj1jEluPK-Y35ai1eJjXHPk9DCjO0esS8GPcJA&oe=66AEF478";
 
 export default function Blog({ page }: Props) {
   if (!page || !page.post) return <NotFound />;
