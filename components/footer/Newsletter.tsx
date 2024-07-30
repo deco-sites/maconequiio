@@ -46,6 +46,8 @@ function Newsletter(
       const email =
         (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
 
+      if (!email) return;
+
       await invoke.vtex.actions.newsletter.subscribe({ email, name });
     } finally {
       loading.value = false;
@@ -73,6 +75,7 @@ function Newsletter(
                 class="flex flex-col md:flex-row items-center justify-center gap-8 w-full"
               >
                 <input
+                  required
                   name="name"
                   type="text"
                   placeholder={content?.form?.placeholder?.name || "Nome"}
@@ -80,6 +83,7 @@ function Newsletter(
                 />
 
                 <input
+                  required
                   name="email"
                   type="email"
                   placeholder={content?.form?.placeholder?.email ||
@@ -134,6 +138,7 @@ function Newsletter(
               >
                 <div class="flex flex-wrap gap-1 bg-white-normal w-full justify-between rounded pr-4">
                   <input
+                    required
                     name="email"
                     class="flex-auto lg:flex-none input lg:w-[500px] text-base-content rounded border-none focus:outline-none pl-4 pr-0"
                     placeholder={content?.form?.placeholder?.email ||
