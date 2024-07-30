@@ -61,6 +61,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
     availability,
   } = useOffer(offers);
   const productGroupID = isVariantOf?.productGroupID ?? "";
+
   const breadcrumb = {
     ...breadcrumbList,
     itemListElement: breadcrumbList?.itemListElement.slice(0, -1),
@@ -125,8 +126,8 @@ function ProductInfo({ page, colors = [], layout }: Props) {
           </div>
 
           <div class="flex items-center gap-0.5 text-yellow-400">
-            <Rating maxRating={5} rating={5} />
-            <span>(233)</span>
+            <Rating maxRating={5} rating={product.review?.length ?? 0} />
+            <span>{`(${product.review?.length ?? 0})`}</span>
           </div>
         </div>
       </div>
