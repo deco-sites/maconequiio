@@ -196,7 +196,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
         {availability === "https://schema.org/InStock"
           ? (
             <>
-              {platform === "vtex" && !notHasPossibilities && (
+              {platform === "vtex" && !hasVariants && (
                 <>
                   <AddToCartButtonVTEX
                     eventParams={{ items: [eventItem] }}
@@ -212,7 +212,7 @@ function ProductInfo({ page, colors = [], layout }: Props) {
                   }
                 </>
               )}
-              {platform === "wake" && !notHasPossibilities && (
+              {platform === "wake" && !hasVariants && (
                 <>
                   <AddToCartButtonWake
                     eventParams={{ items: [eventItem] }}
@@ -225,27 +225,27 @@ function ProductInfo({ page, colors = [], layout }: Props) {
                   />
                 </>
               )}
-              {platform === "linx" && !notHasPossibilities && (
+              {platform === "linx" && !hasVariants && (
                 <AddToCartButtonLinx
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   productGroupID={productGroupID}
                 />
               )}
-              {platform === "vnda" && !notHasPossibilities && (
+              {platform === "vnda" && !hasVariants && (
                 <AddToCartButtonVNDA
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   additionalProperty={additionalProperty}
                 />
               )}
-              {platform === "shopify" && !notHasPossibilities && (
+              {platform === "shopify" && !hasVariants && (
                 <AddToCartButtonShopify
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                 />
               )}
-              {platform === "nuvemshop" && !notHasPossibilities && (
+              {platform === "nuvemshop" && !hasVariants && (
                 <AddToCartButtonNuvemshop
                   productGroupID={productGroupID}
                   eventParams={{ items: [eventItem] }}
