@@ -10,13 +10,13 @@ export interface Props {
 function SearchbarModal({ searchbar }: Props) {
   const { displaySearchPopup } = useUI();
 
-  if (!searchbar) {
+  if (!searchbar || !displaySearchPopup.value) {
     return null;
   }
 
   return (
     <div class="block border-y border-base-200 shadow absolute left-0 top-[100%] w-screen z-50 bg-base-100">
-      {displaySearchPopup.value && <Searchbar {...searchbar} />}
+      <Searchbar {...searchbar} />
     </div>
   );
 }

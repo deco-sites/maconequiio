@@ -33,7 +33,10 @@ export default function ProductDescription({ page }: Props) {
             </h3>
             <div
               dangerouslySetInnerHTML={{
-                __html: description.replace(/\r?\n/g, "<br />"),
+                __html: description.replace(/\r?\n/g, "<br />").replace(
+                  "iframe",
+                  "iframe loading='lazy'",
+                ),
               }}
             />
           </div>
