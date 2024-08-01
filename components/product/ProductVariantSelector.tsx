@@ -1,15 +1,13 @@
 import Avatar from "$store/components/ui/Avatar.tsx";
 import { type Possibilities } from "$store/sdk/useVariantPossiblities.ts";
 import { relative } from "$store/sdk/url.ts";
-import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
 
 interface Props {
   possibilities: Possibilities;
   url: string;
-  colors: Color[];
 }
 
-function VariantSelector({ possibilities, url, colors }: Props) {
+function VariantSelector({ possibilities, url }: Props) {
   return (
     <div class="flex flex-col mt-4 sm:mt-6">
       <ul class="flex flex-col gap-4">
@@ -26,7 +24,6 @@ function VariantSelector({ possibilities, url, colors }: Props) {
                     <li class="h-8">
                       <button f-partial={relativeLink} f-client-nav>
                         <Avatar
-                          colors={colors}
                           content={value}
                           variant={relativeLink === relativeUrl
                             ? "active"

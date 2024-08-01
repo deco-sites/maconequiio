@@ -18,13 +18,11 @@ import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
-import type { Color } from "deco-sites/maconequiio/loaders/Colors/colors.ts";
 import Variants from "deco-sites/maconequiio/components/product/Variants.tsx";
 import { useVariantPossibilities } from "deco-sites/maconequiio/sdk/useVariantPossiblities.ts";
 
 export interface Props {
   page: ProductDetailsPage | null;
-  colors: Color[];
   layout: {
     /**
      * @title Product Name
@@ -35,7 +33,7 @@ export interface Props {
   };
 }
 
-function ProductInfo({ page, colors = [], layout }: Props) {
+function ProductInfo({ page, layout }: Props) {
   const platform = usePlatform();
   const id = useId();
 
@@ -144,7 +142,6 @@ function ProductInfo({ page, colors = [], layout }: Props) {
         <ProductSelector
           possibilities={possibilities}
           url={url ?? ""}
-          colors={colors}
         />
       )}
 
