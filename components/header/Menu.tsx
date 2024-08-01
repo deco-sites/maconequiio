@@ -29,7 +29,7 @@ export interface Props {
 function MenuItem({ item }: { item: SiteNavigationElement }) {
   return (
     <div class="collapse collapse-arrow">
-      <input type="checkbox" />
+      <input aria-label="toggle menu" type="checkbox" />
       <div class="collapse-title">
         <div class="flex items-center gap-2 w-full">
           <Icon

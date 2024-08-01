@@ -12,10 +12,22 @@ export default function Toggle(props: Props) {
         ? (
           <label className="label cursor-pointer">
             <span className="label-text">{label}</span>
-            <input type="checkbox" className="toggle" checked={checked} />
+            <input
+              aria-label="toggle button"
+              type="checkbox"
+              className="toggle"
+              checked={checked}
+            />
           </label>
         )
-        : <input type="checkbox" className="toggle" checked={checked} />}
+        : (
+          <input
+            aria-label="toggle button"
+            type="checkbox"
+            className="toggle"
+            checked={checked}
+          />
+        )}
     </div>
   );
 }

@@ -33,6 +33,7 @@ function CategoryCard({ image, label, callToAction }: Category) {
     <div class="flex flex-col items-center justify-between w-full h-[294px]">
       <Image
         src={image}
+        alt={label}
         width={204}
         height={204}
         loading="lazy"

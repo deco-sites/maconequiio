@@ -55,7 +55,11 @@ export default function Brands(
               index={index}
               class="carousel-item w-40 h-full"
             >
-              <a href={brand.link} class="border-2 border-gray-300 w-full">
+              <a
+                aria-label={`go to ${brand.description}`}
+                href={brand.link}
+                class="border-2 border-gray-300 w-full"
+              >
                 <Image
                   src={brand.image}
                   width={160 || brand.width}

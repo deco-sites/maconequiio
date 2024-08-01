@@ -57,7 +57,11 @@ export default function FooterItems(
               {sections.map((section) => (
                 <li>
                   <div class="collapse collapse-arrow">
-                    <input type="checkbox" class="min-h-[0]" />
+                    <input
+                      aria-label="open collapse"
+                      type="checkbox"
+                      class="min-h-[0]"
+                    />
                     <label
                       htmlFor={section.label}
                       class="collapse-title min-h-[0] !px-0 flex gap-2"
