@@ -22,7 +22,11 @@ function VariantSelector({ possibilities, url }: Props) {
 
                   return (
                     <li class="h-8">
-                      <button f-partial={relativeLink} f-client-nav>
+                      <button
+                        title={value}
+                        f-partial={relativeLink}
+                        f-client-nav
+                      >
                         <Avatar
                           content={value}
                           variant={relativeLink === relativeUrl
