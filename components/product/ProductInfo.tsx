@@ -264,9 +264,12 @@ function ProductInfo({ page, layout }: Props) {
           </div>
           <p>
             Você pode retirar mais rápido nas{" "}
-            <span class="underline text-red cursor-pointer">
+            <a
+              href="/institucional/lojas-fisicas"
+              class="underline text-red cursor-pointer"
+            >
               seguintes lojas
-            </span>
+            </a>
           </p>
         </div>
 
