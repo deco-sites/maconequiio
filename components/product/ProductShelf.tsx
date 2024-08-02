@@ -61,7 +61,7 @@ function ProductShelf({
 
   const slideMobile = {
     1: "w-full",
-    2: "w-1/2",
+    2: "w-[200px]",
     3: "w-1/3",
     4: "w-1/4",
     5: "w-1/5",

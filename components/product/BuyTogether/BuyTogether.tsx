@@ -52,7 +52,7 @@ export default function BuyTogether(
     })), [products]);
 
   return (
-    <div class="flex items-center justify-center my-12 py-6 px-4 xl:px-0 bg-white-ice">
+    <div class="flex items-center justify-center my-12 py-6 px-6 bg-white-ice">
       <div class="flex flex-col xl:flex-row items-center gap-7 xl:max-w-full xl:mx-auto">
         <div class="flex-col gap-2.5 hidden xl:flex">
           <h2 class="text-black-neutral font-bold text-xl leading-6">
@@ -71,7 +71,7 @@ export default function BuyTogether(
           <h2 class="text-black-neutral font-bold text-xl leading-6">
             Compre junto
           </h2>
-          <div class="flex flex-col xl:flex-row items-center justify-between gap-1.5 xl:gap-7">
+          <div class="flex flex-col xl:flex-row items-center justify-between gap-1.5">
             {othersProducts.map((product, index) => (
               <>
                 <Card product={product} hasViewProductLink={true} />
