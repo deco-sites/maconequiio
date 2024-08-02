@@ -5,11 +5,10 @@
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$0 from "./loaders/Blog/BlogPostPageImproved.ts";
-import * as $$$1 from "./loaders/Colors/colors.ts";
-import * as $$$2 from "./loaders/Layouts/ProductCard.tsx";
-import * as $$$3 from "./loaders/List/Sections.tsx";
-import * as $$$4 from "./loaders/Search/details.ts";
-import * as $$$5 from "./loaders/Search/subcategories.ts";
+import * as $$$1 from "./loaders/Layouts/ProductCard.tsx";
+import * as $$$2 from "./loaders/List/Sections.tsx";
+import * as $$$3 from "./loaders/Search/details.ts";
+import * as $$$4 from "./loaders/Search/subcategories.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$1 from "./sections/Blog/BlogPost.tsx";
 import * as $$$$$$2 from "./sections/Blog/BlogPostsImproved.tsx";
@@ -86,11 +85,10 @@ import * as $$$$$$71 from "./sections/Theme/Theme.tsx";
 const manifest = {
   "loaders": {
     "deco-sites/maconequiio/loaders/Blog/BlogPostPageImproved.ts": $$$0,
-    "deco-sites/maconequiio/loaders/Colors/colors.ts": $$$1,
-    "deco-sites/maconequiio/loaders/Layouts/ProductCard.tsx": $$$2,
-    "deco-sites/maconequiio/loaders/List/Sections.tsx": $$$3,
-    "deco-sites/maconequiio/loaders/Search/details.ts": $$$4,
-    "deco-sites/maconequiio/loaders/Search/subcategories.ts": $$$5,
+    "deco-sites/maconequiio/loaders/Layouts/ProductCard.tsx": $$$1,
+    "deco-sites/maconequiio/loaders/List/Sections.tsx": $$$2,
+    "deco-sites/maconequiio/loaders/Search/details.ts": $$$3,
+    "deco-sites/maconequiio/loaders/Search/subcategories.ts": $$$4,
   },
   "sections": {
     "deco-sites/maconequiio/sections/Animation/Animation.tsx": $$$$$$0,
