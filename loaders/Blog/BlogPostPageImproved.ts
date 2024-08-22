@@ -37,8 +37,6 @@ export default async function BlogPostPageLoader(
       ACCESSOR,
     );
 
-    console.log("Records:", records);
-
     if (!records || records.length === 0) {
       console.error("No records found");
       return null;
