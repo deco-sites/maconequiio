@@ -17,7 +17,7 @@ import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Logo } from "$store/components/header/Header.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
-import User from "deco-sites/maconequiio/components/user/User.tsx";
+import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
 
 function Navbar({ items, searchbar, logo }: {
   items?: SiteNavigationElement[];
@@ -41,7 +41,7 @@ function Navbar({ items, searchbar, logo }: {
             {logo && (
               <a
                 href="/"
-                class="flex-grow inline-flex items-center justify-start"
+                class="flex-grow inline-flex items-center justify-center"
                 style={{ minHeight: navbarHeight }}
                 aria-label="Store logo"
               >
@@ -69,40 +69,49 @@ function Navbar({ items, searchbar, logo }: {
 
       {/* Desktop Version */}
       {isDesktop && (
-        <div class="hidden xl:flex items-center justify-between gap-1.5 w-full container py-0.5 px-4">
-          <div class="flex items-center gap-4 justify-start">
-            {logo && (
-              <a
-                href="/"
-                aria-label="Store logo"
-                class="block"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={logo.width || 100}
-                  height={logo.height || 13}
-                />
-              </a>
-            )}
+        <div class="hidden xl:flex flex-col items-center justify-center w-full border-b border-base-200 pt-4 mx-auto">
+          <div class="grid grid-cols-3 items-center w-full h-[66px] xl:max-w-[1305px] mx-auto px-6">
+            <div class="flex items-center gap-4 justify-start">
+              {logo && (
+                <a
+                  href="/"
+                  aria-label="Store logo"
+                  class="block"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width || 100}
+                    height={logo.height || 13}
+                  />
+                </a>
+              )}
+            </div>
+
+            <div class="w-full max-w-[640px]">
+              <Searchbar searchbar={searchbar} />
+            </div>
+
+            <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+              <LoginElement />
+              <div class="flex items-center text-xs font-thin">
+                {platform === "vtex" && <CartButtonVTEX type="completed" />}
+                {platform === "vnda" && <CartButtonVDNA />}
+                {platform === "wake" && <CartButtonWake />}
+                {platform === "linx" && <CartButtonLinx />}
+                {platform === "shopify" && <CartButtonShopify />}
+                {platform === "nuvemshop" && <CartButtonNuvemshop />}
+              </div>
+            </div>
           </div>
 
-          <ul class="flex-auto flex items-center justify-center h-full">
-            {items?.map((item) => <NavItem category={item.category} />)}
-          </ul>
-
-          <div class="flex items-center justify-end gap-2">
-            <SearchButton />
-            <Searchbar searchbar={searchbar} />
-            <User />
-            <div class="flex items-center text-xs font-thin">
-              {platform === "vtex" && <CartButtonVTEX type="icon" />}
-              {platform === "vnda" && <CartButtonVDNA />}
-              {platform === "wake" && <CartButtonWake />}
-              {platform === "linx" && <CartButtonLinx />}
-              {platform === "shopify" && <CartButtonShopify />}
-              {platform === "nuvemshop" && <CartButtonNuvemshop />}
-            </div>
+          <div
+            id="nav"
+            class="flex items-center justify-center w-full h-full drop-shadow-md border-t border-t-base-200/50 bg-white-ice"
+          >
+            <ul class="flex items-center justify-center w-full h-full gap-6 col-span-1">
+              {items?.map((item) => <NavItem category={item.category} />)}
+            </ul>
           </div>
         </div>
       )}

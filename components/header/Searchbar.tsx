@@ -1,24 +1,34 @@
 import Searchbar, {
   Props as SearchbarProps,
 } from "$store/components/search/Searchbar.tsx";
+import DesktopSearchbar from "$store/components/search/DesktopSearchbar.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 
 export interface Props {
   searchbar?: SearchbarProps;
+  type?: "mobile" | "desktop";
 }
 
-function SearchbarModal({ searchbar }: Props) {
+function SearchbarModal({ searchbar, type = "desktop" }: Props) {
   const { displaySearchPopup } = useUI();
 
-  if (!searchbar || !displaySearchPopup.value) {
+  if (!searchbar) {
     return null;
   }
 
-  return (
-    <div class="block border-y border-base-200 shadow absolute left-0 top-[100%] w-screen z-50 bg-base-100">
-      <Searchbar {...searchbar} />
-    </div>
-  );
+  if (type === "mobile") {
+    return (
+      <>
+        {displaySearchPopup.value && (
+          <div class="fixed bg-base-100 container h-auto z-[99999]">
+            <Searchbar {...searchbar} />
+          </div>
+        )}
+      </>
+    );
+  }
+
+  return <DesktopSearchbar {...searchbar} />;
 }
 
 export default SearchbarModal;

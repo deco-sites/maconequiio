@@ -72,7 +72,7 @@ function ProductShelf({
       style={{ backgroundColor: background }}
       class="flex items-center justify-center w-full h-full py-8 lg:py-10"
     >
-      <div class="w-full container max-w-[95%] lg:max-w-[1350px] flex flex-col gap-10">
+      <div class="w-full md:container md:max-w-[95%] lg:max-w-[1350px] flex flex-col gap-10">
         <Header
           title={title || ""}
           description={description || ""}
@@ -84,7 +84,7 @@ function ProductShelf({
           class={clx(
             "grid",
             layout?.showArrows && "grid-cols-[48px_1fr_48px]",
-            "px-4 container",
+            "px-4 md:container",
           )}
         >
           <Slider class="carousel carousel-center gap-1 lg:gap-4 row-start-2 row-end-5">

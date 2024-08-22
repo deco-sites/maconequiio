@@ -147,7 +147,7 @@ function Header({
   return (
     <>
       <header
-        class={`${PLPIntegration ? "h-[100px]" : "h-[58px]"} xl:h-[82px]`}
+        class={`${PLPIntegration ? "h-[117px]" : "h-[75px]"} xl:h-[160px]`}
       >
         <Drawers
           menu={{ items: mobileMenuNavItems }}
