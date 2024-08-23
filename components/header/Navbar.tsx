@@ -70,7 +70,7 @@ function Navbar({ items, searchbar, logo }: {
       {/* Desktop Version */}
       {isDesktop && (
         <div class="hidden xl:flex flex-col items-center justify-center w-full border-b border-base-200 pt-4 mx-auto">
-          <div class="grid grid-cols-3 items-center w-full h-[66px] xl:max-w-[1305px] mx-auto px-6">
+          <div class="flex justify-between items-center w-full h-[66px] xl:max-w-[1305px] mx-auto px-6 gap-4">
             <div class="flex items-center gap-4 justify-start">
               {logo && (
                 <a
