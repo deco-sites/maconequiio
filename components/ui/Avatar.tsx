@@ -5,6 +5,7 @@
 
 const colors: Record<string, string> = {
   "Bege": "bg-[#ad7d67] ring-[#ad7d67]",
+  "Taupe": "bg-[#a1928b] ring-[#a1928b]",
   "Bronze": "bg[#b68968] ring-[#b68968]",
   "Olinda": "bg-[#9e715b] ring-[#9e715b]",
   "Sahara": "bg-[#845a4a] ring-[#845a4a]",
