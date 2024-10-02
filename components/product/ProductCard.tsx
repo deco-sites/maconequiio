@@ -6,8 +6,6 @@ import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
 import { relative } from "$store/sdk/url.ts";
-import { useDevice } from "deco/hooks/useDevice.ts";
-import AddToCartButtonVTEX from "deco-sites/maconequiio/islands/AddToCartButton/vtex.tsx";
 
 export interface Layout {
   onMouseOver?: {
@@ -57,23 +55,12 @@ function ProductCard({
   const id = `product-card-${productID}`;
   const description = product.description || isVariantOf?.description;
   const [front] = images ?? [];
-  const { listPrice, price, installments, availability, seller = "1" } =
-    useOffer(offers);
+  const { listPrice, price, installments, availability } = useOffer(offers);
   const name = product?.isVariantOf?.name || partialName;
 
   const l = layout;
 
-  const device = useDevice();
-  const isDesktop = device === "desktop";
-
   const isUnavailable = availability === "https://schema.org/OutOfStock";
-
-  const eventItem = mapProductToAnalyticsItem({
-    product,
-    price,
-    listPrice,
-    index,
-  });
 
   const discount = Math.round(
     (((listPrice ?? 0) - (price ?? 0)) / (listPrice ?? 0)) * 100,
@@ -200,23 +187,12 @@ function ProductCard({
             </div>
           )}
 
-        {!l?.hide?.cta && isDesktop
-          ? (
-            <div
-              class={`opacity-0 group-hover:opacity-100 items-end flex-auto transition-all duration-150 ease-linear`}
-            >
-              <AddToCartButtonVTEX
-                eventParams={{ items: [eventItem] }}
-                productID={productID}
-                seller={seller}
-                isUnavailable={isUnavailable}
-                type="Shelf"
-              />
-            </div>
-          )
-          : (
-            ""
-          )}
+        <a
+          href={url && relative(url)}
+          class="flex items-center justify-center text-sm w-full max-w-sm h-12 rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold leading-5 disabled:bg-black-neutral disabled:hover:bg-black-neutral/90 disabled:text-white-normal"
+        >
+          Comprar
+        </a>
       </div>
     </div>
   );
