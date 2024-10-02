@@ -187,12 +187,23 @@ function ProductCard({
             </div>
           )}
 
-        <a
-          href={url && relative(url)}
-          class="flex items-center justify-center text-sm w-full max-w-sm h-12 rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold leading-5 disabled:bg-black-neutral disabled:hover:bg-black-neutral/90 disabled:text-white-normal"
-        >
-          Comprar
-        </a>
+        {!isUnavailable
+          ? (
+            <a
+              href={url && relative(url)}
+              class="flex items-center justify-center text-sm w-full max-w-sm h-12 rounded bg-green hover:bg-green/90 border border-green drop-shadow transition-all duration-150 text-white-normal font-bold leading-5 disabled:bg-black-neutral disabled:hover:bg-black-neutral/90 disabled:text-white-normal"
+            >
+              Comprar
+            </a>
+          )
+          : (
+            <div
+              href={url && relative(url)}
+              class="flex items-center justify-center text-sm w-full max-w-sm h-12 rounded drop-shadow transition-all duration-150 font-bold leading-5 bg-black-neutral hover:bg-black-neutral/90 text-white-normal"
+            >
+              Indisponível
+            </div>
+          )}
       </div>
     </div>
   );

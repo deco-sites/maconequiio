@@ -1,15 +1,9 @@
 import { SendEventOnView } from "$store/components/Analytics.tsx";
 import QuantitySelector from "$store/islands/QuantitySelector.tsx";
 import Rating from "$store/components/daisy/Rating.tsx";
-import AddToCartButtonLinx from "$store/islands/AddToCartButton/linx.tsx";
-import AddToCartButtonShopify from "$store/islands/AddToCartButton/shopify.tsx";
-import AddToCartButtonVNDA from "$store/islands/AddToCartButton/vnda.tsx";
 import AddToCartButtonVTEX from "$store/islands/AddToCartButton/vtex.tsx";
-import AddToCartButtonWake from "$store/islands/AddToCartButton/wake.tsx";
-import AddToCartButtonNuvemshop from "$store/islands/AddToCartButton/nuvemshop.tsx";
 import OutOfStock from "$store/islands/OutOfStock.tsx";
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
-import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
 import { formatInstallments, formatPrice } from "$store/sdk/format.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
@@ -48,7 +42,6 @@ function ProductInfo({ page, layout }: Props) {
     name = "",
     gtin,
     isVariantOf,
-    additionalProperty = [],
     url,
   } = product;
   const {
@@ -58,8 +51,6 @@ function ProductInfo({ page, layout }: Props) {
     installments,
     availability,
   } = useOffer(offers);
-  const productGroupID = isVariantOf?.productGroupID ?? "";
-
   const breadcrumb = {
     ...breadcrumbList,
     itemListElement: breadcrumbList?.itemListElement.slice(0, -1),
@@ -80,8 +71,7 @@ function ProductInfo({ page, layout }: Props) {
   const variants = product.isVariantOf?.hasVariant ?? [];
   const hasVariants = variants.length > 1;
   const possibilities = useVariantPossibilities(variants, product);
-  const notHasPossibilities = !possibilities ||
-    Object.keys(possibilities).length === 0;
+  const notHasPossibilities = Object.values(possibilities).length === 0;
 
   return (
     <div class="flex flex-col xl:max-w-xl px-4 xl:px-0" id={id}>
@@ -128,13 +118,6 @@ function ProductInfo({ page, layout }: Props) {
             <span>{`(${product.review?.length ?? 0})`}</span>
           </div>
         </div>
-      </div>
-
-      {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <a href="#descricao" class="text-sm underline text-red-light">
-          Ver descrição completa
-        </a>
       </div>
 
       {/* Sku Selector */}
@@ -190,70 +173,26 @@ function ProductInfo({ page, layout }: Props) {
       )}
 
       {/* Add to Cart and Favorites button */}
-      <div class="mt-5 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              {platform === "vtex" && !hasVariants && (
-                <>
-                  <AddToCartButtonVTEX
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                    seller={seller}
-                  />
-                  {
-                    /* <WishlistButtonVtex
-                    variant="full"
-                    productID={productID}
-                    productGroupID={productGroupID}
-                  /> */
-                  }
-                </>
-              )}
-              {platform === "wake" && !hasVariants && (
-                <>
-                  <AddToCartButtonWake
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                  />
-                  <WishlistButtonWake
-                    variant="full"
-                    productID={productID}
-                    productGroupID={productGroupID}
-                  />
-                </>
-              )}
-              {platform === "linx" && !hasVariants && (
-                <AddToCartButtonLinx
-                  eventParams={{ items: [eventItem] }}
-                  productID={productID}
-                  productGroupID={productGroupID}
-                />
-              )}
-              {platform === "vnda" && !hasVariants && (
-                <AddToCartButtonVNDA
-                  eventParams={{ items: [eventItem] }}
-                  productID={productID}
-                  additionalProperty={additionalProperty}
-                />
-              )}
-              {platform === "shopify" && !hasVariants && (
-                <AddToCartButtonShopify
-                  eventParams={{ items: [eventItem] }}
-                  productID={productID}
-                />
-              )}
-              {platform === "nuvemshop" && !hasVariants && (
-                <AddToCartButtonNuvemshop
-                  productGroupID={productGroupID}
-                  eventParams={{ items: [eventItem] }}
-                  additionalProperty={additionalProperty}
-                />
-              )}
-            </>
-          )
-          : <OutOfStock productID={productID} />}
-      </div>
+      {((hasVariants && !notHasPossibilities) ||
+        (!hasVariants && notHasPossibilities)) && (
+        <div className="mt-5 flex flex-col gap-2">
+          {availability === "https://schema.org/InStock"
+            ? (
+              <>
+                {platform === "vtex" && (
+                  <>
+                    <AddToCartButtonVTEX
+                      eventParams={{ items: [eventItem] }}
+                      productID={productID}
+                      seller={seller}
+                    />
+                  </>
+                )}
+              </>
+            )
+            : <OutOfStock productID={productID} />}
+        </div>
+      )}
 
       {/* Security */}
       <div class="flex flex-col gap-5 mt-5 text-sm">
