@@ -44,16 +44,16 @@ export default function GallerySlider(props: Props) {
               index={index}
               class="carousel-item w-full"
             >
-              <Image
+              <img
                 class="w-full object-contain"
                 sizes="(max-width: 640px) 100vw, 40vw"
-                style={{ aspectRatio }}
                 src={img.url!}
                 alt={img.alternateName}
                 width={width}
                 height={height}
+                style={{ aspectRatio }}
                 // Preload LCP image for better web vitals
-                preload={index === 0}
+                // preload={index === 0}
                 loading={index === 0 ? "eager" : "lazy"}
               />
             </Slider.Item>
