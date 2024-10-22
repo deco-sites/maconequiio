@@ -35,8 +35,8 @@ interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 292;
-const HEIGHT = 220;
+const WIDTH = 200;
+const HEIGHT = 133;
 
 function ProductCard({
   product,
@@ -112,7 +112,8 @@ function ProductCard({
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="col-span-full row-span-full rounded w-full h-3/4 object-contain"
+            style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
+            class="col-span-full row-span-full rounded w-full object-contain"
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"

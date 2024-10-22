@@ -73,6 +73,7 @@ export type AvailableIcons =
   | "Curativo"
   | "Seringa"
   | "Coração"
+  | "MonitorPressao"
   | "Share"
   | "Youtube"
   | "BenefitsGuard"
