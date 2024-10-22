@@ -62,8 +62,8 @@ export default function Brands(
               >
                 <Image
                   src={brand.image}
-                  width={160 || brand.width}
-                  height={36 || brand.height}
+                  width={brand.width || 160}
+                  height={brand.height || 36}
                   loading="lazy"
                   decoding="async"
                   class="w-full"
