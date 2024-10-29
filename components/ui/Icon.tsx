@@ -65,6 +65,7 @@ export type AvailableIcons =
   | "Bolsa"
   | "GridColumns"
   | "FourColumns"
+  | "MonitorPressao"
   | "Ostomia"
   | "Atleta"
   | "Meias"
