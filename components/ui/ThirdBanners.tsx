@@ -14,6 +14,8 @@ export interface Banner {
    */
   link: string;
   target?: "_blank" | "_self";
+  width?: number;
+  height?: number;
 }
 
 export interface Props {
@@ -26,7 +28,16 @@ export interface Props {
 }
 
 function BannerCard(
-  { image, alt, title, description, link = "#", target = "_blank" }: Banner,
+  {
+    image,
+    alt,
+    title,
+    description,
+    link = "#",
+    target = "_blank",
+    width,
+    height,
+  }: Banner,
 ) {
   return (
     <div class="flex flex-col items-center justify-center gap-6 w-full h-full">
@@ -36,8 +47,8 @@ function BannerCard(
       >
         <Image
           src={image}
-          width={423}
-          height={321}
+          width={width || 423}
+          height={height || 321}
           alt={alt}
           loading="lazy"
           fetchPriority="low"

@@ -4,7 +4,7 @@ import { formatInstallments, formatPrice } from "$store/sdk/format.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import Image from "apps/website/components/Image.tsx";
+// import Image from "apps/website/components/Image.tsx";
 import { relative } from "$store/sdk/url.ts";
 
 export interface Layout {
@@ -35,8 +35,8 @@ interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 292;
-const HEIGHT = 220;
+const WIDTH = 200;
+const HEIGHT = 133;
 
 function ProductCard({
   product,
@@ -107,13 +107,14 @@ function ProductCard({
           aria-label="view product"
           class="grid grid-cols-1 grid-rows-1 items-center w-full"
         >
-          <Image
+          <img
             src={front.url!}
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="col-span-full row-span-full rounded w-full h-3/4 object-contain"
-            sizes="(max-width: 640px) 50vw, 20vw"
+            style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
+            class="col-span-full row-span-full rounded w-full object-contain"
+            // sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"
           />
