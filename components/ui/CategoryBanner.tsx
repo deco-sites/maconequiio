@@ -20,9 +20,17 @@ export interface Banner {
   };
   image: {
     /** @description Image for big screens */
-    desktop: ImageWidget;
+    desktop: {
+      source: ImageWidget;
+      width?: number;
+      height?: number;
+    };
     /** @description Image for small screens */
-    mobile: ImageWidget;
+    mobile: {
+      source: ImageWidget;
+      width?: number;
+      height?: number;
+    };
     /** @description image alt text */
     alt?: string;
   };
@@ -32,10 +40,18 @@ const DEFAULT_PROPS = {
   banners: [
     {
       image: {
-        mobile:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af",
-        desktop:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96",
+        mobile: {
+          source:
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af",
+          width: 360,
+          height: 120,
+        },
+        desktop: {
+          source:
+            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96",
+          width: 1440,
+          height: 200,
+        },
         alt: "a",
       },
       matcher: "/*",
@@ -64,20 +80,20 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
     <div class="grid grid-cols-1 grid-rows-1">
       <Picture preload class="col-start-1 col-span-1 row-start-1 row-span-1">
         <Source
-          src={image.mobile}
-          width={360}
-          height={120}
+          src={image.mobile.source}
+          width={image.mobile.width || 360}
+          height={image.mobile.height || 120}
           media="(max-width: 767px)"
         />
         <Source
-          src={image.desktop}
-          width={1440}
-          height={200}
+          src={image.desktop.source}
+          width={image.desktop.width || 1440}
+          height={image.desktop.height || 200}
           media="(min-width: 767px)"
         />
         <img
           class="w-full"
-          src={image.desktop}
+          src={image.desktop.source}
           alt={image.alt ?? title?.content}
         />
       </Picture>
