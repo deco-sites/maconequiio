@@ -162,13 +162,24 @@ function BannerItem(
 function Dots({ images, interval = 0 }: Props) {
   return (
     <>
-      <ul class="carousel justify-center col-span-full gap-2 z-10 row-start-4 translate-y-12">
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @property --dot-progress {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+          }
+          `,
+        }}
+      />
+      <ul class="carousel justify-center col-span-full gap-4 z-10 row-start-4">
         {images?.map((_, index) => (
           <li class="carousel-item">
             <Slider.Dot index={index}>
-              <div>
+              <div class="py-5">
                 <div
-                  class="w-8 h-0.5 group-disabled:h-2 bg-gray-lighter group-disabled:bg-black"
+                  class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
                   style={{ animationDuration: `${interval}s` }}
                 />
               </div>
@@ -183,21 +194,21 @@ function Dots({ images, interval = 0 }: Props) {
 function Buttons() {
   return (
     <>
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class="btn btn-circle bg-white">
+      <div class="flex items-center justify-center z-10 absolute top-1/3 left-4">
+        <Slider.PrevButton class="btn btn-circle glass">
           <Icon
-            class="text-black rotate-180"
-            size={24}
-            id="ChevronRight"
+            class="text-base-100"
+            size={20}
+            id="ChevronLeft"
             strokeWidth={3}
           />
         </Slider.PrevButton>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton class="btn btn-circle bg-white">
+      <div class="flex items-center justify-center z-10 absolute top-1/3 right-4">
+        <Slider.NextButton class="btn btn-circle glass">
           <Icon
-            class="text-black"
-            size={24}
+            class="text-base-100"
+            size={20}
             id="ChevronRight"
             strokeWidth={3}
           />
