@@ -1,6 +1,6 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { SectionProps } from "deco/types.ts";
-import type { Color, ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 
 /**
  * @titleBy matcher
@@ -10,13 +10,11 @@ export interface Banner {
   matcher: string;
   /** @description text to be rendered on top of the image */
   title?: {
-    color: Color;
-    content: string;
+    content: RichText;
   };
   /** @description text to be rendered on top of the image */
   subtitle?: {
-    color: Color;
-    content: string;
+    content: RichText;
   };
   image: {
     /** @description Image for big screens */
@@ -56,12 +54,10 @@ const DEFAULT_PROPS = {
       },
       matcher: "/*",
       title: {
-        color: "#fff",
-        content: "Título",
+        content: "<p>Título</p>",
       },
       subtitle: {
-        color: "#fff",
-        content: "Subtítulo",
+        content: "<p>Subtítulo</p>",
       },
     },
   ],
@@ -100,21 +96,17 @@ function Banner(props: SectionProps<ReturnType<typeof loader>>) {
 
       <div class="container flex flex-col gap-4 items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full px-4">
         {title && (
-          <h1
-            style={{ color: title.color }}
-            class="w-full text-5xl font-medium"
-          >
-            {title.content}
-          </h1>
+          <div
+            dangerouslySetInnerHTML={{ __html: title.content }}
+            class="w-full font-medium"
+          />
         )}
 
         {subtitle && (
-          <h2
-            style={{ color: subtitle.color }}
-            class="w-full text-xl font-medium"
-          >
-            {subtitle.content}
-          </h2>
+          <div
+            dangerouslySetInnerHTML={{ __html: subtitle.content }}
+            class="w-full font-medium"
+          />
         )}
       </div>
     </div>
