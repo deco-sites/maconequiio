@@ -1,5 +1,6 @@
 import { Color, ImageWidget, RichText } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { clx } from "deco-sites/maconequiio/sdk/clx.ts";
 
 export interface ButtonProps {
   text?: string;
@@ -116,20 +117,23 @@ function ImageAndText({
 }: Banner) {
   return (
     <div
-      style={{ backgroundColor: backgroundColor }}
-      class="flex justify-center w-full h-full items-center py-8 lg:py-10 px-4"
+      style={{ backgroundColor }}
+      class="flex justify-center w-full h-full items-center"
     >
       <div
-        class={`${
-          hasContainerClass && "container max-w-[95%] lg:max-w-[1350px]"
-        } flex justify-between w-full h-full items-center gap-3 ${maxWidth} ${mobilePosition} ${mobileAlignment} ${
-          DESKTOP_POSITION[desktopPosition]
-        } ${DESKTOP_ALIGNMENT[desktopAlignment]} ${
-          hasBorderClass && "rounded-lg"
-        }`}
+        class={clx(
+          "flex justify-between w-full h-full items-center gap-3",
+          hasContainerClass && "container max-w-[95%] lg:max-w-[1350px]",
+          maxWidth,
+          mobilePosition,
+          mobileAlignment,
+          DESKTOP_POSITION[desktopPosition],
+          DESKTOP_ALIGNMENT[desktopAlignment],
+          hasBorderClass && "rounded-lg",
+        )}
       >
         {titleAppearsFirst && (
-          <div class="flex flex-col gap-2.5 w-full">
+          <div class="flex flex-col gap-2.5 w-full px-4">
             <div dangerouslySetInnerHTML={{ __html: title || "" }} />
 
             {description && (
@@ -148,12 +152,14 @@ function ImageAndText({
         />
 
         <div
-          class={`flex flex-col ${mobileAlignment} ${
-            DESKTOP_ALIGNMENT[desktopAlignment]
-          } gap-2.5 w-full`}
+          class={clx(
+            "flex flex-col gap-2.5 w-full",
+            mobileAlignment,
+            DESKTOP_ALIGNMENT[desktopAlignment],
+          )}
         >
           {!titleAppearsFirst && (
-            <div class="flex flex-col gap-2.5 w-full">
+            <div class="flex flex-col gap-2.5 w-full px-4">
               <div dangerouslySetInnerHTML={{ __html: title || "" }} />
               {description && (
                 <div dangerouslySetInnerHTML={{ __html: description }} />
@@ -187,9 +193,13 @@ export default function ImageAndTextGrid(
 
   return (
     <div
-      class={`${MOBILE_COLUMNS[mobile]} ${DESKTOP_COLUMNS[desktop]} ${
-        hasContainerClass && "container"
-      } ${hasSpacement && "gap-6 py-4"} grid w-full`}
+      class={clx(
+        "grid w-full",
+        MOBILE_COLUMNS[mobile],
+        DESKTOP_COLUMNS[desktop],
+        hasSpacement && "gap-6 py-4",
+        hasContainerClass && "container",
+      )}
     >
       {banners?.map((banner) => <ImageAndText {...banner} />)}
     </div>

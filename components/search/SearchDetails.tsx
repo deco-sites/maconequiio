@@ -25,8 +25,8 @@ export default function SearchDetails({ details, hasViewMore = true }: Props) {
   }
 
   return (
-    <div class="flex items-center justify-center w-full bg-white-normal py-8">
-      <div class="flex flex-col gap-0.5 container p-4">
+    <div class="flex items-center justify-center w-full bg-white-normal py-4 lg:py-8">
+      <div class="flex flex-col gap-0.5 container px-4">
         <div
           id="read-more"
           dangerouslySetInnerHTML={{ __html: details.item.html }}
