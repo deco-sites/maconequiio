@@ -37,7 +37,7 @@ function Benefit(
 
 export default function PurchaseBenefits({ benefits = [] }: Props) {
   return (
-    <div class="flex items-center justify-center w-full h-full py-6 px-4">
+    <div class="flex items-center justify-center w-full h-full pt-2 px-4">
       <div class="container max-w-[95%] lg:max-w-[1350px]">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full h-full">
           {benefits.map((benefit) => <Benefit {...benefit} />)}
