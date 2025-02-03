@@ -58,7 +58,7 @@ function Navbar({ items, searchbar, logo }: {
             {platform === "vnda" && <CartButtonVDNA />}
             {platform === "wake" && <CartButtonWake />}
             {platform === "linx" && <CartButtonLinx />}
-            {platform === "shopify" && <CartButtonShopify />}
+            {platform === "shopify" && <CartButtonShopify type="icon" />}
             {platform === "nuvemshop" && <CartButtonNuvemshop />}
           </div>
         </div>
@@ -96,7 +96,9 @@ function Navbar({ items, searchbar, logo }: {
                 {platform === "vnda" && <CartButtonVDNA />}
                 {platform === "wake" && <CartButtonWake />}
                 {platform === "linx" && <CartButtonLinx />}
-                {platform === "shopify" && <CartButtonShopify />}
+                {platform === "shopify" && (
+                  <CartButtonShopify type="completed" />
+                )}
                 {platform === "nuvemshop" && <CartButtonNuvemshop />}
               </div>
             </div>

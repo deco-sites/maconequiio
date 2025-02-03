@@ -3,5 +3,6 @@
   "platform": "shopify",
   "storeName": "kdts68-p5",
   "publicUrl": "kdts68-p5.myshopify.com",
-  "storefrontAccessToken": "278cb4310071891d8d56c5e9bb52ee14"
+  "storefrontAccessToken": "2314f28a8bb55f22744275ac017d2af8",
+  "adminAccessToken": {}
 }

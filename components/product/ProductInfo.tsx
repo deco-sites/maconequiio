@@ -2,6 +2,7 @@ import { SendEventOnView } from "$store/components/Analytics.tsx";
 import QuantitySelector from "$store/islands/QuantitySelector.tsx";
 import Rating from "$store/components/daisy/Rating.tsx";
 import AddToCartButtonVTEX from "$store/islands/AddToCartButton/vtex.tsx";
+import AddToCartButtonShopify from "$store/islands/AddToCartButton/shopify.tsx";
 import OutOfStock from "$store/islands/OutOfStock.tsx";
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 import { formatInstallments, formatPrice } from "$store/sdk/format.ts";
@@ -10,10 +11,10 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import ProductSelector from "./ProductVariantSelector.tsx";
+// import ProductSelector from "./ProductVariantSelector.tsx";
 import Icon from "site/components/ui/Icon.tsx";
-import Variants from "site/components/product/Variants.tsx";
-import { useVariantPossibilities } from "site/sdk/useVariantPossiblities.ts";
+// import Variants from "site/components/product/Variants.tsx";
+// import { useVariantPossibilities } from "site/sdk/useVariantPossiblities.ts";
 
 export interface Props {
   page: ProductDetailsPage | null;
@@ -42,7 +43,7 @@ function ProductInfo({ page, layout }: Props) {
     name = "",
     gtin,
     isVariantOf,
-    url,
+    // url,
   } = product;
   const {
     price = 0,
@@ -68,10 +69,10 @@ function ProductInfo({ page, layout }: Props) {
     listPrice,
   });
 
-  const variants = product.isVariantOf?.hasVariant ?? [];
-  const hasVariants = variants.length > 1;
-  const possibilities = useVariantPossibilities(variants, product);
-  const notHasPossibilities = Object.values(possibilities).length === 0;
+  // const variants = product.isVariantOf?.hasVariant ?? [];
+  // const hasVariants = variants.length > 1;
+  // const possibilities = useVariantPossibilities(variants, product);
+  // const notHasPossibilities = Object.values(possibilities).length === 0;
 
   return (
     <div class="flex flex-col xl:max-w-xl px-4 xl:px-0" id={id}>
@@ -89,14 +90,16 @@ function ProductInfo({ page, layout }: Props) {
             </span>
           </h1>
 
-          {hasVariants && notHasPossibilities && (
+          {
+            /* {hasVariants && notHasPossibilities && (
             <div class="flex items-center justify-center text-xs leading-3 bg-[#ffbbbb] text-black w-full h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
               <span>
                 Este produto possui{" "}
                 <b>{variants.length} variações</b>, escolha abaixo.
               </span>
             </div>
-          )}
+          )} */
+          }
         </div>
 
         <div class="flex items-center justify-between xl:max-w-[95%] gap-1">
@@ -121,78 +124,86 @@ function ProductInfo({ page, layout }: Props) {
       </div>
 
       {/* Sku Selector */}
-      {!notHasPossibilities && (
+      {
+        /* {!notHasPossibilities && (
         <ProductSelector
           possibilities={possibilities}
           url={url ?? ""}
         />
-      )}
+      )} */
+      }
 
-      {hasVariants && notHasPossibilities && (
+      {
+        /* {hasVariants && notHasPossibilities && (
         <Variants
           variants={variants}
         />
-      )}
+      )} */
+      }
 
       {/* Prices */}
-      {!hasVariants && notHasPossibilities && (
-        <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
-          <div class="flex items-center gap-2">
-            <div class="flex flex-col gap-0.5">
-              {(listPrice ?? 0) > price && (
-                <span class="line-through text-sm text-gray-base">
-                  de: {formatPrice(listPrice, offers?.priceCurrency)}
-                </span>
-              )}
-
-              <span class="font-medium text-lg text-black-neutral">
-                {formatPrice(price, offers?.priceCurrency)}
+      <div class="flex flex-row items-center justify-between mt-4 w-full gap-x-2 xl:max-w-sm">
+        <div class="flex items-center gap-2">
+          <div class="flex flex-col gap-0.5">
+            {(listPrice ?? 0) > price && (
+              <span class="line-through text-sm text-gray-base">
+                de: {formatPrice(listPrice, offers?.priceCurrency)}
               </span>
+            )}
 
-              {installments && (
-                <span class="text-xs sm:text-sm text-gray-base">
-                  ou {formatInstallments(installments)}
-                </span>
-              )}
-            </div>
+            <span class="font-medium text-lg text-black-neutral">
+              {formatPrice(price, offers?.priceCurrency)}
+            </span>
 
-            {discount > 0 && (
-              <div class="flex items-center justify-center text-xs leading-3 font-bold bg-red-light text-white-normal w-10 h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
-                -{discount}%
-              </div>
+            {installments && (
+              <span class="text-xs sm:text-sm text-gray-base">
+                ou {formatInstallments(installments)}
+              </span>
             )}
           </div>
 
-          <div class="hidden lg:flex bg-gray-300 h-14 w-0.5" />
-
-          <QuantitySelector
-            quantity={1}
-            variation="variation-2"
-          />
+          {discount > 0 && (
+            <div class="flex items-center justify-center text-xs leading-3 font-bold bg-red-light text-white-normal w-10 h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
+              -{discount}%
+            </div>
+          )}
         </div>
-      )}
+
+        <div class="hidden lg:flex bg-gray-300 h-14 w-0.5" />
+
+        <QuantitySelector
+          quantity={1}
+          variation="variation-2"
+        />
+      </div>
 
       {/* Add to Cart and Favorites button */}
-      {((hasVariants && !notHasPossibilities) ||
-        (!hasVariants && notHasPossibilities)) && (
-        <div className="mt-5 flex flex-col gap-2">
-          {availability === "https://schema.org/InStock"
-            ? (
-              <>
-                {platform === "vtex" && (
-                  <>
-                    <AddToCartButtonVTEX
-                      eventParams={{ items: [eventItem] }}
-                      productID={productID}
-                      seller={seller}
-                    />
-                  </>
-                )}
-              </>
-            )
-            : <OutOfStock productID={productID} />}
-        </div>
-      )}
+      <div className="mt-5 flex flex-col gap-2">
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              {platform === "vtex" && (
+                <>
+                  <AddToCartButtonVTEX
+                    eventParams={{ items: [eventItem] }}
+                    productID={productID}
+                    seller={seller}
+                  />
+                </>
+              )}
+
+              {platform === "shopify" && (
+                <AddToCartButtonShopify
+                  eventParams={{ items: [eventItem] }}
+                  productID={productID}
+                  type="PDP"
+                  isUnavailable={availability !== "https://schema.org/InStock"}
+                />
+              )}
+            </>
+          )
+          : <OutOfStock productID={productID} />}
+      </div>
 
       {/* Security */}
       <div class="flex flex-col gap-5 mt-5 text-sm">

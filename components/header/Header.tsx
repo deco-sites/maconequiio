@@ -180,13 +180,13 @@ function Header({
   );
 }
 
-export const loader = (props: Props, req: Request) => {
-  const url = new URL(req.url);
-  const verifiedUrl = url.pathname === "/" || url.search.includes("skuId");
+export const loader = (props: Props, _req: Request) => {
+  // const url = new URL(req.url);
+  // const verifiedUrl = url.pathname === "/" || url.search.includes("/products");
 
   return {
     ...props,
-    PLPIntegration: !verifiedUrl ? props.PLPIntegration : null,
+    PLPIntegration: null,
   };
 };
 

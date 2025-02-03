@@ -1,7 +1,11 @@
 import { itemToAnalyticsItem, useCart } from "apps/shopify/hooks/useCart.ts";
 import Button from "./common.tsx";
 
-function CartButton() {
+export interface Props {
+  type: "icon" | "completed";
+}
+
+function CartButton({ type = "completed" }: Props) {
   const { cart, loading } = useCart();
   const items = cart.value?.lines?.nodes ?? [];
   const currency = cart.value?.cost?.totalAmount.currencyCode ?? "BRL";
@@ -13,6 +17,7 @@ function CartButton() {
       loading={loading.value}
       total={total}
       items={items.map((item, index) => itemToAnalyticsItem(item, index))}
+      type={type}
     />
   );
 }

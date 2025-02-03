@@ -16,24 +16,14 @@
   "flavor": {
     "framework": "fresh"
   },
-  "global": [
-    {
-      "__resolveType": "htmx/sections/htmx.tsx"
-    }
-  ],
+  "global": [],
   "routes": [
     {
-      "__resolveType": "vtex/loaders/proxy.ts",
+      "__resolveType": "shopify/loaders/proxy.ts",
       "includeSiteMap": [],
       "extraPathsToProxy": [],
-      "includeScriptsToHead": {
-        "includes": [
-          {
-            "__resolveType": "analytics/loaders/DecoAnalyticsScript.ts"
-          }
-        ],
-        "includePlausible": true
-      }
+      "excludePathsFromDecoSiteMap": [],
+      "replaces": []
     },
     {
       "__resolveType": "website/loaders/pages.ts"
@@ -48,7 +38,7 @@
   "commerce": {
     "platform": "other"
   },
-  "platform": "vtex",
+  "platform": "shopify",
   "abTesting": {
     "replaces": [],
     "includeScriptsToHead": {
