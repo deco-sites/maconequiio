@@ -1,6 +1,6 @@
 import { BlogPostPage } from "apps/blog/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import NotFound from "deco-sites/maconequiio/components/ui/NotFound.tsx";
+import NotFound from "site/components/ui/NotFound.tsx";
 
 interface Props {
   /**

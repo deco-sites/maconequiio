@@ -1,6 +1,6 @@
 import { grid, VNode } from "../../constants.tsx";
 import { clx } from "../../sdk/clx.ts";
-import { Section } from "deco/blocks/section.ts";
+import type { Section } from "@deco/deco/blocks";
 
 export interface GridMobile {
   /** @default Col */

@@ -1,5 +1,5 @@
 import type { Details } from "$store/loaders/Search/details.ts";
-import { clx } from "deco-sites/maconequiio/sdk/clx.ts";
+import { clx } from "site/sdk/clx.ts";
 
 export interface Props {
   details: Details | undefined;

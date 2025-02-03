@@ -1,6 +1,6 @@
 import { ProductLeaf } from "apps/commerce/types.ts";
-import { useOffer } from "deco-sites/maconequiio/sdk/useOffer.ts";
-import { formatPrice } from "deco-sites/maconequiio/sdk/format.ts";
+import { useOffer } from "site/sdk/useOffer.ts";
+import { formatPrice } from "site/sdk/format.ts";
 import AddToCartButton from "$store/islands/AddToCartButton/Variants/button.tsx";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 

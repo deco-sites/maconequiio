@@ -1,7 +1,8 @@
 import Component from "$store/components/header/Buttons/Cart/shopify.tsx";
+import type { Props } from "$store/components/header/Buttons/Cart/vtex.tsx";
 
-function Island() {
-  return <Component />;
+function Island({ type }: Props) {
+  return <Component type={type} />;
 }
 
 export default Island;

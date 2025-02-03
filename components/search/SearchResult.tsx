@@ -6,14 +6,14 @@ import Filters from "../../components/search/Filters.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
-import { SectionProps } from "deco/types.ts";
+import type { Section as SectionProps } from "@deco/deco/blocks";
 import { clx } from "$store/sdk/clx.ts";
 import Sort from "$store/islands/Sort.tsx";
-import ColumnToggle from "deco-sites/maconequiio/components/search/ColumnToggle.tsx";
+import ColumnToggle from "site/components/search/ColumnToggle.tsx";
 import type { Subcategories } from "$store/loaders/Search/subcategories.ts";
-import SearchSubcategories from "deco-sites/maconequiio/components/search/SearchSubcategories.tsx";
-import Pagination from "deco-sites/maconequiio/components/search/Pagination.tsx";
-import { useDevice } from "deco/hooks/useDevice.ts";
+import SearchSubcategories from "site/components/search/SearchSubcategories.tsx";
+import Pagination from "site/components/search/Pagination.tsx";
+import { useDevice } from "@deco/deco/hooks";
 
 export type Format = "Show More" | "Pagination";
 

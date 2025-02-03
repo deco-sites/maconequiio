@@ -1,5 +1,5 @@
-import { useScript } from "deco/hooks/useScript.ts";
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import { useScript } from "@deco/deco/hooks";
+import Icon from "site/components/ui/Icon.tsx";
 import type { Device } from "apps/website/matchers/device.ts";
 
 const applySort = (value: string) => {

@@ -1,0 +1,1165 @@
+{
+  "cart": {
+    "freeShippingObjectiveQuantity": 600
+  },
+  "logo": {
+    "alt": "Maconequi Logo",
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/997098c2-1152-4d2e-b78e-86bcf90c2767",
+    "width": 210,
+    "height": 41
+  },
+  "alert": {
+    "infos": [
+      {
+        "icon": {
+          "width": 20,
+          "height": 20,
+          "source": "WhatsApp"
+        },
+        "link": "https://api.whatsapp.com/send?phone=5521970056473",
+        "text": "Compre pelo Whatsapp"
+      },
+      {
+        "icon": {
+          "width": 12,
+          "height": 10,
+          "source": "Store"
+        },
+        "link": "/lojas-fisicas",
+        "text": "Lojas físicas"
+      }
+    ],
+    "benefit": {
+      "url": "/blog",
+      "text": "Blog Maconequi • Dicas de Saúde • Conheça!"
+    },
+    "dropdown": {
+      "links": [
+        {
+          "url": "https://www.maconequi.com.br/login?ReturnUrl=/_secure/account#/orders",
+          "label": "Acompanhe seu pedido"
+        },
+        {
+          "url": "tel:3500 - 8435",
+          "label": "Televendas"
+        },
+        {
+          "url": "https://www.maconequi.com.br/institucional/fale-conosco",
+          "label": "Atendimentos"
+        },
+        {
+          "url": "sac@maconequi.com.br",
+          "label": "Enviar e-mail"
+        },
+        {
+          "url": "https://b2b.maconequi.com.br/",
+          "label": "Soluções para Empresas B2B"
+        }
+      ],
+      "title": "Fale Conosco"
+    },
+    "backgroundColor": "#81191E"
+  },
+  "alerts": [
+    "Use this template to create your store at deco.cx"
+  ],
+  "navItems": [
+    {
+      "category": {
+        "url": "#",
+        "icon": "Menu",
+        "items": [
+          [
+            {
+              "url": "/home-care/almofadas",
+              "text": "Almofadas",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/locomocao-e-apoio/andador",
+              "text": "Andador",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelho-de-pressao/aparelho-de-pressao-digital",
+              "text": "Aparelho de Pressão Digital",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/equipamentos-hospitalares/aspirador-cirurgico-de-secrecao",
+              "text": "Aspirador Cirúrgico",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/home-care/assento-sanitario",
+              "text": "Assento Sanitário",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/equipamentos-hospitalares/autoclave",
+              "text": "Autoclave",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/linha-pessoal/balanca",
+              "text": "Balança",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/linha-pessoal/balanca",
+              "text": "Barra de Apoio",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/locomocao-e-apoio/bengala",
+              "text": "Bengala",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/linha-pessoal/bolsa-termica",
+              "text": "Bolsa Térmica",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/beleza-e-estetica/bracadeira-compressiva",
+              "text": "Braçadeira Compressiva",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/cadeira-de-rodas/cadeira-de-banho",
+              "text": "Cadeira de Banho",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/cadeira-de-rodas/cadeira-de-rodas-manual",
+              "text": "Cadeira de Rodas",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/beleza-e-estetica/cintas-pos-cirurgicas",
+              "text": "Cinta Modeladoras",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/esporte-e-fitness/aparelhos-de-ginastica/corda-de-pular",
+              "text": "Corda de Pular",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/beleza-e-estetica/corretores-posturais",
+              "text": "Corretores Posturais",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/curativo",
+              "text": "Curativos",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/diabetes",
+              "text": "Diabetes",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/fisioterapia/disco-de-equilibrio",
+              "text": "Disco de Equilíbrio",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelho-de-pressao/esfigmomanometro-aneroide",
+              "text": "Esfigmomanômetro Aneroide",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/estetoscopio",
+              "text": "Estetoscópio",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/esporte-e-fitness/aparelhos-de-ginastica/faixa-elastica",
+              "text": "Faixa Elástica",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/fisioterapia",
+              "text": "Fisioterapia",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/ginecologia",
+              "text": "Ginecologia",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/inalador-nebulizador",
+              "text": "Inalador - Nebulizador",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/incontinencia-urinaria",
+              "text": "Incontinência Urinária",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/instrumentos-cirurgicos",
+              "text": "Instrumentos Cirúrgicos",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/vestuario/jalecos",
+              "text": "Jalecos",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelhos-medicos/kit-academico",
+              "text": "Kits Acadêmicos",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelhos-medicos/lanterna",
+              "text": "Lanterna Clínica",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelhos-medicos/laringoscopio",
+              "text": "Laringoscópio",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/littmann",
+              "text": "Littmann",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/linha-pessoal/mamae-e-bebe",
+              "text": "Mamãe e Bebê",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "linha-pessoal/massageador",
+              "text": "Massageador",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/material-de-consumo",
+              "text": "Material de Consumo",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/meia-de-compressao",
+              "text": "Meias de Compressão",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/locomocao-e-apoio/muletas",
+              "text": "Muletas",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelhos-medicos/oftalmoscopio",
+              "text": "Oftalmoscópio",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/produtos-ortopedicos",
+              "text": "Ortopedia",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/ostomia",
+              "text": "Ostomia",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelhos-medicos/otoscopio",
+              "text": "Otoscópio",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelhos-medicos/oximetro",
+              "text": "Oxímetro",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/enfermagem",
+              "text": "Produtos para Enfermagem",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/beleza-e-estetica/protese-mamaria",
+              "text": "Prótese Mamária",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/linha-pessoal/protetor-anti-acaros",
+              "text": "Protetor Antiácaro",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/vestuario/sapatos",
+              "text": "Sapatos Hospitalares",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/aparelhos-medicos/termometro",
+              "text": "Termômetros",
+              "defaultType": "SiteNavigationOnlyText"
+            },
+            {
+              "url": "/linha-pessoal/umidificador",
+              "text": "Umidificador",
+              "defaultType": "SiteNavigationOnlyText"
+            }
+          ]
+        ],
+        "label": "Ver todas"
+      }
+    },
+    {
+      "category": {
+        "url": "/estetoscopio",
+        "icon": "Estetoscopio",
+        "items": [
+          [
+            {
+              "items": [
+                {
+                  "url": "/estetoscopio/littmann/classic-iii",
+                  "text": "Classic III"
+                },
+                {
+                  "url": "/estetoscopio/littmann/cardiology-iv",
+                  "text": "Cardiology IV"
+                },
+                {
+                  "url": "/estetoscopio/littmann/lightweight",
+                  "text": "Lightweight"
+                },
+                {
+                  "url": "/estetoscopio/littmann/master-cardiology",
+                  "text": "Master Cardiology"
+                },
+                {
+                  "url": "/estetoscopio/estetoscopio-rappaport",
+                  "text": "Rappaport"
+                },
+                {
+                  "url": "/estetoscopio/littmann/neonatal",
+                  "text": "Neonatal"
+                },
+                {
+                  "url": "/estetoscopio/littmann",
+                  "text": "Todos Littmann",
+                  "isViewMore": true
+                }
+              ],
+              "title": "Estetoscópios Littmann",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "items": [
+                {
+                  "url": "/estetoscopio?sort=price%3Adesc&filter.category-1=estetoscopio&filter.category-2=estetoscopio-cardiologico",
+                  "text": "Estetoscópios Cardiológicos"
+                },
+                {
+                  "url": "/estetoscopio?sort=price%3Adesc&filter.category-1=estetoscopio&filter.category-2=estetoscopio-rappaport",
+                  "text": "Estetoscópios Rappaport"
+                },
+                {
+                  "url": "/estetoscopio?sort=price%3Adesc&filter.category-1=estetoscopio&filter.category-2=estetoscopio-duplo",
+                  "text": "Estetoscópio Duplo"
+                },
+                {
+                  "url": "/estetoscopio?sort=price%3Adesc&filter.category-1=estetoscopio&filter.category-2=estetoscopio-pediatrico",
+                  "text": "Estetoscópio Pediátrico"
+                },
+                {
+                  "url": "/estetoscopio?sort=price%3Adesc&filter.category-1=estetoscopio&filter.category-2=estetoscopio-simples",
+                  "text": "Estetoscópio Simples"
+                },
+                {
+                  "url": "/estetoscopio?sort=price%3Adesc&filter.category-1=estetoscopio&filter.category-2=pecas-e-acessorios",
+                  "text": "Peças e Acessórios"
+                }
+              ],
+              "title": "Todos os Estetoscópios",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "layoutType": "grid-cols-1",
+              "defaultType": "SiteNavigationBanners",
+              "bannersSubItems": [
+                {
+                  "url": "/estetoscopio",
+                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/0a654d98-85b9-470b-acdd-f6cea5ad2400/estetoscopios-01.jpg",
+                  "width": 300,
+                  "height": 200,
+                  "imageDescription": "esteto"
+                }
+              ]
+            }
+          ]
+        ],
+        "label": "Estetoscópios",
+        "brands": []
+      }
+    },
+    {
+      "category": {
+        "url": "/aparelho-de-pressao",
+        "icon": "MonitorPressao",
+        "items": [
+          [
+            {
+              "items": [
+                {
+                  "url": "/omron?sort=price%3Adesc&filter.brand=omron&filter.category-1=aparelho-de-pressao&filter.category-2=aparelho-de-pressao-digital",
+                  "text": "Aparelhos de Pressão Digital",
+                  "isViewMore": false
+                },
+                {
+                  "url": "/aparelho-de-pressao?sort=price%3Adesc&filter.category-1=aparelho-de-pressao&filter.regiao=braco&filter.brand=omron",
+                  "text": "Aparelhos de Pressão de Braço",
+                  "isViewMore": false
+                },
+                {
+                  "url": "/aparelho-de-pressao?sort=price%3Adesc&filter.category-1=aparelho-de-pressao&filter.brand=omron&filter.regiao=pulso",
+                  "text": "Aparelhos de Pressão de Pulso",
+                  "isViewMore": false
+                },
+                {
+                  "url": "/omron?sort=price%3Adesc&filter.brand=omron&filter.category-2=pecas-e-acessorios",
+                  "text": "Braçadeiras e Acessórios",
+                  "isViewMore": false
+                },
+                {
+                  "url": "/omron",
+                  "text": "Todos Omron",
+                  "isViewMore": true
+                }
+              ],
+              "title": "Produtos Omron",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "items": [
+                {
+                  "url": "/aparelho-de-pressao?sort=price%3Adesc&filter.category-1=aparelho-de-pressao&filter.category-2=esfigmomanometro-aneroide",
+                  "text": "Esfigmomanômetros"
+                },
+                {
+                  "url": "/aparelho-de-pressao?sort=price%3Adesc&filter.category-1=aparelho-de-pressao&filter.category-2=aparelho-de-pressao-digital",
+                  "text": "Aparelhos de Pressão Digital"
+                },
+                {
+                  "url": "/aparelho-de-pressao?sort=price%3Adesc&filter.category-1=aparelho-de-pressao&filter.category-2=esfigmomanometro-aneroide",
+                  "text": "Aparelhos de Pressão Aneróide"
+                },
+                {
+                  "url": "/aparelho-de-pressao?sort=price%3Adesc&filter.category-1=aparelho-de-pressao&filter.category-2=pecas-e-acessorios",
+                  "text": "Peças e Acessórios"
+                }
+              ],
+              "title": "Todos os Monitores",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "layoutType": "grid-cols-1",
+              "defaultType": "SiteNavigationBanners",
+              "bannersSubItems": [
+                {
+                  "url": "/",
+                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/1f8df45f-37aa-491f-8d00-7f4a0b420b33/monitores---01.jpg",
+                  "width": 300,
+                  "height": 200,
+                  "imageDescription": "ap de pressao"
+                }
+              ]
+            }
+          ]
+        ],
+        "label": "Monitores de Pressão",
+        "width": 23,
+        "brands": [],
+        "height": 18
+      }
+    },
+    {
+      "category": {
+        "url": "/meia-de-compressao",
+        "icon": "MeiaMenu",
+        "items": [
+          [
+            {
+              "items": [
+                {
+                  "url": "/sigvaris?sort=price%3Adesc&filter.brand=sigvaris&filter.category-2=panturrilha",
+                  "text": "Meias Panturrilha"
+                },
+                {
+                  "url": "/sigvaris?sort=price%3Adesc&filter.brand=sigvaris&filter.category-2=meia-coxa",
+                  "text": "Meias Coxa"
+                },
+                {
+                  "url": "/sigvaris?sort=price%3Adesc&filter.brand=sigvaris&filter.category-2=meia-calca",
+                  "text": "Meias Calça"
+                },
+                {
+                  "url": "/sigvaris?sort=price%3Adesc&filter.brand=sigvaris&filter.category-2=anti-trombo",
+                  "text": "Anti Trombo"
+                },
+                {
+                  "url": "/sigvaris?sort=price%3Adesc&filter.brand=sigvaris&filter.category-2=meia-calca-para-gestantes",
+                  "text": "Para Gestantes"
+                },
+                {
+                  "url": "/sigvaris?sort=price%3Adesc&filter.brand=sigvaris&filter.category-2=meias-esportivas",
+                  "text": "Meias Esportivas"
+                },
+                {
+                  "url": "/sigvaris",
+                  "text": "Todos Sigvaris",
+                  "isViewMore": true
+                }
+              ],
+              "title": "Meias de Compressão Sigvaris",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "items": [
+                {
+                  "url": "/meia-de-compressao?sort=price%3Adesc&filter.category-1=meia-de-compressao&filter.compressao-da-meia=suave",
+                  "text": "Suave Compressão"
+                },
+                {
+                  "url": "/meia-de-compressao?sort=price%3Adesc&filter.category-1=meia-de-compressao&filter.compressao-da-meia=media",
+                  "text": "Média Compressão"
+                },
+                {
+                  "url": "/meia-de-compressao?sort=price%3Adesc&filter.category-1=meia-de-compressao&filter.compressao-da-meia=alta",
+                  "text": "Alta Compressão"
+                },
+                {
+                  "url": "/meia-de-compressao?sort=price%3Adesc&filter.category-1=meia-de-compressao&filter.category-2=meias-esportivas",
+                  "text": "Meias Esportivas"
+                },
+                {
+                  "url": "/meia-de-compressao?sort=price%3Adesc&filter.category-1=meia-de-compressao&filter.category-2=meia-calca-para-gestantes",
+                  "text": "Para Gestantes"
+                },
+                {
+                  "url": "/meia-de-compressao?sort=price%3Adesc&filter.category-1=meia-de-compressao&filter.category-2=anti-trombo",
+                  "text": "Anti Trombo"
+                }
+              ],
+              "title": "Todas as Meias",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "layoutType": "grid-cols-1",
+              "defaultType": "SiteNavigationBanners",
+              "bannersSubItems": [
+                {
+                  "url": "/meia-de-compressao",
+                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/0927daa1-e321-474e-9b4d-c4dae0e95b58/meias---01.jpg",
+                  "width": 300,
+                  "height": 200,
+                  "imageDescription": "meia"
+                }
+              ]
+            }
+          ]
+        ],
+        "label": "Meias de Compressão",
+        "width": 20,
+        "brands": [],
+        "height": 25
+      }
+    },
+    {
+      "category": {
+        "url": "/ostomia",
+        "icon": "Ostomia",
+        "items": [
+          [
+            {
+              "items": [
+                {
+                  "url": "/coloplast?q=coloplast&sort=price%3Adesc&filter.brand=coloplast&filter.category-2=bolsa-colostomia",
+                  "text": "Bolsa Colostomia"
+                },
+                {
+                  "url": "/coloplast?q=coloplast&sort=price%3Adesc&filter.brand=coloplast&filter.category-2=bolsa-de-urostomia",
+                  "text": "Bolsa Urostomia"
+                },
+                {
+                  "url": "/coloplast?q=coloplast&sort=price%3Adesc&filter.brand=coloplast&filter.category-2=placa-para-bolsa",
+                  "text": "Placa para Bolsa"
+                },
+                {
+                  "url": "/coloplast?q=coloplast&sort=price%3Adesc&filter.brand=coloplast&filter.category-2=sonda-uretral",
+                  "text": "Sonda Uretral"
+                },
+                {
+                  "url": "/coloplast?q=coloplast&sort=price%3Adesc&filter.brand=coloplast&filter.category-2=barreira-protetora&filter.category-2=pasta-barreira-protetora",
+                  "text": "Barreira Protetora"
+                },
+                {
+                  "url": "/coloplast",
+                  "text": "Todos Coloplast",
+                  "isViewMore": true
+                }
+              ],
+              "title": "Produtos Coloplast",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "items": [
+                {
+                  "url": "/ostomia/bolsa-colostomia",
+                  "text": "Bolsa Colostomia"
+                },
+                {
+                  "url": "/ostomia/bolsa-de-urostomia",
+                  "text": "Bolsa Urostomia"
+                },
+                {
+                  "url": "/ostomia?sort=price%3Adesc&filter.category-1=ostomia&filter.category-2=fita-adesiva-para-fixacao",
+                  "text": "Fitas Adesivas"
+                },
+                {
+                  "url": "/ostomia/barreira-protetora",
+                  "text": "Barreira Protetora"
+                }
+              ],
+              "title": "Todos para Ostomia",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "layoutType": "grid-cols-1",
+              "defaultType": "SiteNavigationBanners",
+              "bannersSubItems": [
+                {
+                  "url": "/ostomia",
+                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/3764f56c-0ede-4cf7-8125-2f8dbe560c09/ostomia---01.jpg",
+                  "width": 300,
+                  "height": 200,
+                  "imageDescription": "ostomia"
+                }
+              ]
+            }
+          ]
+        ],
+        "label": "Ostomia",
+        "brands": []
+      }
+    },
+    {
+      "category": {
+        "url": "/curativo",
+        "icon": "Curativo",
+        "items": [
+          [
+            {
+              "items": [
+                {
+                  "url": "/curativo/fitas-e-esparadrapos",
+                  "text": "Esparadrapos"
+                },
+                {
+                  "url": "/curativo/curativos-de-alginato-de-calcio-e-sodio",
+                  "text": "Alginato"
+                },
+                {
+                  "url": "/curativo/micropore",
+                  "text": "Micropore"
+                },
+                {
+                  "url": "/curativo/curativo-de-espuma",
+                  "text": "Poliuretano"
+                },
+                {
+                  "url": "/curativo/hidrogel",
+                  "text": "Hidrogel"
+                },
+                {
+                  "url": "/curativo/hidrocoloides",
+                  "text": "Hidrocolóide"
+                }
+              ],
+              "title": "Curativos",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "items": [
+                {
+                  "url": "/curativo/atadura-elastica",
+                  "text": "Atadura Elástica"
+                },
+                {
+                  "url": "/curativo/bota-de-unna",
+                  "text": "Bota de Unna"
+                },
+                {
+                  "url": "/curativo/linha-age",
+                  "text": "Linha AGE"
+                },
+                {
+                  "url": "/curativo/compressa-de-gaze",
+                  "text": "Compressa de Gaze"
+                }
+              ],
+              "title": "Todos os Curativos",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "layoutType": "grid-cols-1",
+              "defaultType": "SiteNavigationBanners",
+              "bannersSubItems": [
+                {
+                  "url": "/curativo",
+                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/c74f4d28-5662-4d75-af70-0e84035151ce/curativo---01.jpg",
+                  "width": 300,
+                  "height": 200,
+                  "imageDescription": "curativo"
+                }
+              ]
+            }
+          ]
+        ],
+        "label": "Curativo",
+        "brands": []
+      }
+    },
+    {
+      "category": {
+        "url": "/aparelhos-medicos",
+        "icon": "OtoscopioMenu",
+        "items": [
+          [
+            {
+              "items": [
+                {
+                  "url": "/aparelho-de-pressao/esfigmomanometro-aneroide",
+                  "text": "Esfigmomanômetros"
+                },
+                {
+                  "url": "/aparelhos-medicos/otoscopio",
+                  "text": "Otoscópios"
+                },
+                {
+                  "url": "/aparelhos-medicos/oftalmoscopio",
+                  "text": "Oftalmoscópios"
+                },
+                {
+                  "url": "/aparelhos-medicos/oximetro",
+                  "text": "Oxímetros"
+                },
+                {
+                  "url": "/aparelhos-medicos/termometro",
+                  "text": "Termômetros"
+                }
+              ],
+              "title": "Aparelhos Médicos",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "items": [
+                {
+                  "url": "/instrumentos-cirurgicos?sort=price%3Adesc&filter.category-1=instrumentos-cirurgicos&filter.category-2=tesouras",
+                  "text": "Tesouras"
+                },
+                {
+                  "url": "/instrumentos-cirurgicos?sort=price%3Adesc&filter.category-1=instrumentos-cirurgicos&filter.category-2=pincas",
+                  "text": "Pinças"
+                },
+                {
+                  "url": "/instrumentos-cirurgicos?sort=price%3Adesc&filter.category-1=instrumentos-cirurgicos&filter.category-2=diapasao",
+                  "text": "Diapasão"
+                },
+                {
+                  "url": "/instrumentos-cirurgicos?sort=price%3Adesc&filter.category-1=instrumentos-cirurgicos&filter.category-2=porta-agulha",
+                  "text": "Porta Agulha"
+                }
+              ],
+              "title": "Instrumentais",
+              "defaultType": "SiteNavigationOnlyTextWithTitle"
+            }
+          ],
+          [
+            {
+              "layoutType": "grid-cols-1",
+              "defaultType": "SiteNavigationBanners",
+              "bannersSubItems": [
+                {
+                  "url": "/aparelhos-medicos",
+                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/f564e881-c767-440e-a631-e548ade3a490/aparelhos---01.jpg",
+                  "width": 300,
+                  "height": 200,
+                  "imageDescription": "aparelho"
+                }
+              ]
+            }
+          ]
+        ],
+        "label": "Aparelhos Médicos",
+        "width": 24,
+        "height": 27
+      }
+    }
+  ],
+  "products": [],
+  "searchbar": {
+    "name": "q",
+    "action": "/s",
+    "loader": {
+      "__resolveType": "resolved",
+      "data": {
+        "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts",
+        "count": 4,
+        "advancedConfigs": {
+          "includeOriginalAttributes": []
+        }
+      }
+    },
+    "placeholder": "O que você está procurando?"
+  },
+  "suggestions": {
+    "products": [],
+    "searches": []
+  },
+  "logoPosition": "left",
+  "__resolveType": "site/sections/Header/Header.tsx",
+  "PLPIntegration": {
+    "__resolveType": "PLP Loader"
+  },
+  "mobileMenuNavItems": [
+    {
+      "icon": {
+        "id": "Estetoscopio",
+        "size": 12,
+        "width": 20,
+        "height": 20,
+        "strokeWidth": 1
+      },
+      "name": "Aparelhos Profissionais",
+      "children": [
+        {
+          "url": "/estetoscopio",
+          "name": "Estetoscópio"
+        },
+        {
+          "url": "/estetoscopio/littmann",
+          "name": "Littmann"
+        },
+        {
+          "url": "/aparelho-de-pressao/esfigmomanometro-aneroide",
+          "name": "Esfignomanômetro"
+        },
+        {
+          "url": "/aparelhos-medicos/otoscopio",
+          "name": "Otoscópio"
+        },
+        {
+          "url": "/aparelhos-medicos/oftalmoscopio",
+          "name": "Oftalmoscópio"
+        },
+        {
+          "url": "/aparelhos-medicos/oximetro",
+          "name": "Oxímetro"
+        },
+        {
+          "url": "/instrumentos-cirurgicos",
+          "name": "Intrumentais"
+        }
+      ]
+    },
+    {
+      "icon": {
+        "id": "Meias",
+        "size": 16,
+        "width": 20,
+        "height": 20,
+        "strokeWidth": 2
+      },
+      "name": "Meias de Compressão",
+      "children": [
+        {
+          "url": "/sigvaris",
+          "name": "Meias Sigvaris"
+        },
+        {
+          "url": "/venosan",
+          "name": "Meias Venosan"
+        },
+        {
+          "url": "/meia-de-compressao/panturrilha",
+          "name": "Meia Panturrilha 3/4"
+        },
+        {
+          "url": "/meia-de-compressao/meia-coxa",
+          "name": "Meia Coxa 7/8"
+        },
+        {
+          "url": "/meia-de-compressao/meia-calca",
+          "name": "Meia Calça"
+        },
+        {
+          "url": "/meia-de-compressao/meia-calca-para-gestantes",
+          "name": "Meia para Gestante"
+        },
+        {
+          "url": "/meia-de-compressao",
+          "name": "Ver tudo"
+        }
+      ]
+    },
+    {
+      "icon": {
+        "id": "Ostomia",
+        "size": 16,
+        "width": 20,
+        "height": 20,
+        "strokeWidth": 2
+      },
+      "name": "Ostomia",
+      "children": [
+        {
+          "url": "/ostomia/bolsa-colostomia",
+          "name": "Bolsa de Ostomia"
+        },
+        {
+          "url": "/ostomia/placa-para-bolsa",
+          "name": "Placa para Bolsa"
+        },
+        {
+          "url": "/ostomia/barreira-protetora",
+          "name": "Barreira Protetora"
+        },
+        {
+          "url": "/ostomia/fita-adesiva-para-fixacao",
+          "name": "Fita Adesiva p/ Fixação"
+        },
+        {
+          "url": "/ostomia/liberador-e-removedor-adesivo",
+          "name": "Liberador e Removedor Adesivo"
+        },
+        {
+          "url": "/ostomia/bolsa-de-urostomia",
+          "name": "Bolsa de Urostomia"
+        },
+        {
+          "url": "/ostomia",
+          "name": "Ver Mais"
+        }
+      ]
+    },
+    {
+      "icon": {
+        "id": "Curativo",
+        "size": 16,
+        "width": 30,
+        "height": 22,
+        "strokeWidth": 2
+      },
+      "name": "Curativo",
+      "children": [
+        {
+          "url": "/atadura",
+          "name": "Atadura e Bandagem"
+        },
+        {
+          "url": "/gaze",
+          "name": "Compressa de Gaze"
+        },
+        {
+          "url": "/hidrocoloide",
+          "name": "Curativo Hidrocolóide"
+        },
+        {
+          "url": "/curativo/linha-age/girassol?PS=24",
+          "name": "Óleo de Girassol"
+        },
+        {
+          "url": "/hidrogel",
+          "name": "Hidrogel"
+        },
+        {
+          "url": "/curativo/bota-de-unna/unna",
+          "name": "Bota de Unna"
+        },
+        {
+          "url": "/protosan",
+          "name": "Limpador de Feridas"
+        },
+        {
+          "url": "/curativo/fitas-e-esparadrapos",
+          "name": "Fitas e Esparadrapos"
+        },
+        {
+          "url": "/curativo",
+          "name": "Ver tudo"
+        }
+      ]
+    },
+    {
+      "icon": {
+        "id": "Discount",
+        "size": 16,
+        "width": 20,
+        "height": 20,
+        "strokeWidth": 2
+      },
+      "name": "Outlet",
+      "children": [
+        {
+          "url": "/outlet",
+          "name": "Ver promoções"
+        }
+      ]
+    },
+    {
+      "icon": {
+        "id": "Menu",
+        "size": 16,
+        "width": 25,
+        "height": 23,
+        "strokeWidth": 2
+      },
+      "name": "Todos Departamentos",
+      "children": [
+        {
+          "url": "/estetoscopio",
+          "name": "Estetoscópio"
+        },
+        {
+          "url": "/aparelhos-medicos/kit-academico",
+          "name": "Kits Acadêmicos"
+        },
+        {
+          "url": "/produtos-ortopedicos",
+          "name": "Ortopedia"
+        },
+        {
+          "url": "/curativo",
+          "name": "Curativos"
+        },
+        {
+          "url": "/material-de-consumo",
+          "name": "Material de Consumo"
+        },
+        {
+          "url": "/meia-de-compressao",
+          "name": "Meias de Compressão"
+        },
+        {
+          "url": "/vestuario/jalecos",
+          "name": "Jalecos"
+        },
+        {
+          "url": "/aparelhos-medicos/oximetro",
+          "name": "Oxímetro"
+        },
+        {
+          "url": "/vestuario/sapatos",
+          "name": "Sapatos Hospitalares"
+        },
+        {
+          "url": "/locomocao-e-apoio/muletas",
+          "name": "Muletas"
+        },
+        {
+          "url": "/instrumentos-cirurgicos",
+          "name": "Instrumentos Cirúrgicos"
+        },
+        {
+          "url": "/aparelho-de-pressao/esfigmomanometro-aneroide",
+          "name": "Esfigmomanômetro Aneroide"
+        },
+        {
+          "url": "/ostomia",
+          "name": "Ostomia"
+        },
+        {
+          "url": "/cadeira-de-rodas/cadeira-de-banho",
+          "name": "Cadeira de Banho"
+        },
+        {
+          "url": "/aparelhos-medicos/termometro",
+          "name": "Termômetros"
+        },
+        {
+          "url": "/locomocao-e-apoio/bengala",
+          "name": "Bengala"
+        },
+        {
+          "url": "/littmann",
+          "name": "Littmann"
+        },
+        {
+          "url": "/beleza-e-estetica/cintas-pos-cirurgicas",
+          "name": "Cinta Modeladoras"
+        },
+        {
+          "url": "/cadeira-de-rodas/cadeira-de-rodas-manual",
+          "name": "Cadeira de Rodas"
+        },
+        {
+          "url": "/inalador-nebulizador",
+          "name": "Inalador - Nebulizador"
+        },
+        {
+          "url": "/locomocao-e-apoio/andador",
+          "name": "Andador"
+        },
+        {
+          "url": "/linha-pessoal/massageador",
+          "name": "Massageador"
+        },
+        {
+          "url": "/aparelhos-medicos/otoscopio",
+          "name": "Otoscópio"
+        },
+        {
+          "url": "/incontinencia-urinaria",
+          "name": "Incontinência Urinária"
+        },
+        {
+          "url": "/linha-pessoal/protetor-anti-acaros",
+          "name": "Protetor Antiácaro"
+        },
+        {
+          "url": "/diabetes",
+          "name": "Diabetes"
+        },
+        {
+          "url": "/enfermagem",
+          "name": "Produtos para Enfermagem"
+        }
+      ]
+    }
+  ]
+}

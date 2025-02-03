@@ -2,7 +2,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { clx } from "$store/sdk/clx.ts";
-import type { Section } from "deco/blocks/section.ts";
+import { type Section } from "@deco/deco/blocks";
 import { ComponentChildren, toChildArray } from "preact";
 import { useId } from "preact/hooks";
 import { buttonClasses, ButtonColor, grid } from "../../constants.tsx";

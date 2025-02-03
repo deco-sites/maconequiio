@@ -1,6 +1,6 @@
 import { Color, ImageWidget, RichText } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import { clx } from "deco-sites/maconequiio/sdk/clx.ts";
+import { clx } from "site/sdk/clx.ts";
 
 export interface ButtonProps {
   text?: string;

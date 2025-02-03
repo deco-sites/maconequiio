@@ -1,0 +1,54 @@
+{
+  "seo": {
+    "type": "website",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/3ed4a2c2-7388-429f-9aa2-2f8e1d1d0237",
+    "title": "Maconequi | Produtos Médicos e Hospitalares",
+    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/69aa4247-3baa-4b78-965d-f4ef431f3797",
+    "jsonLDs": [],
+    "noIndexing": false,
+    "description": "Compre agora aparelhos médicos, meias de compressão, curativos, estetoscópios e mais. Somos referência em cuidados com a saúde.",
+    "titleTemplate": "%s",
+    "descriptionTemplate": "%s | Maconequi"
+  },
+  "theme": {
+    "__resolveType": "Fashion theme"
+  },
+  "flavor": {
+    "framework": "fresh"
+  },
+  "global": [],
+  "routes": [
+    {
+      "__resolveType": "shopify/loaders/proxy.ts",
+      "includeSiteMap": [],
+      "extraPathsToProxy": [],
+      "excludePathsFromDecoSiteMap": [],
+      "replaces": []
+    },
+    {
+      "__resolveType": "website/loaders/pages.ts"
+    },
+    {
+      "__resolveType": "website/loaders/redirects.ts"
+    }
+  ],
+  "caching": {
+    "directives": []
+  },
+  "commerce": {
+    "platform": "other"
+  },
+  "platform": "shopify",
+  "abTesting": {
+    "replaces": [],
+    "includeScriptsToHead": {
+      "includes": []
+    },
+    "includeScriptsToBody": {
+      "includes": []
+    }
+  },
+  "pageSections": [],
+  "__resolveType": "site/apps/site.ts",
+  "firstByteThresholdMS": false
+}

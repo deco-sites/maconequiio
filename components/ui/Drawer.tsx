@@ -2,7 +2,7 @@ import { useId } from "$store/sdk/useId.ts";
 import { useSignal } from "@preact/signals";
 import { ComponentChildren } from "preact";
 import { useEffect } from "preact/hooks";
-import { clx } from "deco-sites/maconequiio/sdk/clx.ts";
+import { clx } from "site/sdk/clx.ts";
 
 interface Props {
   onClose?: () => void;

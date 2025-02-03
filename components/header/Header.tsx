@@ -1,14 +1,14 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import type { SiteNavigationElement as MobileSiteNavigationElement } from "./Menu.tsx";
-import type { AvailableIcons } from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import type { AvailableIcons } from "site/components/ui/Icon.tsx";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Drawers from "$store/islands/Header/Drawers.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
-import { useDevice } from "deco/hooks/useDevice.ts";
-import SearchNavbar from "deco-sites/maconequiio/components/header/SearchNavbar.tsx";
+import { useDevice } from "@deco/deco/hooks";
+import SearchNavbar from "site/components/header/SearchNavbar.tsx";
 
 /** @title OnlyText */
 export interface SiteNavigationOnlyText {
@@ -180,13 +180,13 @@ function Header({
   );
 }
 
-export const loader = (props: Props, req: Request) => {
-  const url = new URL(req.url);
-  const verifiedUrl = url.pathname === "/" || url.search.includes("skuId");
+export const loader = (props: Props, _req: Request) => {
+  // const url = new URL(req.url);
+  // const verifiedUrl = url.pathname === "/" || url.search.includes("/products");
 
   return {
     ...props,
-    PLPIntegration: !verifiedUrl ? props.PLPIntegration : null,
+    PLPIntegration: null,
   };
 };
 

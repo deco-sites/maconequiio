@@ -1,4 +1,4 @@
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
 import type {
   SiteNavigationBanners,
@@ -7,7 +7,7 @@ import type {
   SiteNavigationOnlyText,
   SiteNavigationOnlyTextWithTitle,
 } from "./Header.tsx";
-import { menuMarginTop } from "deco-sites/maconequiio/components/header/constants.ts";
+import { menuMarginTop } from "site/components/header/constants.ts";
 
 function NavItem({ category }: SiteNavigationElement) {
   if (!category || !category.icon || !category.label) return null;

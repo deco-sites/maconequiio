@@ -1,0 +1,254 @@
+{
+  "name": "Home",
+  "path": "/",
+  "sections": [
+    {
+      "__resolveType": "SEODefault - Maconequi"
+    },
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "dots": false,
+      "arrows": true,
+      "images": [
+        {
+          "alt": "Banner Sigvaris",
+          "action": {
+            "href": "/sigvaris"
+          },
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/7d231ebb-e409-4d28-98fb-cae60da1006e",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/01708e00-638d-449c-b62a-cc93e82e8891"
+        },
+        {
+          "alt": "Banner Omron",
+          "action": {
+            "href": "/omron"
+          },
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/2f0e47d7-368b-4a98-9353-a2c357a2ddc1",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/9b8bf858-aab2-44ff-bdb4-38cd79510044"
+        },
+        {
+          "alt": "Banner Coloplast",
+          "action": {
+            "href": "/coloplast"
+          },
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/8504fb87-6d22-41e6-aa8b-2307ce10eb5d",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/87e40ec9-3130-4399-879b-76c640e14a8c"
+        },
+        {
+          "alt": "Banner Whatsapp",
+          "action": {
+            "href": "https://api.whatsapp.com/send/?phone=5521970056473&text=Ol%C3%A1!%20Desejo%20realizar%20uma%20compra"
+          },
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/47354bf3-630e-457f-bebb-751ad466d055",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/2f0f1cd1-3029-4505-b640-fe4657da24d5"
+        }
+      ],
+      "preload": true,
+      "interval": 7,
+      "__resolveType": "site/sections/Images/Carousel.tsx"
+    },
+    {
+      "benefits": [
+        {
+          "icon": "Discount",
+          "label": "Parcele em até 10x sem juros",
+          "width": 30,
+          "height": 30
+        },
+        {
+          "icon": "Truck",
+          "label": "Entrega rápida para todo o Brasil",
+          "width": 30,
+          "height": 30
+        },
+        {
+          "icon": "ArrowsPointingOut",
+          "label": "Devolução grátis em até 7 dias",
+          "width": 30,
+          "height": 30
+        },
+        {
+          "icon": "Guard",
+          "label": "Ambiente seguro e protegido",
+          "width": 30,
+          "height": 18
+        }
+      ],
+      "__resolveType": "site/sections/Content/PurchaseBenefits.tsx"
+    },
+    {
+      "__resolveType": "CategoriesShelf-01"
+    },
+    {
+      "__resolveType": "site/sections/Content/Brands.tsx",
+      "title": "<p style=\"text-align: center\"><span style=\"font-size: 22pt\">Principais </span><strong><span style=\"font-size: 22pt\">Marcas</span></strong></p>",
+      "brands": [
+        {
+          "link": "/omron",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/46c1d8ec-8749-48f3-85f4-cc04d47d4711",
+          "width": 157,
+          "height": 157,
+          "description": "Omron"
+        },
+        {
+          "link": "/coloplast",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/1a62080b-5565-4030-8e44-32ad50cdf445",
+          "width": 157,
+          "height": 157,
+          "description": "Coloplast"
+        },
+        {
+          "link": "/mova",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/1fb27585-f704-4b5b-acad-028c21785114",
+          "width": 157,
+          "height": 157,
+          "description": "Mova"
+        },
+        {
+          "link": "/3m",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/876cd82b-dae5-4a5f-bbaf-03d7a0620782",
+          "width": 157,
+          "height": 157,
+          "description": "3M"
+        },
+        {
+          "link": "/sigvaris",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/073a5787-8ce1-439a-be5b-bc923f97ef9c",
+          "width": 157,
+          "height": 157,
+          "description": "Sigvaris"
+        },
+        {
+          "link": "/estetoscopio//littmann",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/c0637382-a9c5-470d-9003-c0307af94d9c",
+          "width": 157,
+          "height": 157,
+          "description": "Littmann"
+        },
+        {
+          "link": "/americal-medical",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/9afb387c-1575-4079-9af5-6e7b7cd451b7",
+          "width": 157,
+          "height": 157,
+          "description": "America Medical"
+        },
+        {
+          "link": "/descarpack",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/23787a6c-7618-42c0-b772-7b072dc57ca5",
+          "width": 157,
+          "height": 157,
+          "description": "Descarpack"
+        },
+        {
+          "link": "/fresenius-kabi",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/b58976db-0b1f-4b35-81c6-edeccb6db80b",
+          "width": 157,
+          "height": 157,
+          "description": "Fresenius Kabi"
+        },
+        {
+          "link": "/medix-brasil",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/efdf36c3-da5c-4f01-8d08-afc4ce336b5e",
+          "width": 157,
+          "height": 157,
+          "description": "Medix Brasil"
+        },
+        {
+          "link": "/medsonda",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/2f7a3e82-3b51-4a47-9471-80e124e9f1ca",
+          "width": 157,
+          "height": 157,
+          "description": "Medsonda"
+        },
+        {
+          "link": "/maxicor",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/b9297934-65ca-4467-b643-945373f67409",
+          "width": 157,
+          "height": 157,
+          "description": "Maxicor"
+        }
+      ],
+      "layout": {
+        "interval": 7,
+        "isInfinite": true,
+        "showArrows": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductShelf.tsx",
+        "products": {
+          "__resolveType": "shopify/loaders/ProductList.ts",
+          "props": {
+            "sort": "price-descending",
+            "query": "balanca",
+            "count": 12
+          },
+          "filters": {
+            "tags": [],
+            "productTypes": [],
+            "productVendors": [],
+            "variantOptions": []
+          },
+          "metafields": []
+        },
+        "cardLayout": {
+          "hide": {
+            "productDescription": false,
+            "productName": false
+          }
+        }
+      }
+    },
+    {
+      "__resolveType": "site/sections/Images/ThirdBanners.tsx",
+      "title": "<p style=\"text-align: center\"><span style=\"font-size: 22pt\">Destaques da </span><strong><span style=\"font-size: 22pt\">Semana</span></strong></p>",
+      "banners": [
+        {
+          "alt": "Meia Panturrilha",
+          "link": "/meia-panturrilha-20-30-algodao-super-sigvaris/p?skuId=6395",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/65de8d50-6b1d-4cbc-8102-cd087a5c249c/01---sigvaris.png",
+          "title": " ",
+          "width": 423,
+          "height": 423,
+          "target": "_blank",
+          "description": "<p></p>"
+        },
+        {
+          "alt": "Esteto",
+          "link": "/estetoscopio-littmann-classic-iii-preto-5620-3m/p?skuId=2237",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/84c7f712-c2ef-4323-ad26-1fff1a73892b/02---littman.png",
+          "title": " ",
+          "width": 423,
+          "height": 423,
+          "target": "_blank",
+          "description": "<p></p>"
+        },
+        {
+          "alt": "brav fita",
+          "link": "/brava-fita-adesiva-formato-meia-lua-coloplast/p?skuId=18997",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/80739a0a-ceab-4a9b-b51a-9123258099c9/03---spray.png",
+          "title": " ",
+          "width": 423,
+          "height": 423,
+          "target": "_blank",
+          "description": "<p></p>"
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Content/AdditionalInfo.tsx",
+      "html": "<div><div><div><p style=\"text-align: center;\" data-mce-style=\"text-align: center;\"><strong>Somos referência em cuidados com a saúde</strong></p></div></div></div><div><div><div><p style=\"text-align: center;\" data-mce-style=\"text-align: center;\">Ajudando você a viver bem e profissionais da saúde cumprirem sua missão.</p></div></div></div>"
+    },
+    {
+      "__resolveType": "Blog Posts"
+    },
+    {
+      "__resolveType": "Footer - Maconequi"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}

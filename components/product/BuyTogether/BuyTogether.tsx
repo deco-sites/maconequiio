@@ -1,10 +1,10 @@
 import { useMemo } from "preact/hooks";
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 import Card from "./Card.tsx";
 import AddToCartButtonVTEX from "$store/islands/AddToCartButton/BuyTogether/vtex.tsx";
 
 import { useOffer } from "$store/sdk/useOffer.ts";
-import { formatPrice } from "deco-sites/maconequiio/sdk/format.ts";
+import { formatPrice } from "site/sdk/format.ts";
 
 import type { Product } from "apps/commerce/types.ts";
 
