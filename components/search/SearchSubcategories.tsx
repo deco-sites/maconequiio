@@ -2,7 +2,7 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Image from "apps/website/components/Image.tsx";
-import { useId } from "deco-sites/maconequiio/sdk/useId.ts";
+import { useId } from "site/sdk/useId.ts";
 
 export interface Subcategory {
   image: {

@@ -11,9 +11,9 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
-import Variants from "deco-sites/maconequiio/components/product/Variants.tsx";
-import { useVariantPossibilities } from "deco-sites/maconequiio/sdk/useVariantPossiblities.ts";
+import Icon from "site/components/ui/Icon.tsx";
+import Variants from "site/components/product/Variants.tsx";
+import { useVariantPossibilities } from "site/sdk/useVariantPossiblities.ts";
 
 export interface Props {
   page: ProductDetailsPage | null;

@@ -1,5 +1,5 @@
 import type { ProductListingPage } from "apps/commerce/types.ts";
-import Breadcrumb from "deco-sites/maconequiio/components/ui/Breadcrumb.tsx";
+import Breadcrumb from "site/components/ui/Breadcrumb.tsx";
 
 export interface Props {
   /** @title Integration */

@@ -1,6 +1,6 @@
 import Icon, {
   AvailableIcons,
-} from "deco-sites/maconequiio/components/ui/Icon.tsx";
+} from "site/components/ui/Icon.tsx";
 
 /**
  * @title {{{text}}}

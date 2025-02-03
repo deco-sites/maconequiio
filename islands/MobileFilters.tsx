@@ -1,7 +1,7 @@
 import Drawer from "$store/components/ui/Drawer.tsx";
-import Button from "deco-sites/maconequiio/components/ui/Button.tsx";
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
-import Filters from "deco-sites/maconequiio/components/search/Filters.tsx";
+import Button from "site/components/ui/Button.tsx";
+import Icon from "site/components/ui/Icon.tsx";
+import Filters from "site/components/search/Filters.tsx";
 import { useSignal } from "@preact/signals";
 import { ProductListingPage } from "apps/commerce/types.ts";
 

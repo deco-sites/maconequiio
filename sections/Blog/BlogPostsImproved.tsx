@@ -3,7 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { ComponentChildren, Fragment } from "preact";
 import { BlogPost } from "apps/blog/types.ts";
-import { useId } from "deco-sites/maconequiio/sdk/useId.ts";
+import { useId } from "site/sdk/useId.ts";
 
 export interface CTA {
   text?: string;

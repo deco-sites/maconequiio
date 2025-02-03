@@ -15,10 +15,10 @@ import Newsletter from "$store/islands/Newsletter.tsx";
 import type { RichText } from "apps/admin/widgets.ts";
 import AboutUs, {
   Props as AboutUsProps,
-} from "deco-sites/maconequiio/components/footer/AboutUs.tsx";
+} from "site/components/footer/AboutUs.tsx";
 import Logos, {
   Logo,
-} from "deco-sites/maconequiio/components/footer/Logos.tsx";
+} from "site/components/footer/Logos.tsx";
 
 export type Item = {
   label: string;

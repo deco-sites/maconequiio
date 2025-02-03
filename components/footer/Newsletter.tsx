@@ -1,7 +1,7 @@
 import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
 import type { JSX } from "preact";
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 import { RichText } from "apps/admin/widgets.ts";
 
 export interface Form {

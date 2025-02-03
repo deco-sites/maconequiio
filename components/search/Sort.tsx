@@ -1,7 +1,7 @@
 import { useMemo } from "preact/hooks";
 import { ProductListingPage } from "apps/commerce/types.ts";
 import type { JSX } from "preact";
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 
 const SORT_QUERY_PARAM = "sort";
 

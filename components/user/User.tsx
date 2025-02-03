@@ -1,5 +1,5 @@
-import Icon from "deco-sites/maconequiio/components/ui/Icon.tsx";
-import Button from "deco-sites/maconequiio/components/ui/Button.tsx";
+import Icon from "site/components/ui/Icon.tsx";
+import Button from "site/components/ui/Button.tsx";
 
 export default function User() {
   return (

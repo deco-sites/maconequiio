@@ -3,7 +3,7 @@ import type { SiteNavigationElement } from "./Header.tsx";
 import {
   MenuButton,
   SearchButton,
-} from "deco-sites/maconequiio/islands/Header/Buttons.tsx";
+} from "site/islands/Header/Buttons.tsx";
 import CartButtonLinx from "$store/islands/Header/Cart/linx.tsx";
 import CartButtonShopify from "$store/islands/Header/Cart/shopify.tsx";
 import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";
@@ -17,7 +17,7 @@ import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Logo } from "$store/components/header/Header.tsx";
 import { useDevice } from "deco/hooks/useDevice.ts";
-import LoginElement from "deco-sites/maconequiio/islands/LoginElement.tsx";
+import LoginElement from "site/islands/LoginElement.tsx";
 
 function Navbar({ items, searchbar, logo }: {
   items?: SiteNavigationElement[];
