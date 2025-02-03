@@ -2,8 +2,10 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
-import * as $$$$$$$$$$$1 from "./apps/site.ts";
+import * as $$$$$$$$$$$0 from "./apps/deco/shopify.ts";
+import * as $$$$$$$$$$$1 from "./apps/deco/vtex.ts";
+import * as $$$$$$$$$$$2 from "./apps/decohub.ts";
+import * as $$$$$$$$$$$3 from "./apps/site.ts";
 import * as $$$0 from "./loaders/Blog/BlogPostPageImproved.ts";
 import * as $$$1 from "./loaders/Layouts/ProductCard.tsx";
 import * as $$$2 from "./loaders/List/Sections.tsx";
@@ -95,11 +97,9 @@ const manifest = {
     "site/sections/Blog/BlogPost.tsx": $$$$$$1,
     "site/sections/Blog/BlogPostsImproved.tsx": $$$$$$2,
     "site/sections/Cards/IconCardsCarousel.tsx": $$$$$$3,
-    "site/sections/Cards/IconCardsCarouselWithImage.tsx":
-      $$$$$$4,
+    "site/sections/Cards/IconCardsCarouselWithImage.tsx": $$$$$$4,
     "site/sections/Cards/ImageCardsCarousel.tsx": $$$$$$5,
-    "site/sections/Cards/ImageCardsCarouselWithImage.tsx":
-      $$$$$$6,
+    "site/sections/Cards/ImageCardsCarouselWithImage.tsx": $$$$$$6,
     "site/sections/Category/CategoriesShelf.tsx": $$$$$$7,
     "site/sections/Category/CategoryBanner.tsx": $$$$$$8,
     "site/sections/Category/CategoryGrid.tsx": $$$$$$9,
@@ -130,8 +130,7 @@ const manifest = {
     "site/sections/Images/BannerGrid.tsx": $$$$$$34,
     "site/sections/Images/BannerWithLinks.tsx": $$$$$$35,
     "site/sections/Images/Carousel.tsx": $$$$$$36,
-    "site/sections/Images/CarouselBannerWithTitle.tsx":
-      $$$$$$37,
+    "site/sections/Images/CarouselBannerWithTitle.tsx": $$$$$$37,
     "site/sections/Images/DoubleBanners.tsx": $$$$$$38,
     "site/sections/Images/ImageAndTextGrid.tsx": $$$$$$39,
     "site/sections/Images/ImageGallery.tsx": $$$$$$40,
@@ -150,8 +149,7 @@ const manifest = {
     "site/sections/Miscellaneous/Slide.tsx": $$$$$$53,
     "site/sections/Newsletter/Newsletter.tsx": $$$$$$54,
     "site/sections/Product/BuyTogether.tsx": $$$$$$55,
-    "site/sections/Product/ImageGalleryFrontBack.tsx":
-      $$$$$$56,
+    "site/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$56,
     "site/sections/Product/ImageGallerySlider.tsx": $$$$$$57,
     "site/sections/Product/NotFound.tsx": $$$$$$58,
     "site/sections/Product/NotFoundChallenge.tsx": $$$$$$59,
@@ -169,8 +167,10 @@ const manifest = {
     "site/sections/Theme/Theme.tsx": $$$$$$71,
   },
   "apps": {
-    "site/apps/decohub.ts": $$$$$$$$$$$0,
-    "site/apps/site.ts": $$$$$$$$$$$1,
+    "site/apps/deco/shopify.ts": $$$$$$$$$$$0,
+    "site/apps/deco/vtex.ts": $$$$$$$$$$$1,
+    "site/apps/decohub.ts": $$$$$$$$$$$2,
+    "site/apps/site.ts": $$$$$$$$$$$3,
   },
   "name": "site",
   "baseUrl": import.meta.url,

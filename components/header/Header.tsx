@@ -7,7 +7,7 @@ import Drawers from "$store/islands/Header/Drawers.tsx";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import Alert, { Props as AlertProps } from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
-import { useDevice } from "deco/hooks/useDevice.ts";
+import { useDevice } from "@deco/deco/hooks";
 import SearchNavbar from "site/components/header/SearchNavbar.tsx";
 
 /** @title OnlyText */

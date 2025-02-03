@@ -1,5 +1,5 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { SectionProps } from "deco/types.ts";
+import { SectionProps } from "@deco/deco";
 import type { ImageWidget, RichText } from "apps/admin/widgets.ts";
 
 /**

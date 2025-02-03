@@ -16,9 +16,7 @@ import type { RichText } from "apps/admin/widgets.ts";
 import AboutUs, {
   Props as AboutUsProps,
 } from "site/components/footer/AboutUs.tsx";
-import Logos, {
-  Logo,
-} from "site/components/footer/Logos.tsx";
+import Logos, { Logo } from "site/components/footer/Logos.tsx";
 
 export type Item = {
   label: string;

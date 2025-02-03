@@ -1,4 +1,4 @@
-import { Section } from "deco/blocks/section.ts";
+import type { Section } from "@deco/deco/blocks";
 import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 

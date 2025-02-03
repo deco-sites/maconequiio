@@ -1,9 +1,6 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import type { SiteNavigationElement } from "./Header.tsx";
-import {
-  MenuButton,
-  SearchButton,
-} from "site/islands/Header/Buttons.tsx";
+import { MenuButton, SearchButton } from "site/islands/Header/Buttons.tsx";
 import CartButtonLinx from "$store/islands/Header/Cart/linx.tsx";
 import CartButtonShopify from "$store/islands/Header/Cart/shopify.tsx";
 import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";
@@ -16,7 +13,7 @@ import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Logo } from "$store/components/header/Header.tsx";
-import { useDevice } from "deco/hooks/useDevice.ts";
+import { useDevice } from "@deco/deco/hooks";
 import LoginElement from "site/islands/LoginElement.tsx";
 
 function Navbar({ items, searchbar, logo }: {

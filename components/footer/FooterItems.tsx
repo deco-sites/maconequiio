@@ -1,4 +1,4 @@
-import { useDevice } from "deco/hooks/useDevice.ts";
+import { useDevice } from "@deco/deco/hooks";
 
 export type Item = {
   label: string;

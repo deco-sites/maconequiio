@@ -14,7 +14,7 @@ import Image from "apps/website/components/Image.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useId } from "$store/sdk/useId.ts";
 import { useSuggestions } from "$store/sdk/useSuggestions.ts";
-import { Resolved } from "deco/engine/core/resolver.ts";
+import { Resolved } from "@deco/deco";
 import { Suggestion } from "apps/commerce/types.ts";
 import { useEffect, useRef, useState } from "preact/compat";
 

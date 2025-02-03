@@ -1,7 +1,7 @@
 import type { RichText } from "apps/admin/widgets.ts";
 import Icon from "site/components/ui/Icon.tsx";
-import { useScript } from "deco/hooks/useScript.ts";
-import { SectionProps } from "deco/mod.ts";
+import { useScript } from "@deco/deco/hooks";
+import { SectionProps } from "@deco/deco";
 import { getCookies } from "std/http/cookie.ts";
 
 export interface Props {
