@@ -1,1 +1,55 @@
-{"name":"Quem somos","path":"/quem-somos","default":{"possiblePaths":[]},"sections":[{"title":"Quem Somos","__resolveType":"website/sections/Seo/SeoV2.tsx"},{"__resolveType":"Header - 01"},{"banners":[{"title":"<h2><strong><span style=\"font-size: 24pt\">Quem Somos</span></strong></h2>","button":{"width":"\"100%\"","target":"_blank","isDisabled":true,"backgroundColor":"#000000"},"maxWidth":"max-w-[90%]","bannerImage":{"image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/38358084-0ac1-4575-8721-044f3a672f4a","width":600,"height":250,"description":"maconequi"},"description":"<p></p><p><span style=\"font-size: 13pt\">Há anos a Maconequi é referência na distribuição de materiais médicos hospitalares e odontológicos. O primeiro ponto de venda e sede administrativa está localizado na cidade de Resende. E em 2012, a empresa inaugurou uma nova base comercial na Zona Oeste da cidade do Rio de Janeiro afim de oferecer um atendimento personalizado e com maior agilidade na entrega aos nossos clientes.</span></p><p><span style=\"color: #ffffff; font-size: 13pt\"> .</span></p><p style=\"text-align: start\"><span style=\"font-size: 13pt\">Atendemos diversos segmentos da área de saúde e oferecemos os melhores produtos e os melhores preços para profissionais da saúde, empresas de home care, estudantes, clinicas e hospitais da rede pública e privada.</span></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 13pt\">.</span></p><p style=\"text-align: start\"><span style=\"font-size: 13pt\">Comercializamos mais de 10 mil produtos, com preço de varejo e atacado e entregamos para todo o Brasil. Fale com um de nossos consultores para realizar o atendimento de acordo com a sua necessidade.</span></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 13pt\">.</span></p><p style=\"text-align: start\"><span style=\"font-size: 13pt\">CNPJ: 17.151.435/0002-10</span></p>","hasBorderClass":false,"mobilePosition":"flex-col","desktopPosition":"flex-row-reverse","mobileAlignment":"items-start","desktopAlignment":"items-center","hasContainerClass":true,"titleAppearsFirst":false}],"hasSpacement":false,"itemsPerLine":{"mobile":1,"desktop":1},"__resolveType":"site/sections/Images/ImageAndTextGrid.tsx","hasContainerClass":false},{"__resolveType":"Footer - Maconequi"}],"__resolveType":"website/pages/Page.tsx"}
+{
+  "name": "Quem somos",
+  "path": "/quem-somos",
+  "default": {
+    "possiblePaths": []
+  },
+  "sections": [
+    {
+      "title": "Quem Somos",
+      "__resolveType": "website/sections/Seo/SeoV2.tsx"
+    },
+    {
+      "__resolveType": "Header - 01"
+    },
+    {
+      "banners": [
+        {
+          "title": "<h2><strong><span style=\"font-size: 24pt\">Quem Somos</span></strong></h2>",
+          "button": {
+            "width": "\"100%\"",
+            "target": "_blank",
+            "isDisabled": true,
+            "backgroundColor": "#000000"
+          },
+          "maxWidth": "max-w-[90%]",
+          "bannerImage": {
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/38358084-0ac1-4575-8721-044f3a672f4a",
+            "width": 600,
+            "height": 250,
+            "description": "maconequi"
+          },
+          "description": "<p></p><p><span style=\"font-size: 13pt\">Há anos a Maconequi é referência na distribuição de materiais médicos hospitalares e odontológicos. O primeiro ponto de venda e sede administrativa está localizado na cidade de Resende. E em 2012, a empresa inaugurou uma nova base comercial na Zona Oeste da cidade do Rio de Janeiro afim de oferecer um atendimento personalizado e com maior agilidade na entrega aos nossos clientes.</span></p><p><span style=\"color: #ffffff; font-size: 13pt\"> .</span></p><p style=\"text-align: start\"><span style=\"font-size: 13pt\">Atendemos diversos segmentos da área de saúde e oferecemos os melhores produtos e os melhores preços para profissionais da saúde, empresas de home care, estudantes, clinicas e hospitais da rede pública e privada.</span></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 13pt\">.</span></p><p style=\"text-align: start\"><span style=\"font-size: 13pt\">Comercializamos mais de 10 mil produtos, com preço de varejo e atacado e entregamos para todo o Brasil. Fale com um de nossos consultores para realizar o atendimento de acordo com a sua necessidade.</span></p><p style=\"text-align: start\"><span style=\"color: #ffffff; font-size: 13pt\">.</span></p><p style=\"text-align: start\"><span style=\"font-size: 13pt\">CNPJ: 17.151.435/0002-10</span></p>",
+          "hasBorderClass": false,
+          "mobilePosition": "flex-col",
+          "desktopPosition": "flex-row-reverse",
+          "mobileAlignment": "items-start",
+          "desktopAlignment": "items-center",
+          "hasContainerClass": true,
+          "titleAppearsFirst": false
+        }
+      ],
+      "hasSpacement": false,
+      "itemsPerLine": {
+        "mobile": 1,
+        "desktop": 1
+      },
+      "__resolveType": "site/sections/Images/ImageAndTextGrid.tsx",
+      "hasContainerClass": false
+    },
+    {
+      "__resolveType": "Footer - Maconequi"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}
