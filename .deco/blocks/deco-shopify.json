@@ -1,8 +1,6 @@
 {
   "__resolveType": "site/apps/deco/shopify.ts",
-  "adminAccessToken": {},
   "platform": "shopify",
   "storeName": "kdts68-p5",
-  "publicUrl": "kdts68-p5.myshopify.com",
-  "storefrontAccessToken": "278cb4310071891d8d56c5e9bb52ee14"
+  "publicUrl": "kdts68-p5.myshopify.com"
 }
