@@ -1,1 +1,9 @@
-{"data":{"sort":"price:desc","count":12,"fuzzy":"automatic","pageOffset":1,"__resolveType":"vtex/loaders/intelligentSearch/productListingPage.ts","selectedFacets":[]},"extensions":[{"__resolveType":"vtex/loaders/product/extensions/listingPage.ts"}],"__resolveType":"commerce/loaders/product/extensions/listingPage.ts"}
+{
+  "data": {
+    "count": 12,
+    "__resolveType": "shopify/loaders/ProductListingPage.ts",
+    "metafields": []
+  },
+  "extensions": [],
+  "__resolveType": "commerce/loaders/product/extensions/listingPage.ts"
+}
