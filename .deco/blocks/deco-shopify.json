@@ -2,7 +2,7 @@
   "__resolveType": "site/apps/deco/shopify.ts",
   "adminAccessToken": {},
   "platform": "shopify",
-  "storefrontAccessToken": "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",
   "storeName": "kdts68-p5",
-  "publicUrl": "kdts68-p5.myshopify.com"
+  "publicUrl": "kdts68-p5.myshopify.com",
+  "storefrontAccessToken": "278cb4310071891d8d56c5e9bb52ee14"
 }
