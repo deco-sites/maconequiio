@@ -4996,6 +4996,9 @@ details.collapse summary::-webkit-details-marker {
 .h-\[204px\] {
   height: 204px;
 }
+.h-\[207px\] {
+  height: 207px;
+}
 .h-\[210px\] {
   height: 210px;
 }
@@ -9102,8 +9105,8 @@ details.collapse summary::-webkit-details-marker {
     height: 374px;
   }
 
-  .xl\:h-\[380px\] {
-    height: 380px;
+  .xl\:h-\[400px\] {
+    height: 400px;
   }
 
   .xl\:max-h-\[1380px\] {

@@ -4,8 +4,8 @@ import { formatInstallments, formatPrice } from "$store/sdk/format.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-// import Image from "apps/website/components/Image.tsx";
 import { relative } from "$store/sdk/url.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Layout {
   onMouseOver?: {
@@ -35,8 +35,8 @@ interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 200;
-const HEIGHT = 133;
+const WIDTH = 439;
+const HEIGHT = 439;
 
 function ProductCard({
   product,
@@ -69,7 +69,7 @@ function ProductCard({
   return (
     <div
       id={id}
-      class={`card group w-full xl:h-[380px] duration-300 transition-all ease-out bg-white-normal text-start ${
+      class={`card group w-full xl:h-[400px] duration-300 transition-all ease-out bg-white-normal text-start ${
         !l?.hide?.cta ? "" : "shadow-none"
       } ${l?.onMouseOver?.showCardShadow ? "xl:hover:shadow-md" : ""}`}
       data-deco="view-product"
@@ -95,9 +95,7 @@ function ProductCard({
         class="relative overflow-hidden"
         style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
       >
-        <div
-          class={`absolute top-2 z-10 flex items-center left-1/2`}
-        >
+        <div class="absolute top-2 z-10 flex items-center left-1/2">
           {/* <div class=""></div> */}
         </div>
 
@@ -107,14 +105,14 @@ function ProductCard({
           aria-label="view product"
           class="grid grid-cols-1 grid-rows-1 items-center w-full"
         >
-          <img
+          <Image
             src={front.url!}
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
             style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
-            class="col-span-full row-span-full rounded w-full object-contain"
-            // sizes="(max-width: 640px) 50vw, 20vw"
+            class="col-span-full row-span-full rounded w-full h-[207px] object-contain"
+            sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"
           />

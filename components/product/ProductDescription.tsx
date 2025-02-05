@@ -7,9 +7,15 @@ export interface Props {
 export default function ProductDescription({ page }: Props) {
   if (!page || !page.product) return null;
 
-  const { description: productDescription, isVariantOf } = page.product;
+  const {
+    description: productDescription,
+    isVariantOf,
+    additionalProperty = [],
+  } = page.product;
 
-  const description = productDescription || isVariantOf?.description || "";
+  const description =
+    additionalProperty.find((item) => item.name === "descriptionHtml")?.value ||
+    productDescription;
 
   const productCharacteristics = isVariantOf?.additionalProperty.filter((
     item,
@@ -44,10 +50,7 @@ export default function ProductDescription({ page }: Props) {
 
               <div
                 dangerouslySetInnerHTML={{
-                  __html: description.replace(/\r?\n/g, "<br />").replace(
-                    "iframe",
-                    "iframe loading='lazy'",
-                  ),
+                  __html: description?.replace(/\s{2,}|\n/g, "<br>") || "",
                 }}
                 class="text-justify"
               />

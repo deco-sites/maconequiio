@@ -29,10 +29,12 @@ export default function GallerySlider(props: Props) {
   }
 
   const {
-    page: { product: { image: images = [] } },
+    page: { product: { isVariantOf } },
     layout: { width, height },
   } = props;
   const aspectRatio = `${width} / ${height}`;
+
+  const images = isVariantOf?.image || [];
 
   return (
     <div id={id} class="grid grid-flow-row sm:grid-flow-col">

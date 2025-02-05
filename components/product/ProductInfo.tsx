@@ -11,8 +11,10 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-// import ProductSelector from "./ProductVariantSelector.tsx";
+import ProductSelector from "./ProductVariantSelector.tsx";
 import Icon from "site/components/ui/Icon.tsx";
+// import Variants from "site/components/product/Variants.tsx";
+import { useVariantPossibilities } from "site/sdk/useVariantPossiblities.ts";
 // import Variants from "site/components/product/Variants.tsx";
 // import { useVariantPossibilities } from "site/sdk/useVariantPossiblities.ts";
 
@@ -43,7 +45,7 @@ function ProductInfo({ page, layout }: Props) {
     name = "",
     gtin,
     isVariantOf,
-    // url,
+    url,
   } = product;
   const {
     price = 0,
@@ -69,9 +71,9 @@ function ProductInfo({ page, layout }: Props) {
     listPrice,
   });
 
-  // const variants = product.isVariantOf?.hasVariant ?? [];
-  // const hasVariants = variants.length > 1;
-  // const possibilities = useVariantPossibilities(variants, product);
+  const variants = product.isVariantOf?.hasVariant ?? [];
+  const hasVariants = variants.length > 1;
+  const possibilities = useVariantPossibilities(variants, product);
   // const notHasPossibilities = Object.values(possibilities).length === 0;
 
   return (
@@ -90,16 +92,14 @@ function ProductInfo({ page, layout }: Props) {
             </span>
           </h1>
 
-          {
-            /* {hasVariants && notHasPossibilities && (
+          {hasVariants && (
             <div class="flex items-center justify-center text-xs leading-3 bg-[#ffbbbb] text-black w-full h-8 p-0.5 rounded-tl-2xl rounded-br-2xl">
               <span>
                 Este produto possui{" "}
                 <b>{variants.length} variações</b>, escolha abaixo.
               </span>
             </div>
-          )} */
-          }
+          )}
         </div>
 
         <div class="flex items-center justify-between xl:max-w-[95%] gap-1">
@@ -124,17 +124,15 @@ function ProductInfo({ page, layout }: Props) {
       </div>
 
       {/* Sku Selector */}
-      {
-        /* {!notHasPossibilities && (
+      {hasVariants && possibilities && (
         <ProductSelector
           possibilities={possibilities}
           url={url ?? ""}
         />
-      )} */
-      }
+      )}
 
       {
-        /* {hasVariants && notHasPossibilities && (
+        /* {hasVariants && (
         <Variants
           variants={variants}
         />
