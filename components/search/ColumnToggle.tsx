@@ -1,4 +1,3 @@
-import { useScript } from "@deco/deco/hooks";
 import Icon from "site/components/ui/Icon.tsx";
 import type { Device } from "apps/website/matchers/device.ts";
 
@@ -26,7 +25,7 @@ export default function ColumnToggle(
           <button
             aria-label="change elements to grid position"
             class="flex items-center gap-1 hover:cursor-pointer"
-            hx-on:click={useScript(applySort, "grid")}
+            onClick={() => applySort("grid")}
           >
             <Icon
               id="GridColumns"
@@ -38,7 +37,7 @@ export default function ColumnToggle(
           <button
             aria-label="change elements to list position"
             class="flex items-center gap-1 hover:cursor-pointer"
-            hx-on:click={useScript(applySort, "list")}
+            onClick={() => applySort("list")}
           >
             <Icon
               id="FourColumns"
@@ -53,7 +52,7 @@ export default function ColumnToggle(
         <button
           aria-label="change elements to grid position"
           class="flex items-center gap-1 hover:cursor-pointer"
-          hx-on:click={useScript(applySort, "grid")}
+          onClick={() => applySort("grid")}
         >
           {Array(3).fill("").map((_) => (
             <div
@@ -67,7 +66,7 @@ export default function ColumnToggle(
         <button
           aria-label="change elements to list position"
           class="flex items-center gap-1 hover:cursor-pointer"
-          hx-on:click={useScript(applySort, "list")}
+          onClick={() => applySort("list")}
         >
           {Array(4).fill("").map((_) => (
             <div

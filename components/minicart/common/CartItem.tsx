@@ -66,7 +66,7 @@ function CartItem(
     >
       <Image
         {...image}
-        src={image.src.replace("-55-55", "-62-62")}
+        src={image.src}
         style={{ aspectRatio: "62 / 62" }}
         width={62}
         height={62}

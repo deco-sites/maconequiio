@@ -8572,6 +8572,10 @@ details.collapse summary::-webkit-details-marker {
     max-height: 600px;
   }
 
+  .lg\:min-h-\[193px\] {
+    min-height: 193px;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -9205,6 +9209,11 @@ details.collapse summary::-webkit-details-marker {
   .xl\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .xl\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .xl\:pb-0 {

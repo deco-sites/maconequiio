@@ -190,7 +190,7 @@ function Searchbar({
                         class="flex items-center w-full h-full gap-3"
                       >
                         <Image
-                          src={front.url?.replace("-25-25", "-60-60") || ""}
+                          src={front.url || ""}
                           alt={front.alternateName}
                           width={60}
                           height={60}

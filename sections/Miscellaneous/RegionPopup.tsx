@@ -1,28 +1,11 @@
 import type { RichText } from "apps/admin/widgets.ts";
-import Icon from "site/components/ui/Icon.tsx";
-import { useScript } from "@deco/deco/hooks";
 import { SectionProps } from "@deco/deco";
 import { getCookies } from "std/http/cookie.ts";
+import ChangeRegionPopupButton from "site/islands/ChangeRegionPopupButton.tsx";
 
 export interface Props {
   text: RichText;
 }
-
-const changeRegionPopupAttribute = () => {
-  const root = globalThis.document.getElementById("popup");
-
-  if (!root) {
-    console.warn("Unable to find root element with popup id");
-    return;
-  }
-
-  root.setAttribute("data-popup-closed", "true");
-
-  const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + 2);
-  document.cookie =
-    `region-popup=true; expires=${expirationDate.toUTCString()}; path=/`;
-};
 
 export default function RegionPopup(
   { text, hasRegionPopupCookie }: SectionProps<typeof loader>,
@@ -38,18 +21,7 @@ export default function RegionPopup(
       <div class="flex items-center justify-between bg-red py-5 px-6 rounded-md shadow container mx-auto w-full">
         <div dangerouslySetInnerHTML={{ __html: text }} />
 
-        <button
-          aria-label="close region popup"
-          hx-on:click={useScript(changeRegionPopupAttribute)}
-        >
-          <Icon
-            id="XMark"
-            width={24}
-            height={24}
-            strokeWidth={1.5}
-            class="text-white-normal"
-          />
-        </button>
+        <ChangeRegionPopupButton />
       </div>
     </div>
   );

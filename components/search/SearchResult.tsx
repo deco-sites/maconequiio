@@ -8,7 +8,7 @@ import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import { SectionProps } from "@deco/deco";
 import { clx } from "$store/sdk/clx.ts";
 import Sort from "$store/islands/Sort.tsx";
-import ColumnToggle from "site/components/search/ColumnToggle.tsx";
+import ColumnToggle from "site/islands/ColumnToggle.tsx";
 import type { Subcategories } from "$store/loaders/Search/subcategories.ts";
 import SearchSubcategories from "site/components/search/SearchSubcategories.tsx";
 import Pagination from "site/components/search/Pagination.tsx";
@@ -87,7 +87,7 @@ function Result({
     >
       <div
         class={`container px-4 ${
-          !(!isFirstPage && format == "Show More") ? "xl:pt-10" : ""
+          !(!isFirstPage && format == "Show More") ? "xl:py-10" : "xl:pt-10"
         }`}
       >
         <div class="flex flex-row mt-6 gap-x-8 w-full">

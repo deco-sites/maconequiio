@@ -119,7 +119,7 @@ function ProductCard({
         </a>
       </figure>
       {/* Prices & Name */}
-      <div class="flex-auto flex flex-col p-4 gap-3 lg:gap-2">
+      <div class="flex-auto flex flex-col justify-between p-4 gap-3 lg:gap-2 lg:min-h-[193px]">
         {l?.hide?.productName && l?.hide?.productDescription
           ? (
             ""
