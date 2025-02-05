@@ -13,10 +13,10 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useId } from "$store/sdk/useId.ts";
-import { useSuggestions } from "$store/sdk/useSuggestions.ts";
-import { Resolved } from "@deco/deco";
-import { Suggestion } from "apps/commerce/types.ts";
-import { useEffect, useRef, useState } from "preact/compat";
+import { Product } from "apps/commerce/types.ts";
+import { useCallback, useEffect, useRef, useState } from "preact/compat";
+import { useSignal } from "@preact/signals";
+import { invoke } from "site/runtime.ts";
 
 export interface Props {
   /**
@@ -37,19 +37,12 @@ export interface Props {
    * @default q
    */
   name?: string;
-
-  /**
-   * @title Suggestions Integration
-   * @todo: improve this typings ({query: string, count: number}) => Suggestions
-   */
-  loader: Resolved<Suggestion | null>;
 }
 
 function Searchbar({
   placeholder = "What are you looking for?",
   action = "/s",
   name = "q",
-  loader,
 }: Props) {
   const id = useId();
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -57,11 +50,12 @@ function Searchbar({
   const searchInputRef = useRef<HTMLInputElement>(null);
   const modal = useRef<HTMLDivElement>(null);
 
-  const { setQuery, payload, loading } = useSuggestions(loader);
-  const { products = [], searches = [] } = payload.value ?? {};
+  const loading = useSignal(false);
+  const [products, setProducts] = useState<Product[] | null>([]);
+  const [searches, setSearches] = useState<{ term: string }[]>([]);
+  const hasProducts = Boolean(products?.length ?? 0);
+  const hasTerms = Boolean(searches?.length ?? 0);
 
-  const hasProducts = Boolean(products.length);
-  const hasTerms = Boolean(searches.length);
   const notFound = !hasProducts && !hasTerms &&
     (searchInputRef.current && searchInputRef.current.value.length > 0);
 
@@ -82,6 +76,19 @@ function Searchbar({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [modal, searchTerm]);
+
+  const fetchProducts = useCallback(async (query: string) => {
+    loading.value = true;
+    try {
+      const results = await invoke.shopify.loaders.ProductList({
+        props: { query, count: 10 },
+      });
+      setProducts(results);
+      setSearches([{ term: query }]);
+    } finally {
+      loading.value = false;
+    }
+  }, []);
 
   return (
     <div class="flex-grow flex flex-col relative z-[70]">
@@ -111,7 +118,7 @@ function Searchbar({
               });
             }
 
-            setQuery(value);
+            fetchProducts(value);
           }}
           placeholder={placeholder}
           role="combobox"

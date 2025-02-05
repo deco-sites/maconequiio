@@ -1,14 +1,14 @@
 import { clx } from "$store/sdk/clx.ts";
-import type { Section as SectionProps } from "@deco/deco/blocks";
 import type { ComponentChildren } from "preact";
 import { flex } from "../../constants.tsx";
+import { Sections } from "apps/website/pages/Page.tsx";
 
 /**
  * @title Flex
  */
 export interface Props {
   children?: ComponentChildren | null;
-  sectionChildrens?: SectionProps[];
+  sectionChildrens?: Sections;
   gap?: {
     /** @default 2 */
     mobile?: "1" | "2" | "4" | "8" | "12" | "16";

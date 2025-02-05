@@ -835,16 +835,6 @@
   "searchbar": {
     "name": "q",
     "action": "/s",
-    "loader": {
-      "__resolveType": "resolved",
-      "data": {
-        "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts",
-        "count": 4,
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        }
-      }
-    },
     "placeholder": "O que você está procurando?"
   },
   "suggestions": {

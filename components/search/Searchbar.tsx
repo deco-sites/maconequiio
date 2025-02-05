@@ -14,10 +14,10 @@ import Image from "apps/website/components/Image.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useId } from "$store/sdk/useId.ts";
 import { useUI } from "$store/sdk/useUI.ts";
-import { useSuggestions } from "$store/sdk/useSuggestions.ts";
-import { Resolved } from "@deco/deco";
-import { Suggestion } from "apps/commerce/types.ts";
-import { useEffect, useRef } from "preact/compat";
+import { Product } from "apps/commerce/types.ts";
+import { useCallback, useEffect, useRef, useState } from "preact/compat";
+import { useSignal } from "@preact/signals";
+import { invoke } from "site/runtime.ts";
 
 // Editable props
 export interface Props {
@@ -39,27 +39,37 @@ export interface Props {
    * @default q
    */
   name?: string;
-
-  /**
-   * @title Suggestions Integration
-   * @todo: improve this typings ({query: string, count: number}) => Suggestions
-   */
-  loader: Resolved<Suggestion | null>;
 }
 
 function Searchbar({
   placeholder = "What are you looking for?",
   action = "/s",
   name = "q",
-  loader,
 }: Props) {
   const id = useId();
   const { displaySearchPopup } = useUI();
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const { setQuery, payload, loading } = useSuggestions(loader);
-  const { products = [], searches = [] } = payload.value ?? {};
+  const query = searchInputRef.current?.value ?? "";
+
+  const loading = useSignal(false);
+  const [products, setProducts] = useState<Product[] | null>([]);
+  const [searches, setSearches] = useState<{ term: string }[]>([]);
+
   const hasProducts = Boolean(products?.length ?? 0);
-  const hasTerms = Boolean(searches.length);
+  const hasTerms = Boolean(searches?.length);
+
+  const fetchProducts = useCallback(async (query: string) => {
+    loading.value = true;
+    try {
+      const results = await invoke.shopify.loaders.ProductList({
+        props: { query, count: 10 },
+      });
+      setProducts(results);
+      setSearches([{ term: query }]);
+    } finally {
+      loading.value = false;
+    }
+  }, [query]);
 
   useEffect(() => {
     if (displaySearchPopup.value === true) {
@@ -89,7 +99,7 @@ function Searchbar({
               });
             }
 
-            setQuery(value);
+            fetchProducts(value);
           }}
           placeholder={placeholder}
           role="combobox"

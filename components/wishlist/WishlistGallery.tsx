@@ -1,4 +1,4 @@
-import type { Section as SectionProps } from "@deco/deco/blocks";
+import { SectionProps } from "@deco/deco";
 import SearchResult, {
   Props as SearchResultProps,
 } from "../../components/search/SearchResult.tsx";

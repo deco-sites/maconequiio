@@ -10,16 +10,17 @@ export interface Props {
 function Notify({ productID }: Props) {
   const loading = useSignal(false);
 
-  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
+  const handleSubmit = async (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {
     e.preventDefault();
 
     try {
       loading.value = true;
 
-      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
-        ?.value;
+      const name =
+        (e.currentTarget.elements.namedItem("name") as HTMLInputElement)?.value;
       const email =
-        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+        (e.currentTarget.elements.namedItem("email") as HTMLInputElement)
+          ?.value;
 
       await invoke.vtex.actions.notifyme({ skuId: productID, name, email });
     } finally {

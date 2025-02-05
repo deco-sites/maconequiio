@@ -39,7 +39,7 @@ export default function GallerySlider(props: Props) {
       {/* Image Slider */}
       <div class="relative order-1 sm:order-2">
         <Slider class="carousel carousel-center gap-6 w-screen sm:w-[40vw]">
-          {images.map((img, index) => (
+          {images?.map((img, index) => (
             <Slider.Item
               index={index}
               class="carousel-item w-full"
@@ -61,17 +61,19 @@ export default function GallerySlider(props: Props) {
         </Slider>
 
         <div class="absolute bottom-2 right-2 bg-base-100 rounded-full">
-          <ProductImageZoom
-            images={images}
-            width={700}
-            height={Math.trunc(700 * height / width)}
-          />
+          {images && (
+            <ProductImageZoom
+              images={images}
+              width={700}
+              height={Math.trunc(700 * height / width)}
+            />
+          )}
         </div>
       </div>
 
       {/* Dots */}
       <ul class="carousel carousel-center gap-1 px-4 sm:px-0 sm:flex-col order-2 sm:order-1 space-y-5">
-        {images.map((img, index) => (
+        {images?.map((img, index) => (
           <li class="carousel-item min-w-[60px]">
             <Slider.Dot index={index}>
               <Image
