@@ -23,7 +23,20 @@
       "includeSiteMap": [],
       "extraPathsToProxy": [],
       "excludePathsFromDecoSiteMap": [],
-      "replaces": []
+      "replaces": [
+        {
+          "from": "https://maconequi.myshopify.com/checkouts/unstable/graphql",
+          "to": "https://maconequiio.deco.site/checkouts/unstable/graphql"
+        },
+        {
+          "from": "https://maconequi.myshopify.com/",
+          "to": "https://maconequiio.deco.site/"
+        },
+        {
+          "from": "https://maconequi.myshopify.com",
+          "to": "https://maconequiio.deco.site"
+        }
+      ]
     },
     {
       "__resolveType": "website/loaders/pages.ts"

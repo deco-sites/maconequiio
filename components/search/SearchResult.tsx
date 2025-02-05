@@ -2,11 +2,10 @@ import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import Filters from "../../components/search/Filters.tsx";
-// import SearchControls from "../../islands/SearchControls.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
-import type { Section as SectionProps } from "@deco/deco/blocks";
+import { SectionProps } from "@deco/deco";
 import { clx } from "$store/sdk/clx.ts";
 import Sort from "$store/islands/Sort.tsx";
 import ColumnToggle from "site/components/search/ColumnToggle.tsx";
@@ -91,17 +90,6 @@ function Result({
           !(!isFirstPage && format == "Show More") ? "xl:pt-10" : ""
         }`}
       >
-        {
-          /* {(isFirstPage || !isPartial) && (
-          <SearchControls
-            sortOptions={sortOptions}
-            filters={filters}
-            breadcrumb={breadcrumb}
-            displayFilter={layout?.variant === "drawer"}
-          />
-        )} */
-        }
-
         <div class="flex flex-row mt-6 gap-x-8 w-full">
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside
@@ -123,7 +111,7 @@ function Result({
 
                 <div class="flex items-center justify-between px-6 w-full bg-white-normal text-black h-12 shadow-sm">
                   <span class="text-sm">
-                    <b>{pageInfo.records}</b> itens
+                    <b>{pageInfo.records ?? products.length}</b> itens
                   </span>
 
                   <div class="flex items-center gap-7">
@@ -184,7 +172,7 @@ function SearchResult(
     return <NotFound />;
   }
 
-  return <Result {...props} page={page} />;
+  return <Result {...props} page={page} url={props.url} />;
 }
 
 export const loader = (props: Props, req: Request) => {
