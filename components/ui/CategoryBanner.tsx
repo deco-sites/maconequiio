@@ -40,13 +40,13 @@ const DEFAULT_PROPS = {
       image: {
         mobile: {
           source:
-            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af",
+            "https://decoims.com/maconequiio/0332127b-255b-40f1-a4e1-07c2922c2460/91102b71_91102b71-4832-486a-b683-5f7b06f649af.png",
           width: 360,
           height: 120,
         },
         desktop: {
           source:
-            "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96",
+            "https://decoims.com/maconequiio/0634ff11-924b-4af3-a562-fac1869a475a/ec597b6a_ec597b6a-dcf1-48ca-a99d-95b3c6304f96.png",
           width: 1440,
           height: 200,
         },

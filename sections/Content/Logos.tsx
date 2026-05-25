@@ -21,12 +21,12 @@ const IMAGES = [
   {
     altText: "deco",
     image:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fe7cd8ba-c954-45d6-9282-ee7d8ca8e3c7",
+      "https://decoims.com/maconequiio/e361492f-c237-41a5-9e02-6ebf5605887b/fe7cd8ba_fe7cd8ba-c954-45d6-9282-ee7d8ca8e3c7.svg",
   },
   {
     altText: "deco",
     image:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/637e8601-6b86-4979-aa97-68013a2a60fd",
+      "https://decoims.com/maconequiio/61e5c38b-4712-4300-9667-935d9bba849c/637e8601_637e8601-6b86-4979-aa97-68013a2a60fd.svg",
   },
 ];
 

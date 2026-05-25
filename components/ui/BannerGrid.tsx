@@ -92,17 +92,17 @@ const DEFAULT_PROPS: Props = {
       alt: "a",
       href: "a",
       srcMobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/82727553-f670-4e7c-b9c2-9452aed1955f",
+        "https://decoims.com/maconequiio/e1fe0f7d-eac1-430e-91fd-684fb39e3ef1/82727553_82727553-f670-4e7c-b9c2-9452aed1955f.jpg",
       srcDesktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7b3a9d75-57a5-43cf-a3c5-f689a997f24e",
+        "https://decoims.com/maconequiio/f2e62448-e1f0-427a-aff5-a570028d4509/7b3a9d75_7b3a9d75-57a5-43cf-a3c5-f689a997f24e.jpg",
     },
     {
       alt: "a",
       href: "a",
       srcMobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/c5c6bdf6-5555-488c-8b14-719e4158dea6",
+        "https://decoims.com/maconequiio/4728ac6c-ea07-4a93-9d1b-d24bd1509555/c5c6bdf6_c5c6bdf6-5555-488c-8b14-719e4158dea6.jpg",
       srcDesktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3e2b7824-d75c-4704-8d32-621bfc9b20cf",
+        "https://decoims.com/maconequiio/ca8861f0-f6ad-471f-b0c3-22d55cdfd0a6/3e2b7824_3e2b7824-d75c-4704-8d32-621bfc9b20cf.jpg",
     },
   ],
   borderRadius: {

@@ -57,7 +57,7 @@ let firstRun = true;
  * @title Site
  * @description Start your site from a template or from scratch.
  * @category Tool
- * @logo https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1/0ac02239-61e6-4289-8a36-e78c0975bcc8
+ * @logo https://decoims.com/maconequiio/182ce084-e1a5-4884-9df3-122f08d673b5/0ac02239_0ac02239-61e6-4289-8a36-e78c0975bcc8.png
  */
 export default function Site({ ...state }: Props): A<Manifest, Props, [
   ReturnType<typeof commerce>,

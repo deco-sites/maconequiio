@@ -26,7 +26,7 @@ const PLACEMENT = {
 };
 
 const DEFAULT_IMAGE =
-  "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97";
+  "https://decoims.com/maconequiio/cea37ab1-d2a5-401b-a067-533e38a618ea/b2278d2d_b2278d2d-2270-482b-98d4-f09d5f05ba97.png";
 
 export default function ImageSection({
   title,

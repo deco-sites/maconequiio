@@ -17,32 +17,32 @@
           "action": {
             "href": "/sigvaris"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/7d231ebb-e409-4d28-98fb-cae60da1006e",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/01708e00-638d-449c-b62a-cc93e82e8891"
+          "mobile": "https://decoims.com/maconequiio/594898c3-ce4f-407a-8017-b62a8dfdfcd6/7d231ebb_7d231ebb-e409-4d28-98fb-cae60da1006e.jpg",
+          "desktop": "https://decoims.com/maconequiio/a9f4becc-1b89-4c15-a9d7-96e99ae0537b/01708e00_01708e00-638d-449c-b62a-cc93e82e8891.jpg"
         },
         {
           "alt": "Banner Omron",
           "action": {
             "href": "/omron"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/2f0e47d7-368b-4a98-9353-a2c357a2ddc1",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/9b8bf858-aab2-44ff-bdb4-38cd79510044"
+          "mobile": "https://decoims.com/maconequiio/a9eba2fd-b19e-4e04-bed1-40193e3b6039/2f0e47d7_2f0e47d7-368b-4a98-9353-a2c357a2ddc1.jpg",
+          "desktop": "https://decoims.com/maconequiio/c3f1be0e-14fa-493c-aaef-fb9f59c9f4ee/9b8bf858_9b8bf858-aab2-44ff-bdb4-38cd79510044.jpg"
         },
         {
           "alt": "Banner Coloplast",
           "action": {
             "href": "/coloplast"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/8504fb87-6d22-41e6-aa8b-2307ce10eb5d",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/87e40ec9-3130-4399-879b-76c640e14a8c"
+          "mobile": "https://decoims.com/maconequiio/f624a08e-ae5f-4333-9832-29573d13bb70/8504fb87_8504fb87-6d22-41e6-aa8b-2307ce10eb5d.jpg",
+          "desktop": "https://decoims.com/maconequiio/e37ff395-d1bc-451f-bdc9-5aa9732aff76/87e40ec9_87e40ec9-3130-4399-879b-76c640e14a8c.jpg"
         },
         {
           "alt": "Banner Whatsapp",
           "action": {
             "href": "https://api.whatsapp.com/send/?phone=5521970056473&text=Ol%C3%A1!%20Desejo%20realizar%20uma%20compra"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/47354bf3-630e-457f-bebb-751ad466d055",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/2f0f1cd1-3029-4505-b640-fe4657da24d5"
+          "mobile": "https://decoims.com/maconequiio/a932bed6-abb8-4cec-a538-c022bc2ee3ee/47354bf3_47354bf3-630e-457f-bebb-751ad466d055.webp",
+          "desktop": "https://decoims.com/maconequiio/f4af0510-35b2-47da-bcc2-b519994e50c8/2f0f1cd1_2f0f1cd1-3029-4505-b640-fe4657da24d5.jpg"
         }
       ],
       "preload": true,
@@ -87,84 +87,84 @@
       "brands": [
         {
           "link": "/omron",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/46c1d8ec-8749-48f3-85f4-cc04d47d4711",
+          "image": "https://decoims.com/maconequiio/2e468f36-0959-4ed8-add3-c5b17a0adc49/46c1d8ec_46c1d8ec-8749-48f3-85f4-cc04d47d4711.jpg",
           "width": 157,
           "height": 157,
           "description": "Omron"
         },
         {
           "link": "/coloplast",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/1a62080b-5565-4030-8e44-32ad50cdf445",
+          "image": "https://decoims.com/maconequiio/375854c6-d8fc-4f4c-9e65-3eb895e346ac/1a62080b_1a62080b-5565-4030-8e44-32ad50cdf445.jpg",
           "width": 157,
           "height": 157,
           "description": "Coloplast"
         },
         {
           "link": "/mova",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/1fb27585-f704-4b5b-acad-028c21785114",
+          "image": "https://decoims.com/maconequiio/ead596e4-8ac7-488f-8d99-f7cfa3446b20/1fb27585_1fb27585-f704-4b5b-acad-028c21785114.jpg",
           "width": 157,
           "height": 157,
           "description": "Mova"
         },
         {
           "link": "/3m",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/876cd82b-dae5-4a5f-bbaf-03d7a0620782",
+          "image": "https://decoims.com/maconequiio/fbf4a28a-4f0d-4478-a5dd-e2b82a1cac7a/876cd82b_876cd82b-dae5-4a5f-bbaf-03d7a0620782.png",
           "width": 157,
           "height": 157,
           "description": "3M"
         },
         {
           "link": "/sigvaris",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/073a5787-8ce1-439a-be5b-bc923f97ef9c",
+          "image": "https://decoims.com/maconequiio/b60c122a-f7b1-4e6d-8bcc-f67728f459f8/073a5787_073a5787-8ce1-439a-be5b-bc923f97ef9c.jpg",
           "width": 157,
           "height": 157,
           "description": "Sigvaris"
         },
         {
           "link": "/estetoscopio//littmann",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/c0637382-a9c5-470d-9003-c0307af94d9c",
+          "image": "https://decoims.com/maconequiio/903dc5bd-e898-429a-90f4-a6d6c275ab70/c0637382_c0637382-a9c5-470d-9003-c0307af94d9c.png",
           "width": 157,
           "height": 157,
           "description": "Littmann"
         },
         {
           "link": "/americal-medical",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/9afb387c-1575-4079-9af5-6e7b7cd451b7",
+          "image": "https://decoims.com/maconequiio/8c9c4e5c-aba3-472b-9341-3ca93b6e871e/9afb387c_9afb387c-1575-4079-9af5-6e7b7cd451b7.jpg",
           "width": 157,
           "height": 157,
           "description": "America Medical"
         },
         {
           "link": "/descarpack",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/23787a6c-7618-42c0-b772-7b072dc57ca5",
+          "image": "https://decoims.com/maconequiio/aaf607c7-bdb4-47bb-8c8f-f649f01b96d2/23787a6c_23787a6c-7618-42c0-b772-7b072dc57ca5.jpg",
           "width": 157,
           "height": 157,
           "description": "Descarpack"
         },
         {
           "link": "/fresenius-kabi",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/b58976db-0b1f-4b35-81c6-edeccb6db80b",
+          "image": "https://decoims.com/maconequiio/6979c9d3-aeb8-4110-a085-174fefff88be/b58976db_b58976db-0b1f-4b35-81c6-edeccb6db80b.png",
           "width": 157,
           "height": 157,
           "description": "Fresenius Kabi"
         },
         {
           "link": "/medix-brasil",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/efdf36c3-da5c-4f01-8d08-afc4ce336b5e",
+          "image": "https://decoims.com/maconequiio/86084c5e-d99e-456e-824c-3bc2510ea410/efdf36c3_efdf36c3-da5c-4f01-8d08-afc4ce336b5e.jpg",
           "width": 157,
           "height": 157,
           "description": "Medix Brasil"
         },
         {
           "link": "/medsonda",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/2f7a3e82-3b51-4a47-9471-80e124e9f1ca",
+          "image": "https://decoims.com/maconequiio/1fc90f2e-60c0-4d3b-9cce-9c8250106921/2f7a3e82_2f7a3e82-3b51-4a47-9471-80e124e9f1ca.jpg",
           "width": 157,
           "height": 157,
           "description": "Medsonda"
         },
         {
           "link": "/maxicor",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/b9297934-65ca-4467-b643-945373f67409",
+          "image": "https://decoims.com/maconequiio/f71ffca8-1674-4c97-a30e-8fa2bf3d1aeb/b9297934_b9297934-65ca-4467-b643-945373f67409.jpg",
           "width": 157,
           "height": 157,
           "description": "Maxicor"
@@ -210,7 +210,7 @@
         {
           "alt": "Meia Panturrilha",
           "link": "/meia-panturrilha-20-30-algodao-super-sigvaris/p?skuId=6395",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/65de8d50-6b1d-4cbc-8102-cd087a5c249c/01---sigvaris.png",
+          "image": "https://decoims.com/maconequiio/64d1f3f5-27c5-44f2-9912-8d72219f5e56/65de8d50_65de8d50-6b1d-4cbc-8102-cd087a5c249c.png",
           "title": " ",
           "width": 423,
           "height": 423,
@@ -220,7 +220,7 @@
         {
           "alt": "Esteto",
           "link": "/estetoscopio-littmann-classic-iii-preto-5620-3m/p?skuId=2237",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/84c7f712-c2ef-4323-ad26-1fff1a73892b/02---littman.png",
+          "image": "https://decoims.com/maconequiio/b9853731-8b52-4e4e-8cb5-6a9cf4172798/84c7f712_84c7f712-c2ef-4323-ad26-1fff1a73892b.png",
           "title": " ",
           "width": 423,
           "height": 423,
@@ -230,7 +230,7 @@
         {
           "alt": "brav fita",
           "link": "/brava-fita-adesiva-formato-meia-lua-coloplast/p?skuId=18997",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/80739a0a-ceab-4a9b-b51a-9123258099c9/03---spray.png",
+          "image": "https://decoims.com/maconequiio/27baa1fc-aa76-41b3-9313-c4996b7ba5ac/80739a0a_80739a0a-ceab-4a9b-b51a-9123258099c9.png",
           "title": " ",
           "width": 423,
           "height": 423,

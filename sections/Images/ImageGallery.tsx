@@ -79,9 +79,9 @@ const DEFAULT_PROPS: Props = {
   "banners": [
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/b531631b-8523-4feb-ac37-5112873abad2",
+        "https://decoims.com/maconequiio/aa970168-a55b-441a-b615-695f2b050471/b531631b_b531631b-8523-4feb-ac37-5112873abad2.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/b531631b-8523-4feb-ac37-5112873abad2",
+        "https://decoims.com/maconequiio/aa970168-a55b-441a-b615-695f2b050471/b531631b_b531631b-8523-4feb-ac37-5112873abad2.jpg",
       "alt": "Fashion",
       "href": "/",
     },
@@ -89,23 +89,23 @@ const DEFAULT_PROPS: Props = {
       "alt": "Fashion",
       "href": "/",
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1125d938-89ff-4aae-a354-63d4241394a6",
+        "https://decoims.com/maconequiio/30c715bf-9ec4-4499-9bff-23eb872f1050/1125d938_1125d938-89ff-4aae-a354-63d4241394a6.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1125d938-89ff-4aae-a354-63d4241394a6",
+        "https://decoims.com/maconequiio/30c715bf-9ec4-4499-9bff-23eb872f1050/1125d938_1125d938-89ff-4aae-a354-63d4241394a6.jpg",
     },
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/dd1e2acb-ff80-49f9-8f56-1deac3b7a42d",
+        "https://decoims.com/maconequiio/ce72e3d2-2f3b-4679-b0d9-d3a49663dd7f/dd1e2acb_dd1e2acb-ff80-49f9-8f56-1deac3b7a42d.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/dd1e2acb-ff80-49f9-8f56-1deac3b7a42d",
+        "https://decoims.com/maconequiio/ce72e3d2-2f3b-4679-b0d9-d3a49663dd7f/dd1e2acb_dd1e2acb-ff80-49f9-8f56-1deac3b7a42d.jpg",
       "href": "/",
       "alt": "Fashion",
     },
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/0b85ba2d-48b1-4f5b-b619-7f4a7f50b455",
+        "https://decoims.com/maconequiio/8ed0a7fe-12ea-47de-80bc-53dbcca892ca/0b85ba2d_0b85ba2d-48b1-4f5b-b619-7f4a7f50b455.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/0b85ba2d-48b1-4f5b-b619-7f4a7f50b455",
+        "https://decoims.com/maconequiio/8ed0a7fe-12ea-47de-80bc-53dbcca892ca/0b85ba2d_0b85ba2d-48b1-4f5b-b619-7f4a7f50b455.jpg",
       "alt": "Fashion",
       "href": "/",
     },

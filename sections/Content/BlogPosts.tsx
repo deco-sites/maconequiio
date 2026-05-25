@@ -45,7 +45,7 @@ function BlogPosts({
     {
       href: "/",
       image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
+        "https://decoims.com/maconequiio/09a42b04-5271-4a46-86aa-4a1083d19519/80a115a2_80a115a2-3623-4e9b-aec7-42601c2ff416.png",
       alt: "alternative text",
       label: "Title Post",
       description: "Description",
@@ -55,7 +55,7 @@ function BlogPosts({
     {
       href: "/",
       image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
+        "https://decoims.com/maconequiio/09a42b04-5271-4a46-86aa-4a1083d19519/80a115a2_80a115a2-3623-4e9b-aec7-42601c2ff416.png",
       alt: "alternative text",
       label: "Title Post",
       description: "Description",
@@ -65,7 +65,7 @@ function BlogPosts({
     {
       href: "/",
       image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
+        "https://decoims.com/maconequiio/09a42b04-5271-4a46-86aa-4a1083d19519/80a115a2_80a115a2-3623-4e9b-aec7-42601c2ff416.png",
       alt: "alternative text",
       label: "Title Post",
       description: "Description",

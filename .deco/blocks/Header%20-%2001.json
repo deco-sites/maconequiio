@@ -4,7 +4,7 @@
   },
   "logo": {
     "alt": "Maconequi Logo",
-    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4452/997098c2-1152-4d2e-b78e-86bcf90c2767",
+    "src": "https://decoims.com/maconequiio/b4c31541-21a0-420d-bb30-a0d5f8361031/997098c2_997098c2-1152-4d2e-b78e-86bcf90c2767.png",
     "width": 210,
     "height": 41
   },
@@ -396,7 +396,7 @@
               "bannersSubItems": [
                 {
                   "url": "/estetoscopio",
-                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/0a654d98-85b9-470b-acdd-f6cea5ad2400/estetoscopios-01.jpg",
+                  "image": "https://decoims.com/maconequiio/8d1f5259-a5c2-4889-839e-ccecf5d0e770/0a654d98_0a654d98-85b9-470b-acdd-f6cea5ad2400.jpg",
                   "width": 300,
                   "height": 200,
                   "imageDescription": "esteto"
@@ -478,7 +478,7 @@
               "bannersSubItems": [
                 {
                   "url": "/",
-                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/1f8df45f-37aa-491f-8d00-7f4a0b420b33/monitores---01.jpg",
+                  "image": "https://decoims.com/maconequiio/48d9c20f-1a05-410a-b494-bc53c4334864/1f8df45f_1f8df45f-37aa-491f-8d00-7f4a0b420b33.jpg",
                   "width": 300,
                   "height": 200,
                   "imageDescription": "ap de pressao"
@@ -574,7 +574,7 @@
               "bannersSubItems": [
                 {
                   "url": "/meia-de-compressao",
-                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/0927daa1-e321-474e-9b4d-c4dae0e95b58/meias---01.jpg",
+                  "image": "https://decoims.com/maconequiio/4a19388b-817b-46cc-b9c6-90e577a4d993/0927daa1_0927daa1-e321-474e-9b4d-c4dae0e95b58.jpg",
                   "width": 300,
                   "height": 200,
                   "imageDescription": "meia"
@@ -658,7 +658,7 @@
               "bannersSubItems": [
                 {
                   "url": "/ostomia",
-                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/3764f56c-0ede-4cf7-8125-2f8dbe560c09/ostomia---01.jpg",
+                  "image": "https://decoims.com/maconequiio/4beab65d-2bec-4ad6-9f8d-564a11ad02f9/3764f56c_3764f56c-0ede-4cf7-8125-2f8dbe560c09.jpg",
                   "width": 300,
                   "height": 200,
                   "imageDescription": "ostomia"
@@ -739,7 +739,7 @@
               "bannersSubItems": [
                 {
                   "url": "/curativo",
-                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/c74f4d28-5662-4d75-af70-0e84035151ce/curativo---01.jpg",
+                  "image": "https://decoims.com/maconequiio/f2e31a7e-c86f-4a42-8807-2d5335a48415/c74f4d28_c74f4d28-5662-4d75-af70-0e84035151ce.jpg",
                   "width": 300,
                   "height": 200,
                   "imageDescription": "curativo"
@@ -816,7 +816,7 @@
               "bannersSubItems": [
                 {
                   "url": "/aparelhos-medicos",
-                  "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/maconequiio/f564e881-c767-440e-a631-e548ade3a490/aparelhos---01.jpg",
+                  "image": "https://decoims.com/maconequiio/1df821a3-1557-4a56-9ee7-56f3a3b2d511/f564e881_f564e881-c767-440e-a631-e548ade3a490.jpg",
                   "width": 300,
                   "height": 200,
                   "imageDescription": "aparelho"
